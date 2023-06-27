@@ -9,7 +9,6 @@
    ex)
    출력 예시
    플레이어 O ,컴퓨터는 X
-   플레이어 'n승' 컴퓨터 'n승'
    
    입력 예시
    <input onclick="버튼()" type="button" />
