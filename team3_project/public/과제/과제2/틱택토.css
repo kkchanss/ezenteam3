@@ -1,13 +1,15 @@
 @charset "UTF-8";
 
 
-*{padding: 0px; margin: 0px;}
+*{padding: 0px; margin: 0 auto;}
 
 .gamebtn{
 	padding-top: 30px;
-	margin: 0 auto;
-	display: flex;
 	width: 680px;
+}
+
+.gamebtn div{
+	display: flex;
 }
 
 .gamebtn button{
