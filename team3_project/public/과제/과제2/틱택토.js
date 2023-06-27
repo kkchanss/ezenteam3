@@ -28,8 +28,6 @@ function 클릭함수(index) {
 	
 }
 
-document.querySelector('.btn0').innerHTML = "O";
-
 
 
 
