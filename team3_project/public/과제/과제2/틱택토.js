@@ -22,7 +22,7 @@ function 게임판함수(){
 // 2. 클릭함수 ----------------------------------------------------------
 function 클릭함수(index) {
 	//let btn_check = document.querySelector('.btn${i}');
-	console.log (gameBox[index])
+
 	if(gameBox[index] != 0) {
 		alert('이미 선택된 칸입니다. 다시 선택해주세요.')
 		return;
@@ -30,8 +30,10 @@ function 클릭함수(index) {
 	
 	gameBox[index] = 1;
 	document.querySelector(`.btn${index}`).innerHTML = "O";
-	
+	난수함수()
 	판단함수()
+
+	
 }
 
 
@@ -72,4 +74,19 @@ function 판단함수(){//판단함수 시작
 
 }//판단함수 끝
 
-// 4. 난수함수 ----------------------------------------------------------
+// 4. 난수함수
+function 난수함수(){
+	for(;;){
+		let computer = parseInt(Math.random()*8);
+		console.log(computer)
+		
+		if (gameBox[computer] == 0) {
+			gameBox[computer] = 2	 
+			document.querySelector(`.btn${computer}`).innerHTML = 'X'
+			판단함수()
+			return;
+		}
+	}
+}
+
+
