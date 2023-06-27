@@ -1,21 +1,8 @@
-<<<<<<< HEAD
-=======
-/*
-
- */
->>>>>>> branch '김찬희' of https://github.com/kkchanss/ezenteam3.git
-
- 
-// 1. 게임판함수
-<<<<<<< HEAD
 
 alert ( '게임 시작합니다.')
 console.log ('게임 시작합니다.')
 	 
-let gameBox = [0,0,0,0,0,0,0,0,0]
-=======
 let gameBox = [0,0,0,0,0,0,0,0,0];
->>>>>>> branch '김찬희' of https://github.com/kkchanss/ezenteam3.git
 
 
 function 게임판함수(){
