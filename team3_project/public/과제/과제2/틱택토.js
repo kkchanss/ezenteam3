@@ -56,7 +56,7 @@ function 판단함수(){//판단함수 시작
 		
 	
 	//세로승리 판단
-	for( i = 0 ; i < 2 ; i+=1 ){//for문 시작	
+	for( i = 0 ; i <= 2 ; i+=1 ){//for문 시작	
 		if(gameBox[i] == 1 && gameBox[i+3] == 1 && gameBox[i+6] == 1)
 		{alert('플레이어 승리!'); 게임판함수(); return;}
 		else if(gameBox[i] == 2 && gameBox[i+3] == 2 && gameBox[i+6] == 2)
