@@ -32,8 +32,6 @@ function 클릭함수(index) {
 	document.querySelector(`.btn${index}`).innerHTML = "O";
 	난수함수()
 	판단함수()
-
-	
 }
 
 
@@ -75,7 +73,7 @@ function 판단함수(){//판단함수 시작
 
 }//판단함수 끝
 
-// 4. 난수함수
+// 4. 난수함수 ----------------------------------------------------------
 function 난수함수(){
 	for(;;){
 		let computer = parseInt(Math.random()*8);
