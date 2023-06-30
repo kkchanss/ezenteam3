@@ -57,6 +57,14 @@ function 편도(){
 						</div>
 					</div>
 					<div class="t_booking2">
+							<div>
+								<span> 연령 </span> </br>
+								<select class="destination2"> 
+							  	<option> 성인 </option>
+							  	<option> 청소년 </option>
+							  	<option> 어린이 </option>
+								</select>
+							</div>
 						<div class="date_div">
 							<div>
 								<span> 일자 </span> </br>
@@ -66,16 +74,8 @@ function 편도(){
 								<input class="time" type="time">
 							</div>
 						</div>
-						<div>
-							연령 </br>
-							<select class="destination2"> 
-						  	<option> 성인 </option>
-						  	<option> 청소년 </option>
-						  	<option> 어린이 </option>
-							</select>
-						</div>
 					</div>
-				</div>`;			
+				</div>`;		
 
 	// HTML 넣어주기
 	booking_info.innerHTML = HTML;
@@ -110,6 +110,14 @@ function 왕복(){
 						</div>
 					</div>
 					<div class="t_booking2">
+							<div>
+								<span> 연령 </span> </br>
+								<select class="destination2"> 
+							  	<option> 성인 </option>
+							  	<option> 청소년 </option>
+							  	<option> 어린이 </option>
+								</select>
+							</div>
 						<div class="date_div">
 							<div>
 								<span> 일자 </span> </br>
@@ -118,14 +126,6 @@ function 왕복(){
 								<input class="date" type="date">
 								<input class="time" type="time">
 							</div>
-						</div>
-						<div>
-							연령 </br>
-							<select class="destination2"> 
-						  	<option> 성인 </option>
-						  	<option> 청소년 </option>
-						  	<option> 어린이 </option>
-							</select>
 						</div>
 					</div>
 				</div>`;		
@@ -164,7 +164,7 @@ function 좌석(){
 	
 	for(let i = 0; i < 티켓리스트.length; i++) {
 		let seats = 티켓리스트[i].좌석; 
-		document.querySelector(`.seat${seats}`).style=`color: #406596; background-color: white;`;
+		document.querySelector(`.seat${seats}`).style=`color: #282828; background-color: #282828;`;
 	}	
 	console.log('티켓리스트[0].좌석: ' + 티켓리스트[0].좌석);
 }

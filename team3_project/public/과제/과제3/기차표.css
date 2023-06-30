@@ -127,6 +127,10 @@ li{list-style-type: none;}
 	font-weight: bold;
 	border: none;
 }
+.destination2, .date, .time{
+	border: none;
+	margin-top: 10px;
+}
 .t_booking2{
 	display: flex;
 	height: 100px;
@@ -140,6 +144,26 @@ li{list-style-type: none;}
 	display: flex;
 	flex-direction: column;
 }
+
+
+
+/* 좌석 */
+.seat button{
+	border-bottom-right-radius: 200px;
+	border-top-right-radius: 200px;
+	width: 60px; height: 40px;
+	margin-right: 13px;
+	margin-bottom: 8px;
+	background-color: #D4DDE8;
+	border-color: #D4DDE8;
+}
+.seat button:hover{background-color: #A9A8AA;}
+.seat button:visited{background-color: #D3C85A;}
+.seat{
+	margin-top: 20px;
+	margin-left: 50px;
+}
+
 
 
 
@@ -157,6 +181,7 @@ li{list-style-type: none;}
 .seat_btn:hover, .booking_btn:hover, .modify_btn:hover, .delete_btn:hover{
 	color: black;
 }
+
 
 
 /* 하단버튼들 포지션으로 위치잡기 */
