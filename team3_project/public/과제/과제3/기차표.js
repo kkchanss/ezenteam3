@@ -229,7 +229,31 @@ function 예매(){	console.log('예매함수 실행')
 // 상세 -- 이성호
 function 상세() { console.log('상세함수 실행')
 	
-	// 1.
+	let phone_input = document.querySelector('.phone_input').value;
+	
+	for(i=0; i<티켓리스트.length ; i++){
+		
+		if(티켓리스트[i].휴대폰번호 == phone_input ){
+			break;
+		}
+	}
+	
+	// 1. 어디에 출력할건지?? 선택승차권에
+	let confirm = document.querySelector('.confirm'); console.log(confirm);
+	
+	
+	
+	//2.객체 만든걸 출력한다(도착역, 일자, 인원)
+	let confirmTicket = ` 
+		<div>선택 승차권 확인하기</div>
+		<div>안산 -> ${티켓리스트[i].도착지} </div>	<div> ${티켓리스트[i].일자} </div>	<div> ${티켓리스트[i].연령} 1명 </div>
+						` 
+	
+	
+	confirm.innerHTML=confirmTicket;
+	
+	
+	
 	
 }
 
