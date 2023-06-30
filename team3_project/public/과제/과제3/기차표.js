@@ -25,7 +25,6 @@ let 도착지 = [ ];
 
 
 편도()
-예약자()
 
 
 
@@ -131,17 +130,11 @@ function 왕복(){
 
 
 
-// 좌석선택 -- 김찬희
 
-function 좌석선택(index) {
-	
-}
 
 
 
 // 좌석 -- 김찬희
-
-
 
 function 좌석(){
 	
@@ -156,15 +149,35 @@ function 좌석(){
 	}
 	
 	seat.innerHTML = lists;
-
+	
+	
 	for(let i = 0; i < 티켓리스트.length; i++) {
-		let seats = 티켓리스트[i].티켓; 
+		let seats = 티켓리스트[i].좌석; 
 		document.querySelector(`.seat${seats}`).style=`color: #406596; background-color: white;`;
 	}	
-	
+	console.log('티켓리스트[0].좌석: ' + 티켓리스트[0].좌석);
 }
 
+// 좌석선택 -- 김찬희
 
+function 좌석선택(phone, seatNum) {
+	
+	for(let i = 0; i < 티켓리스트.length; i++) {
+		let seats = 티켓리스트[i].좌석; 
+		if(seatNum == seats) {
+			alert('이미 있는 좌석입니다. 다른 곳을 선택해주시길 바랍니다.');
+			return;
+		}
+	}
+	
+	for(let i = 0; i < 티켓리스트.length; i++) {
+			
+	}
+	티켓리스트[티켓리스트.indexOf(phone)].좌석 = index;
+	
+	좌석();
+	
+}
 
 
 
@@ -228,7 +241,24 @@ function 정기권(){
 
 // 수정 -- 김찬희
 
+function 수정(phone) {
+	
+	let 일자 = 티켓리스트[티켓리스트.indexOf(phone)].일자;
+	let 좌석 = 티켓리스트[티켓리스트.indexOf(phone)].좌석;
+	
+}
 
+function 수정완료(phone) {
+	
+	let 일자In = document.querySelector('.일자In').value;
+	let 좌석In = document.querySelector('.좌석In').value;
+	
+	티켓리스트[티켓리스트.indexOf(phone)].일자 = 일자In;
+	티켓리스트[티켓리스트.indexOf(phone)].좌석 = 좌석In;
+	
+	alert('변경 완료되었습니다.')
+	
+}
 
 
 
