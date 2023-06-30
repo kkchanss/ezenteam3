@@ -199,9 +199,23 @@ function 좌석선택(phone, seatNum) {
 // 예매 -- 이성호
 function 예매(){
 	
-	// 1 입력 : 연령 , 날짜 , 시간 , 좌석 , 도착지
+	// 1. 입력 : 연령 , 날짜 , 시간 , 좌석 , 도착지
 	// 2.작업된 정보 : 가격( 연령 와 도착지) , 일자( 날짜 와 시간 )  
+	let destination = document.querySelector('.destination').Value; 
+	let date = document.querySelector('.date').Value;
+	let time = document.querySelector('.time').Value;
 	
+	let 티켓 = {
+			연령 : destination,
+			날짜 : date,
+			시간 : time,
+			좌석 : seat,
+			도착지 : destination 
+			}				
+							console.log('티켓');
+	티켓리스트.push(티켓);		console.log('티켓리스트');
+	
+	상세();
 }
 
 
@@ -214,6 +228,10 @@ function 예매(){
 
 
 // 상세 -- 이성호
+function 상세() {
+	// 1.
+	
+}
 
 
 
