@@ -56,8 +56,6 @@
 예매확인()
 function 예매확인(){
 	
-	document.querySelector('.t_collect1').innerHTML = `<h3 class = "check_ticket">승차권 확인</h3>`
-	document.querySelector('.t_collect2').innerHTML = `<button>승차권</button> <button onclick="정기권()">정기권</button>`
 	
 	let t_collect3 = document.querySelector('.t_collect3')
 	let collect3 = `<div>${티켓.출발지} </div> <span> -> </span> <div> ${티겟.도착지} </div>`
