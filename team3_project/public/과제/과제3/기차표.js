@@ -14,10 +14,7 @@ let 도착지 = [ ];
 	도착지 
 		안산 -> 대전 : 15000
 		안산 -> 대구 : 25000
-		안산 -> 부산 : 35000
-		
-		
-		
+		안산 -> 부산 : 35000		
 	
 */
 
@@ -99,33 +96,37 @@ function 왕복(){
 	
 	// HTML 선언
 	let HTML = `<div> 
-					<div> 
-					<h4> 안산 </h4>
-					</div>
-					<div> 
-						<ul>
-							<li> → </li>
-							<li> ← </li>
-						</ul>
-					</div>
-					<div> 
-					 	<select class="destination"> 
-						  	<option> 대전 </option>
-						  	<option> 대구 </option>
-						  	<option> 부산 </option>
-						</select>	
-					</div>
-					<div>
-							일자 </br>
-							<input class="date" type="date">
-							<input class="time" type="time">
+					<div class="t_booking1">
+						<div> 
+						<h4> 안산 </h4>
+						</div>
+						<div> 
+							<ul>
+								<li> → </li>
+								<li> ← </li>
+							</ul>
+						</div>
+						<div> 
+						 	<select class="destination"> 
+							  	<option> 대전 </option>
+							  	<option> 대구 </option>
+							  	<option> 부산 </option>
+							</select>	
+						</div>
 					</div>
 					<div>
-						<select class="destination"> 
-					  	<option> 성인 </option>
-					  	<option> 청소년 </option>
-					  	<option> 어린이 </option>
-						</select>
+						<div>
+								일자 </br>
+								<input class="date" type="date">
+								<input class="time" type="time">
+						</div>
+						<div>
+							<select class="destination"> 
+						  	<option> 성인 </option>
+						  	<option> 청소년 </option>
+						  	<option> 어린이 </option>
+							</select>
+						</div>
 					</div>
 				</div>`;	
 
