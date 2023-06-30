@@ -2,7 +2,7 @@
 
 let 티켓리스트 = [ ];
 let 도착지 = [ ];
-
+let 폰넘버 = "";
 // 가격 계산표 
 /*
 	연령 
@@ -154,7 +154,7 @@ function 좌석(){
 	
 	
 	for(let i = 1; i<=28; i++) {
-		lists+=`<button class="seat${i} onclick="좌석선택(${i})">${i}</button>`;
+		lists+=`<button class="seat${i}" onclick="좌석선택(${i})">${i}</button>`;
 		if(i % 7 == 0) lists+="<br/>";
 		if(i % 14 == 0) lists+="<br/>";
 	}
@@ -166,12 +166,11 @@ function 좌석(){
 		let seats = 티켓리스트[i].좌석; 
 		document.querySelector(`.seat${seats}`).style=`color: #406596; background-color: white;`;
 	}	
-	console.log('티켓리스트[0].좌석: ' + 티켓리스트[0].좌석);
 }
 
 // 좌석선택 -- 김찬희
 
-function 좌석선택(phone, seatNum) {
+function 좌석선택(seatNum) {
 	
 	for(let i = 0; i < 티켓리스트.length; i++) {
 		let seats = 티켓리스트[i].좌석; 
@@ -181,10 +180,7 @@ function 좌석선택(phone, seatNum) {
 		}
 	}
 	
-	for(let i = 0; i < 티켓리스트.length; i++) {
-			
-	}
-	티켓리스트[티켓리스트.indexOf(phone)].좌석 = index;
+	좌석번호 = seatNum;
 	
 	좌석();
 	
@@ -251,6 +247,7 @@ function 예매확인(  ){
 	for( i = 0; i<티켓리스트.length ; i++){//for 시작
 		if( 티켓리스트[i].휴대폰번호 == phone ){//if 시작
 			num = 1; 
+			폰넘버 = phone;
 			t = i; break;
 		}
 	}//for 끝
@@ -291,22 +288,59 @@ function 정기권(){
 
 // 수정 -- 김찬희
 
-function 수정(phone) {
+function 수정() {
+	let phone = prompt('휴대번호를 입력해주세요.');
+	let t = 0;
 	
-	let 일자 = 티켓리스트[티켓리스트.indexOf(phone)].일자;
-	let 좌석 = 티켓리스트[티켓리스트.indexOf(phone)].좌석;
+	if( 폰넘버 != phone ){//if 시작
+		alert('맞지 않습니다.');
+		return;
+	}
+		
+	for( i = 0; i<티켓리스트.length ; i++){//for 시작
+		if(티켓리스트[i].phone == phone) t = i;
+	}//for 끝
+		
+	let 일자 = 티켓리스트[t].일자;
+	let 좌석 = 티켓리스트[t].좌석;
+	
+	let t_collect3 = document.querySelector('.t_collect3')
+	let collect3 = `<div>안산</div> <div> -> </div> <div> ${티켓리스트[t].도착지} </div>`
+	
+	let t_collect4 = document.querySelector('.t_collect4')
+	let collect4 = `<div> 일자 <br/> <input class="일자In" type="text" value="${티켓리스트[t].일자}"/> </div> <div> 연령 <br/> ${티켓리스트[t].연령} </div>` 
+	
+	let t_collect5 = document.querySelector('.t_collect5')
+	let collect5 = `<div> 좌석 <br/> <input class="좌석In" type="text" value="${티켓리스트[t].좌석}"/> </div> <div> 타는곳 <br/> 탑승구05 </div>` 
+	
+	let t_collect6 = document.querySelector('.t_collect6')
+	let collect6 = `<div> 호차번호 <br/> 5호차 </div> <div>큐알코드</div>`
+	
+	let t_modify_space = document.querySelector('.modify_space');
+	let modify_space = `<button class="modify_btn" onclick="수정완료()" >변경 완료</button>
+					<button class="delete_btn" onclick="환불()" >반환</button>`;
+	
+	t_collect3.innerHTML = collect3;
+	t_collect4.innerHTML = collect4;
+	t_collect5.innerHTML = collect5;
+	t_collect6.innerHTML = collect6;
 	
 }
 
-function 수정완료(phone) {
+function 수정완료() {
 	
 	let 일자In = document.querySelector('.일자In').value;
 	let 좌석In = document.querySelector('.좌석In').value;
+	let t = 0;
+	for( i = 0; i<티켓리스트.length ; i++){//for 시작
+		if(티켓리스트[i].phone == 폰넘버) t = i;
+	}//for 끝
 	
-	티켓리스트[티켓리스트.indexOf(phone)].일자 = 일자In;
-	티켓리스트[티켓리스트.indexOf(phone)].좌석 = 좌석In;
+	티켓리스트[t].일자 = 일자In;
+	티켓리스트[t].좌석 = 좌석In;
 	
 	alert('변경 완료되었습니다.')
+	
 	
 }
 
@@ -321,7 +355,7 @@ function 환불(){
 	
 	let phone = prompt("핸드폰 번호를 입력해주세요")
 	
-	if( 티켓리스트[티켓리스트.indexOf(핸드폰번호)] == phone){
+	if(폰넘버 == phone){
 	
 	document.querySelector('.t_collect3').innerHTML = `<h3 class = "none_ticket">선택된 도착지 없음</h3>`
 	document.querySelector('.t_collect4').innerHTML = `<h3 class = "none_ticket">선택된 일자, 인원 없음</h3>`
