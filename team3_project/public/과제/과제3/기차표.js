@@ -25,10 +25,6 @@ let 도착지 = [ ];
 
 
 편도()
-<<<<<<< HEAD
-=======
-
->>>>>>> branch '박민재' of https://github.com/kkchanss/ezenteam3.git
 
 
 
