@@ -2,7 +2,7 @@
 
 let 티켓리스트 = [ ];
 let 도착지 = [ ];
-
+let 폰넘버 ="";
 // 가격 계산표 
 /*
 	연령 
@@ -247,15 +247,16 @@ function 예매확인(  ){
 	
 	let phone = prompt('핸드폰 번호를 입력해주세요');
 	let num = 0;
-	let t = 11111;
+	let t = 0;
 	for( i = 0; i<티켓리스트.length ; i++){//for 시작
 		if( 티켓리스트[i].휴대폰번호 == phone ){//if 시작
 			num = 1; 
-			t = i; break;
+			t = i;
+			폰넘버 = phone ; break;
 		}
 	}//for 끝
 	if(num == 0) {
-		alert('일치하는 게 없')
+		alert('없는 휴대폰 번호입니다.')
 		return;
 	}
 	console.log(t)
@@ -271,19 +272,26 @@ function 예매확인(  ){
 	let t_collect6 = document.querySelector('.t_collect6')
 	let collect6 = `<div> 호차번호 <br/> 5호차 </div> <div>큐알코드</div>`
 	
+	let ticketNumber = parseInt(Math.random()*99999+1000)
+	
+	let t_collect7 = document.querySelector('.t_collect7')
+	let collect7 = `<div> 승차권 번호 </div> 
+					<div> ${ticketNumber}-${ticketNumber}-${ticketNumber}-${ticketNumber} </div>`
+	console.log(collect7)
 	t_collect3.innerHTML = collect3
 	t_collect4.innerHTML = collect4
 	t_collect5.innerHTML = collect5
 	t_collect6.innerHTML = collect6 
-	
+	t_collect7.innerHTML = collect7
 }//함수 끝  
 	
 	
 
 
 function 정기권(){
+	
 	alert('확인된 정기권이 없습니다.')
-	예매확인()
+	
 }
 
 
@@ -319,19 +327,30 @@ function 수정완료(phone) {
 // 환불 -- 박민재
 function 환불(){
 	
+	
 	let phone = prompt("핸드폰 번호를 입력해주세요")
 	
-	if( 티켓리스트[티켓리스트.indexOf(핸드폰번호)] == phone){
+	let num = 0;
+	let t = 0;
+		if( 폰넘버 == phone ){//if 시작
+			num = 1; 
+		
+		}
+	if(num == 0) {
+		alert('휴대폰 번호가 일치하지 않습니다.')
+		return;
+	}
 	
-	document.querySelector('.t_collect3').innerHTML = `<h3 class = "none_ticket">선택된 도착지 없음</h3>`
-	document.querySelector('.t_collect4').innerHTML = `<h3 class = "none_ticket">선택된 일자, 인원 없음</h3>`
-	document.querySelector('.t_collect5').innerHTML = `<h3 class = "none_ticket">선택된 좌석 없음</h3>`
-	document.querySelector('.t_collect6').innerHTML = `<h3 class = "none_ticket">선택된 승차권 없음</h3>`
-	document.querySelector('.t_collect7').innerHTML = `<h3 class = "none_ticket">선택된 승차권 없음<h3>`
-	alert('승차권이 취소되었습니다.')}
+	document.querySelector('.t_collect3').innerHTML = `<div> -- </div> <div> -> </div> <div> -- </div>`
+	document.querySelector('.t_collect4').innerHTML = `<div> 일자 <br/> -- </div> <div> 연령 <br/> -- </div>`
+	document.querySelector('.t_collect5').innerHTML = `<div> 좌석 <br/> -- </div> <div> 타는곳 <br/> -- </div>`
+	document.querySelector('.t_collect6').innerHTML = `<div> 호차번호 <br/> -- </div> <div> -- </div>`
+	document.querySelector('.t_collect7').innerHTML = `<div> 승차권 번호 </div> <div> -- </div> `
+	alert('승차권이 취소되었습니다.')
+
+}//환불 끝
 	
-	else{alert("핸드폰번호가 틀립니다."); return; }
-}
+
 
 
 
