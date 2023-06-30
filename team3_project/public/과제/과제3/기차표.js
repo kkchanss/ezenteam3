@@ -1,6 +1,4 @@
 
-<<<<<<< HEAD
-console.log ('JS 실행')
 
 let 티켓리스트 = [ ];
 let 도착지 = [ ];
@@ -29,10 +27,6 @@ let 도착지 = [ ];
 편도()
 예약자()
 
-=======
-let 티켓리스트 = [ ];
-let 도착지 = [ ];
->>>>>>> branch '이성호' of https://github.com/kkchanss/ezenteam3.git
 
 
 // 편도 -- 신예지
