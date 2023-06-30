@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+
+*{ padding:0px; margin: 0 auto;}
+#wrap{
+	width: 1400px;
+	font-family: "돋움";
+	display: flex;
+	justify-content: space-around;
+}
+
+.t_booking{
+	margin-top:50px;
+	width: 600px;
+	height: 800px;
+	border: 1px solid black;
+}
+
+.t_confirm_home{
+	margin-top:50px;
+	width: 600px;
+	height: 800px;
+	border: 1px solid black;
+}
