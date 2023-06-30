@@ -25,7 +25,7 @@ let 도착지 = [ ];
 
 
 편도()
-예약자()
+
 
 
 
@@ -49,21 +49,26 @@ function 편도(){
 							</ul>
 						</div>
 						<div> 
-						 	<select class="destination"> 
+						 	<select class="destination1"> 
 							  	<option> 대전 </option>
 							  	<option> 대구 </option>
 							  	<option> 부산 </option>
 							</select>	
 						</div>
 					</div>
-					<div>
-						<div>
-								일자 </br>
+					<div class="t_booking2">
+						<div class="date_div">
+							<div>
+								<span> 일자 </span> </br>
+							</div>
+							<div>
 								<input class="date" type="date">
 								<input class="time" type="time">
+							</div>
 						</div>
 						<div>
-							<select class="destination"> 
+							연령 </br>
+							<select class="destination2"> 
 						  	<option> 성인 </option>
 						  	<option> 청소년 </option>
 						  	<option> 어린이 </option>
@@ -85,7 +90,7 @@ function 왕복(){
 	let booking_info = document.querySelector('.booking_info')
 	
 	// HTML 선언
-	let HTML = `<div> 
+	let HTML =`<div> 
 					<div class="t_booking1">
 						<div> 
 						<h4> 안산 </h4>
@@ -97,28 +102,33 @@ function 왕복(){
 							</ul>
 						</div>
 						<div> 
-						 	<select class="destination"> 
+						 	<select class="destination1"> 
 							  	<option> 대전 </option>
 							  	<option> 대구 </option>
 							  	<option> 부산 </option>
 							</select>	
 						</div>
 					</div>
-					<div>
-						<div>
-								일자 </br>
+					<div class="t_booking2">
+						<div class="date_div">
+							<div>
+								<span> 일자 </span> </br>
+							</div>
+							<div>
 								<input class="date" type="date">
 								<input class="time" type="time">
+							</div>
 						</div>
 						<div>
-							<select class="destination"> 
+							연령 </br>
+							<select class="destination2"> 
 						  	<option> 성인 </option>
 						  	<option> 청소년 </option>
 						  	<option> 어린이 </option>
 							</select>
 						</div>
 					</div>
-				</div>`;	
+				</div>`;		
 
 	// HTML 넣어주기
 	booking_info.innerHTML = HTML;

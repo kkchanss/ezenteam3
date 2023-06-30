@@ -12,26 +12,50 @@ li{list-style-type: none;}
 }
 
 .t_booking{
-	margin-top:50px;
+	margin-top:30px;
 	width: 600px;
-	height: 800px;
+	height: 700px;
 	border: 1px solid #5C5B5D;
 }
 
 .t_confirm_home{
-	margin-top:50px;
+	margin-top:30px;
 	width: 600px;
-	height: 800px;
+	height: 700px;
 	border: 1px solid #5C5B5D;
 }
 
 /* ---------- CSS : 신예지 ---------- */
+
 /* 외부폰트 사용 */
 @font-face {
     font-family: 'KBO-Dia-Gothic_bold';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/KBO-Dia-Gothic_bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
+}
+@font-face {
+    font-family: 'HANAMDAUM';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/HANAMDAUM.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/* 휴대폰 입력칸 */
+.phone{
+	margin-top:30px;
+	width: 600px;
+	text-align: center;
+}
+.phone span{
+	font-size: 15px;
+	color: gray;
+}
+.phone_input{
+	width: 250px; height: 20px;
+	text-align: center;
+	font-size: 20px;
 }
 
 
@@ -46,12 +70,29 @@ li{list-style-type: none;}
 	font-weight: bold;
 	height: 50px;
 	padding: 10px 0px;
+	border: none;
 }
+.title_btn{
+	background-color: #4973AB;
+	color: white;
+	text-align: center;
+	font-size: 38px;
+	font-family: "KBO-Dia-Gothic_bold";
+	font-weight: bold;
+	height: 70px; width: 600px;
+	padding: 10px 0px;
+	border: none;
+}
+.title_btn:hover{
+	color: black;
+}
+
+
 
 /* 페이지 하단 헤더 */
 .one_way, .round{
 	background-color: #D4DDE8;
-	width: 250px;
+	width: 253px;
 	height: 42px;
 	padding: 10px 0px;
 	font-weight: bold;
@@ -61,40 +102,74 @@ li{list-style-type: none;}
 	border: none;
 	margin: 0px 22px;
 }
+.one_way:hover, .round:hover{
+	background-color: #809ABB;
+}
+
 
 
 /* 옵션 구역 */
-.t_booking1{
-	display: flex;
+.t_booking1 h4{
+	padding-right: 20px;
 }
-
-
-
-
-
-
-/* select 옵션들 */
-.destination{
+.t_booking1{
+	padding: 20px 10px;
+	display: flex;
+	height: 60px;
+	align-items: center;
+	font-size: 28px;
+	font-family: "HANAMDAUM";
+	border-bottom: dashed 1px #C0C0C0;
+}
+.destination1{
+	font-size: 29px;
+	font-family: "HANAMDAUM";
+	font-weight: bold;
 	border: none;
 }
+.t_booking2{
+	display: flex;
+	height: 100px;
+	align-items: center;
+	font-size: 18px;
+	font-family: "HANAMDAUM";
+	border-bottom: dashed 1px #C0C0C0;
+}
+
+.date_div{
+	display: flex;
+	flex-direction: column;
+}
+
+
 
 /* 모든 버튼들(좌석, 예매, 변경, 반환) */
 .seat_btn, .booking_btn, .modify_btn, .delete_btn{
 	border: none;
-	background-color: #D4DDE8;
-	font-weight: bold;
-}
-
-
-.one_way:hover, 
-.round:hover, 
-.seat_btn:hover, 
-.booking_btn:hover, 
-.modify_btn:hover, 
-.delete_btn:hover{
 	background-color: #4973AB;
+	font-weight: bold;
 	color: white;
+	width: 300px; height: 50px;
+	font-size: 18px;
+	font-family: "KBO-Dia-Gothic_bold";
+}
+
+.seat_btn:hover, .booking_btn:hover, .modify_btn:hover, .delete_btn:hover{
+	color: black;
 }
 
 
+/* 하단버튼들 포지션으로 위치잡기 */
+.t_booking{position: relative;}
+.t_confirm_home{position: relative;}
+.seat_btn, .modify_btn{
+	position: absolute;
+	top: 650px;
+	left: -1px;
+}
 
+.booking_btn, .delete_btn{
+	position: absolute;
+	top: 650px;
+	right: -1px;
+}
