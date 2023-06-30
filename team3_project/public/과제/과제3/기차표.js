@@ -25,6 +25,10 @@ let 도착지 = [ ];
 
 
 편도()
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch '박민재' of https://github.com/kkchanss/ezenteam3.git
 
 
 
@@ -213,23 +217,44 @@ function 예매(){
 
 
 // 예매확인 -- 박민재
-예매확인()
-function 예매확인(){
+
+function 예매확인(  ){
 	
-	
+	let phone = prompt('핸드폰 번호를 입력해주세요');
+	let num = 0;
+	let t = 11111;
+	for( i = 0; i<티켓리스트.length ; i++){//for 시작
+		if( 티켓리스트[i].휴대폰번호 == phone ){//if 시작
+			num = 1; 
+			t = i; break;
+		}
+	}//for 끝
+	if(num == 0) {
+		alert('일치하는 게 없')
+		return;
+	}
+	console.log(t)
 	let t_collect3 = document.querySelector('.t_collect3')
-	let collect3 = `<div>${티켓.출발지} </div> <span> -> </span> <div> ${티겟.도착지} </div>`
+	let collect3 = `<div>안산</div> <div> -> </div> <div> ${티켓리스트[t].도착지} </div>`
 	
 	let t_collect4 = document.querySelector('.t_collect4')
-	let collect4 = `<div> 일자 ${티켓.일자} </div> <div> 연령 </div>` 
+	let collect4 = `<div> 일자 <br/> ${티켓리스트[t].일자} </div> <div> 연령 <br/> ${티켓리스트[t].연령} </div>` 
 	
 	let t_collect5 = document.querySelector('.t_collect5')
+	let collect5 = `<div> 좌석 <br/> ${티켓리스트[t].좌석} </div> <div> 타는곳 <br/> 탑승구05 </div>` 
+	
 	let t_collect6 = document.querySelector('.t_collect6')
+	let collect6 = `<div> 호차번호 <br/> 5호차 </div> <div>큐알코드</div>`
+	
+	t_collect3.innerHTML = collect3
+	t_collect4.innerHTML = collect4
+	t_collect5.innerHTML = collect5
+	t_collect6.innerHTML = collect6 
+	
+}//함수 끝  
 	
 	
-	
-	t_collect3.innerHTML(collect3)
-}
+
 
 function 정기권(){
 	alert('확인된 정기권이 없습니다.')
@@ -268,13 +293,19 @@ function 수정완료(phone) {
 
 // 환불 -- 박민재
 function 환불(){
-		
+	
+	let phone = prompt("핸드폰 번호를 입력해주세요")
+	
+	if( 티켓리스트[티켓리스트.indexOf(핸드폰번호)] == phone){
+	
 	document.querySelector('.t_collect3').innerHTML = `<h3 class = "none_ticket">선택된 도착지 없음</h3>`
 	document.querySelector('.t_collect4').innerHTML = `<h3 class = "none_ticket">선택된 일자, 인원 없음</h3>`
 	document.querySelector('.t_collect5').innerHTML = `<h3 class = "none_ticket">선택된 좌석 없음</h3>`
 	document.querySelector('.t_collect6').innerHTML = `<h3 class = "none_ticket">선택된 승차권 없음</h3>`
 	document.querySelector('.t_collect7').innerHTML = `<h3 class = "none_ticket">선택된 승차권 없음<h3>`
-	alert('승차권이 취소되었습니다.')
+	alert('승차권이 취소되었습니다.')}
+	
+	else{alert("핸드폰번호가 틀립니다."); return; }
 }
 
 
