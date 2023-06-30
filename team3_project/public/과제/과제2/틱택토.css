@@ -1,1 +1,30 @@
 @charset "UTF-8";
+
+
+*{padding: 0px; margin: 0 auto;}
+
+.gamebtn{
+	padding-top: 30px;
+	width: 680px;
+}
+
+.gamebtn div{
+	display: flex;
+}
+
+.gamebtn button{
+	width: 200px; height: 200px;
+	margin: 10px 10px;
+	border: none;
+	background-color: #A0BCC7;
+	color: white;
+	font-weight: bold; 
+	font-size: 150px;
+}
+
+.gamebtn button:hover { 
+	background-color: #385661; 
+}
+
+
+
