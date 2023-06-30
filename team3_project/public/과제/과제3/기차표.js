@@ -224,7 +224,6 @@ function 예매(){	console.log('예매함수 실행')
 
 
 
-
 // 상세 -- 이성호
 function 상세() { console.log('상세함수 실행')
 	
