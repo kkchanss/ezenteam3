@@ -213,7 +213,7 @@ function 예매(){	console.log('예매함수 실행')
 	
 	// 3. 배열에 저장 [ 티켓리스트에 티켓 저장 ]
 	티켓리스트.push( 티켓 ); console.log( 티켓리스트 );
-	
+	좌석()
 	상세()
 }
 
@@ -361,6 +361,7 @@ function 수정() {
 	t_collect4.innerHTML = collect4;
 	t_collect5.innerHTML = collect5;
 	t_collect6.innerHTML = collect6;
+	t_modify_space.innerHTML = modify_space;
 	
 }
 
