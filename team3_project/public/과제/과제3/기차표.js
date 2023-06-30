@@ -243,52 +243,55 @@ function 상세() {
 
 // 예매확인 -- 박민재
 
-function 예매확인(  ){
+function 예매확인(  ){//예매 확인 함수 시작
 	
-	let phone = prompt('핸드폰 번호를 입력해주세요');
+	let phone = prompt('핸드폰 번호를 입력해주세요( - 포함 )');//핸드폰 번호 입력 받기
 	let num = 0;
 	let t = 0;
-	for( i = 0; i<티켓리스트.length ; i++){//for 시작
-		if( 티켓리스트[i].휴대폰번호 == phone ){//if 시작
+	for( i = 0; i<티켓리스트.length ; i++){//for 시작 
+		if( 티켓리스트[i].휴대폰번호 == phone ){//if 시작 // 핸드폰 번호 일치 검사
 			num = 1; 
 			t = i;
-			폰넘버 = phone ; break;
-		}
+			폰넘버 = phone ; break; // 일치하면 폰넘버 배열에 저장하고 예매내역 출력
+		}//if 끝
 	}//for 끝
-	if(num == 0) {
-		alert('없는 휴대폰 번호입니다.')
+	if(num == 0) {//틀렸을때 if 문 시작
+		alert('없는 휴대폰 번호입니다.') // 일치하지 않으면 알림
 		return;
-	}
-	console.log(t)
-	let t_collect3 = document.querySelector('.t_collect3')
+	}//if 문 끝
+	
+	let t_collect3 = document.querySelector('.t_collect3') // 안산->도착지 저장
 	let collect3 = `<div>안산</div> <div> -> </div> <div> ${티켓리스트[t].도착지} </div>`
 	
-	let t_collect4 = document.querySelector('.t_collect4')
+	let t_collect4 = document.querySelector('.t_collect4')//티켓 일자와 연령대 저장
 	let collect4 = `<div> 일자 <br/> ${티켓리스트[t].일자} </div> <div> 연령 <br/> ${티켓리스트[t].연령} </div>` 
 	
-	let t_collect5 = document.querySelector('.t_collect5')
+	let t_collect5 = document.querySelector('.t_collect5')//좌석 번호와 탑승구 저장
 	let collect5 = `<div> 좌석 <br/> ${티켓리스트[t].좌석} </div> <div> 타는곳 <br/> 탑승구05 </div>` 
 	
-	let t_collect6 = document.querySelector('.t_collect6')
+	let t_collect6 = document.querySelector('.t_collect6') // 호차 번호와 큐알코드 저장 //큐알코드 텍스트는 임시입니다!
 	let collect6 = `<div> 호차번호 <br/> 5호차 </div> <div>큐알코드</div>`
 	
-	let ticketNumber = parseInt(Math.random()*99999+1000)
+	let ticketNumber1 = parseInt(Math.random()*99999+1000)
+	let ticketNumber2 = parseInt(Math.random()*99999+1000)
+	let ticketNumber3 = parseInt(Math.random()*99999+1000)
+	let ticketNumber4 = parseInt(Math.random()*99999+1000)//승차권 번호 생성 //1000단위부터 10000단위까지 무작위 생성
 	
 	let t_collect7 = document.querySelector('.t_collect7')
 	let collect7 = `<div> 승차권 번호 </div> 
-					<div> ${ticketNumber}-${ticketNumber}-${ticketNumber}-${ticketNumber} </div>`
-	console.log(collect7)
-	t_collect3.innerHTML = collect3
-	t_collect4.innerHTML = collect4
-	t_collect5.innerHTML = collect5
-	t_collect6.innerHTML = collect6 
-	t_collect7.innerHTML = collect7
-}//함수 끝  
+					<div> ${ticketNumber1}-${ticketNumber2}-${ticketNumber3}-${ticketNumber4} </div>`//승차권 번호 저장
+	
+	t_collect3.innerHTML = collect3// 안산->도착지 출력
+	t_collect4.innerHTML = collect4//티켓 일자와 연령대 출력
+	t_collect5.innerHTML = collect5//좌석 번호와 탑승구 출력
+	t_collect6.innerHTML = collect6 // 호차 번호와 큐알코드 출력
+	t_collect7.innerHTML = collect7//승차권 번호 출력
+}// 예매확인 함수 끝  
 	
 	
 
 
-function 정기권(){
+function 정기권(){//정기권 클릭하면 알림만 띄움
 	
 	alert('확인된 정기권이 없습니다.')
 	
@@ -325,22 +328,22 @@ function 수정완료(phone) {
 
 
 // 환불 -- 박민재
-function 환불(){
+function 환불(){//환불 함수 시작
 	
 	
-	let phone = prompt("핸드폰 번호를 입력해주세요")
+	let phone = prompt("핸드폰 번호를 입력해주세요( - 포함 )") //입력받은 핸드폰 번호 값 저장
 	
 	let num = 0;
-	let t = 0;
-		if( 폰넘버 == phone ){//if 시작
+	
+		if( 폰넘버 == phone ){//if 시작 //예매확인에서 입력한 번호와 같다면 승차권 취소
 			num = 1; 
 		
 		}
 	if(num == 0) {
-		alert('휴대폰 번호가 일치하지 않습니다.')
+		alert('휴대폰 번호가 일치하지 않습니다.')//번호가 같지 않다면 알림
 		return;
 	}
-	
+	//취소된 승차권 화면 표시는 ( -- )
 	document.querySelector('.t_collect3').innerHTML = `<div> -- </div> <div> -> </div> <div> -- </div>`
 	document.querySelector('.t_collect4').innerHTML = `<div> 일자 <br/> -- </div> <div> 연령 <br/> -- </div>`
 	document.querySelector('.t_collect5').innerHTML = `<div> 좌석 <br/> -- </div> <div> 타는곳 <br/> -- </div>`
