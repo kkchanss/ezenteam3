@@ -2,6 +2,7 @@
 
 let 티켓리스트 = [ ];
 let 도착지 = [ ];
+let 좌석번호 = 0;
 let 폰넘버 ="";
 // 가격 계산표 
 /*
@@ -57,14 +58,6 @@ function 편도(){
 						</div>
 					</div>
 					<div class="t_booking2">
-							<div>
-								<span> 연령 </span> </br>
-								<select class="destination2"> 
-							  	<option> 성인 </option>
-							  	<option> 청소년 </option>
-							  	<option> 어린이 </option>
-								</select>
-							</div>
 						<div class="date_div">
 							<div>
 								<span> 일자 </span> </br>
@@ -73,6 +66,14 @@ function 편도(){
 								<input class="date" type="date">
 								<input class="time" type="time">
 							</div>
+						</div>
+						<div>
+							연령 </br>
+							<select class="destination2"> 
+						  	<option> 성인 </option>
+						  	<option> 청소년 </option>
+						  	<option> 어린이 </option>
+							</select>
 						</div>
 					</div>
 				</div>`;		
@@ -110,14 +111,6 @@ function 왕복(){
 						</div>
 					</div>
 					<div class="t_booking2">
-							<div>
-								<span> 연령 </span> </br>
-								<select class="destination2"> 
-							  	<option> 성인 </option>
-							  	<option> 청소년 </option>
-							  	<option> 어린이 </option>
-								</select>
-							</div>
 						<div class="date_div">
 							<div>
 								<span> 일자 </span> </br>
@@ -126,6 +119,14 @@ function 왕복(){
 								<input class="date" type="date">
 								<input class="time" type="time">
 							</div>
+						</div>
+						<div>
+							연령 </br>
+							<select class="destination2"> 
+						  	<option> 성인 </option>
+						  	<option> 청소년 </option>
+						  	<option> 어린이 </option>
+							</select>
 						</div>
 					</div>
 				</div>`;		
@@ -154,7 +155,7 @@ function 좌석(){
 	
 	
 	for(let i = 1; i<=28; i++) {
-		lists+=`<button class="seat${i} onclick="좌석선택(${i})">${i}</button>`;
+		lists+=`<button class="seat${i}" onclick="좌석선택(${i})">${i}</button>`;
 		if(i % 7 == 0) lists+="<br/>";
 		if(i % 14 == 0) lists+="<br/>";
 	}
@@ -171,23 +172,21 @@ function 좌석(){
 
 // 좌석선택 -- 김찬희
 
-function 좌석선택(phone, seatNum) {
-	
-	for(let i = 0; i < 티켓리스트.length; i++) {
-		let seats = 티켓리스트[i].좌석; 
-		if(seatNum == seats) {
-			alert('이미 있는 좌석입니다. 다른 곳을 선택해주시길 바랍니다.');
-			return;
-		}
-	}
-	
-	for(let i = 0; i < 티켓리스트.length; i++) {
-			
-	}
-	티켓리스트[티켓리스트.indexOf(phone)].좌석 = index;
-	
-	좌석();
-	
+// 좌석선택 -- 김찬희
+
+function 좌석선택(seatNum) {
+   console.log("좌석선택")
+   for(let i = 0; i < 티켓리스트.length; i++) {
+      let seats = 티켓리스트[i].좌석; 
+      if(seatNum == seats) {
+         alert('이미 있는 좌석입니다. 다른 곳을 선택해주시길 바랍니다.');
+         return;
+      }
+   }
+   
+   좌석번호 = seatNum;
+   console.log(좌석번호);
+   
 }
 
 
@@ -197,25 +196,25 @@ function 좌석선택(phone, seatNum) {
 
 
 // 예매 -- 이성호
-function 예매(){
+function 예매(){	console.log('예매함수 실행')
 	
-	// 1. 입력 : 연령 , 날짜 , 시간 , 좌석 , 도착지
-	// 2.작업된 정보 : 가격( 연령 와 도착지) , 일자( 날짜 와 시간 )  
-	let destination = document.querySelector('.destination').Value; 
-	let date = document.querySelector('.date').Value;
-	let time = document.querySelector('.time').Value;
+	// 1. 입력 가져오기
+	let phone_input = document.querySelector('.phone_input').value;	console.log( phone_input );
+	let destination1 = document.querySelector('.destination1').value; console.log( destination1 );
+	let destination2 = document.querySelector('.destination2').value;  console.log( destination2 );
+	let date = document.querySelector('.date').value; console.log( date );
+	let time = document.querySelector('.time').value; console.log( time );
 	
-	let 티켓 = {
-			연령 : destination,
-			날짜 : date,
-			시간 : time,
-			좌석 : seat,
-			도착지 : destination 
-			}				
-							console.log('티켓');
-	티켓리스트.push(티켓);		console.log('티켓리스트');
+	//2. 객체 만들기
+	let 티켓 = { 휴대폰번호 : phone_input, 연령 : destination2 , 도착지 : destination1 , 
+			일자 : date+'/'+time , 좌석 : 좌석번호  }
+			
+			console.log( 티켓 );
 	
-	상세();
+	// 3. 배열에 저장 [ 티켓리스트에 티켓 저장 ]
+	티켓리스트.push( 티켓 ); console.log( 티켓리스트 );
+	
+	상세()
 }
 
 
@@ -225,11 +224,34 @@ function 예매(){
 
 
 
-
-
 // 상세 -- 이성호
-function 상세() {
-	// 1.
+function 상세() { console.log('상세함수 실행')
+	
+	let phone_input = document.querySelector('.phone_input').value;
+	
+	for(i=0; i<티켓리스트.length ; i++){
+		
+		if(티켓리스트[i].휴대폰번호 == phone_input ){
+			break;
+		}
+	}
+	
+	// 1. 어디에 출력할건지?? 선택승차권에
+	let confirm = document.querySelector('.confirm'); console.log(confirm);
+	
+	
+	
+	//2.객체 만든걸 출력한다(도착역, 일자, 인원)
+	let confirmTicket = ` 
+		<div>선택 승차권 확인하기</div>
+		<div>안산 -> ${티켓리스트[i].도착지} </div>	<div> ${티켓리스트[i].일자} </div>	<div> ${티켓리스트[i].연령} 1명 </div>
+						` 
+	
+	
+	confirm.innerHTML=confirmTicket;
+	
+	
+	
 	
 }
 
