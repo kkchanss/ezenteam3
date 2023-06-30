@@ -62,10 +62,6 @@ li{list-style-type: none;}
 	margin: 0px 22px;
 }
 
-.one_way:hover, .round:hover{
-	background-color: #4973AB;
-	color: white;
-}
 
 /* 옵션 구역 */
 .t_booking1{
@@ -82,11 +78,23 @@ li{list-style-type: none;}
 	border: none;
 }
 
-/* 버튼들(좌석, 예매, 변경, 반환) */
+/* 모든 버튼들(좌석, 예매, 변경, 반환) */
 .seat_btn, .booking_btn, .modify_btn, .delete_btn{
 	border: none;
+	background-color: #D4DDE8;
+	font-weight: bold;
+}
+
+
+.one_way:hover, 
+.round:hover, 
+.seat_btn:hover, 
+.booking_btn:hover, 
+.modify_btn:hover, 
+.delete_btn:hover{
 	background-color: #4973AB;
 	color: white;
-	font-weight: bold;
- 
 }
+
+
+
