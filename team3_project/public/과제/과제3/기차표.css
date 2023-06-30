@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
-
+/* 공통부문 */
 *{ padding:0px; margin: 0 auto;}
+li{list-style-type: none;}
+
 #wrap{
 	width: 1400px;
 	font-family: "돋움";
@@ -13,12 +15,78 @@
 	margin-top:50px;
 	width: 600px;
 	height: 800px;
-	border: 1px solid black;
+	border: 1px solid #5C5B5D;
 }
 
 .t_confirm_home{
 	margin-top:50px;
 	width: 600px;
 	height: 800px;
-	border: 1px solid black;
+	border: 1px solid #5C5B5D;
+}
+
+/* ---------- CSS : 신예지 ---------- */
+/* 외부폰트 사용 */
+@font-face {
+    font-family: 'KBO-Dia-Gothic_bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/KBO-Dia-Gothic_bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+/* 페이지 헤더 */
+.title{
+	background-color: #4973AB;
+	color: white;
+	text-align: center;
+	font-size: 38px;
+	font-family: "KBO-Dia-Gothic_bold";
+	font-weight: bold;
+	height: 50px;
+	padding: 10px 0px;
+}
+
+/* 페이지 하단 헤더 */
+.one_way, .round{
+	background-color: #D4DDE8;
+	width: 250px;
+	height: 42px;
+	padding: 10px 0px;
+	font-weight: bold;
+	font-size: 18px;
+	font-family: "KBO-Dia-Gothic_bold";
+	text-align: center;
+	border: none;
+	margin: 0px 22px;
+}
+
+.one_way:hover, .round:hover{
+	background-color: #4973AB;
+	color: white;
+}
+
+/* 옵션 구역 */
+.t_booking1{
+	display: flex;
+}
+
+
+
+
+
+
+/* select 옵션들 */
+.destination{
+	border: none;
+}
+
+/* 버튼들(좌석, 예매, 변경, 반환) */
+.seat_btn, .booking_btn, .modify_btn, .delete_btn{
+	border: none;
+	background-color: #4973AB;
+	color: white;
+	font-weight: bold;
+ 
 }
