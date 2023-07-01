@@ -4,6 +4,7 @@ let 티켓리스트 = [ ];
 let 도착지 = [ ];
 let 좌석번호 = 0;
 let 폰넘버 ="";
+let t = 0;
 // 가격 계산표 
 /*
 	연령 
@@ -198,6 +199,8 @@ function 좌석선택(seatNum) {
 // 예매 -- 이성호
 function 예매(){	console.log('예매함수 실행')
 	
+	
+	
 	// 1. 입력 가져오기
 	let phone_input = document.querySelector('.phone_input').value;	console.log( phone_input );
 	let destination1 = document.querySelector('.destination1').value; console.log( destination1 );
@@ -205,6 +208,32 @@ function 예매(){	console.log('예매함수 실행')
 	let date = document.querySelector('.date').value; console.log( date );
 	let time = document.querySelector('.time').value; console.log( time );
 	
+	if(phone_input == "" || destination1 == "" || destination2 == "" || date == "" || time == "") {
+		alert('모든 정보를 입력해주시길 바랍니다.');
+		return;
+	}
+	
+	for(let i = 0; i < 티켓리스트.length; i++) {
+		if(phone_input == 티켓리스트[i].휴대폰번호) {
+			alert('이미 예매한 자리가 있는 번호입니다.');
+			return;
+		}
+	}
+	if(좌석번호 == 0 ) { 
+		let duplicate = 0;
+		while(true) {
+			
+			좌석번호 = parseInt(Math.random()*28);
+			for(let i = 0; i < 티켓리스트.length; i++) {
+				if(티켓리스트[i].좌석 == 좌석번호) {
+					duplicate = 1
+				}
+			}
+			if(duplicate == 0) break;
+			duplicate = 0;
+		}
+		
+	}
 	//2. 객체 만들기
 	let 티켓 = { 휴대폰번호 : phone_input, 연령 : destination2 , 도착지 : destination1 , 
 			일자 : date+'/'+time , 좌석 : 좌석번호  }
@@ -213,6 +242,7 @@ function 예매(){	console.log('예매함수 실행')
 	
 	// 3. 배열에 저장 [ 티켓리스트에 티켓 저장 ]
 	티켓리스트.push( 티켓 ); console.log( 티켓리스트 );
+	좌석번호 = 0;
 	좌석()
 	상세()
 }
@@ -327,8 +357,6 @@ function 정기권(){//정기권 클릭하면 알림만 띄움
 
 function 수정() {
 	let phone = prompt('휴대번호를 입력해주세요.');
-	let t = 0;
-	
 	if( 폰넘버 != phone ){//if 시작
 		alert('맞지 않습니다.');
 		return;
@@ -354,7 +382,7 @@ function 수정() {
 	let collect6 = `<div> 호차번호 <br/> 5호차 </div> <div>큐알코드</div>`
 	
 	let t_modify_space = document.querySelector('.modify_space');
-	let modify_space = `<button class="modify_btn" onclick="수정완료()" >변경 완료</button>
+	let modify_space = `<button class="modify_btn" onclick="수정완료(t)" >변경 완료</button>
 					<button class="delete_btn" onclick="환불()" >반환</button>`;
 	
 	t_collect3.innerHTML = collect3;
@@ -365,11 +393,10 @@ function 수정() {
 	
 }
 
-function 수정완료() {
+function 수정완료(t) {
 	
 	let 일자In = document.querySelector('.일자In').value;
 	let 좌석In = document.querySelector('.좌석In').value;
-	let t = 0;
 	for( i = 0; i<티켓리스트.length ; i++){//for 시작
 		if(티켓리스트[i].phone == 폰넘버) t = i;
 	}//for 끝
@@ -379,7 +406,34 @@ function 수정완료() {
 	
 	alert('변경 완료되었습니다.')
 	
+	let t_collect3 = document.querySelector('.t_collect3') // 안산->도착지 저장
+	let collect3 = `<div>안산</div> <div> -> </div> <div> ${티켓리스트[t].도착지} </div>`	
 	
+	let t_collect4 = document.querySelector('.t_collect4')//티켓 일자와 연령대 저장
+	let collect4 = `<div> 일자 <br/> ${티켓리스트[t].일자} </div> <div> 연령 <br/> ${티켓리스트[t].연령} </div>` 
+	
+	let t_collect5 = document.querySelector('.t_collect5')//좌석 번호와 탑승구 저장
+	let collect5 = `<div> 좌석 <br/> ${티켓리스트[t].좌석} </div> <div> 타는곳 <br/> 탑승구05 </div>` 
+	
+	let t_collect6 = document.querySelector('.t_collect6') // 호차 번호와 큐알코드 저장 //큐알코드 텍스트는 임시입니다!
+	let collect6 = `<div> 호차번호 <br/> 5호차 </div> <div>큐알코드</div>`
+	
+	let ticketNumber1 = parseInt(Math.random()*99999+1000)
+	let ticketNumber2 = parseInt(Math.random()*99999+1000)
+	let ticketNumber3 = parseInt(Math.random()*99999+1000)
+	let ticketNumber4 = parseInt(Math.random()*99999+1000)//승차권 번호 생성 //1000단위부터 10000단위까지 무작위 생성
+	
+	let t_collect7 = document.querySelector('.t_collect7')
+	let collect7 = `<div> 승차권 번호 </div> 
+					<div> ${ticketNumber1}-${ticketNumber2}-${ticketNumber3}-${ticketNumber4} </div>`//승차권 번호 저장
+	
+	t_collect3.innerHTML = collect3// 안산->도착지 출력
+	t_collect4.innerHTML = collect4//티켓 일자와 연령대 출력
+	t_collect5.innerHTML = collect5//좌석 번호와 탑승구 출력
+	t_collect6.innerHTML = collect6 // 호차 번호와 큐알코드 출력
+	t_collect7.innerHTML = collect7//승차권 번호 출력
+	
+	좌석()
 }
 
 
