@@ -20,10 +20,10 @@ let t = 0;
 */
 
 // 샘플 
-티켓리스트.push( { 휴대폰번호 : '010-4567-7897', 연령 : '성인' , 도착지 : '대전' , 일자 : '2023-06-14/17:47' , 좌석 : 3   } ); // 성인 
-티켓리스트.push( { 휴대폰번호 : '010-5575-7897', 연령 : '청소년' , 도착지 : '대구' , 일자 : '2023-06-14/17:47' , 좌석 : 11   } ); // 청소년 
-티켓리스트.push( { 휴대폰번호 : '010-2246-7897', 연령 : '어린이' , 도착지 : '대구' , 일자 : '2023-06-14/17:47' , 좌석 : 10   } ); // 어린이 
-티켓리스트.push( { 휴대폰번호 : '010-8686-7897', 연령 : '성인' , 도착지 : '부산' , 일자 : '2023-06-14/17:47' , 좌석 : 15  } ); // 성인 
+티켓리스트.push( { 휴대폰번호 : '01045677897', 연령 : '성인' , 도착지 : '대전' , 일자 : '2023-06-14/17:47' , 좌석 : 3   } ); // 성인 
+티켓리스트.push( { 휴대폰번호 : '01055757897', 연령 : '청소년' , 도착지 : '대구' , 일자 : '2023-06-14/17:47' , 좌석 : 11   } ); // 청소년 
+티켓리스트.push( { 휴대폰번호 : '01022467897', 연령 : '어린이' , 도착지 : '대구' , 일자 : '2023-06-14/17:47' , 좌석 : 10   } ); // 어린이 
+티켓리스트.push( { 휴대폰번호 : '01086867897', 연령 : '성인' , 도착지 : '부산' , 일자 : '2023-06-14/17:47' , 좌석 : 15  } ); // 성인 
 
 
 편도()
@@ -272,9 +272,24 @@ function 상세() { console.log('상세함수 실행')
 	
 	
 	//2.객체 만든걸 출력한다(도착역, 일자, 인원)
+	
+	// 가격 계산표 
+/*
+	연령 
+		x1 성인
+		x0.8 청소년
+		x0.5 어린이
+	
+	도착지 
+		안산 -> 대전 : 15000
+		안산 -> 대구 : 25000
+		안산 -> 부산 : 35000		
+	
+*/
+	// let price = 
 	let confirmTicket = ` 
-		<div>선택 승차권 확인하기</div>
-		<div>안산 -> ${티켓리스트[i].도착지} </div>	<div> ${티켓리스트[i].일자} </div>	<div> ${티켓리스트[i].연령} 1명 </div>
+		<h3>선택 승차권 확인하기</h3>
+		<div class="confirm_info"> <div>안산 -> ${티켓리스트[i].도착지} </div>	<div> ${티켓리스트[i].일자} </div>	<div> ${티켓리스트[i].연령} 1명 </div> </div> 
 						` 
 	
 	
@@ -297,7 +312,7 @@ function 상세() { console.log('상세함수 실행')
 
 function 예매확인(  ){//예매 확인 함수 시작
 	
-	let phone = prompt('핸드폰 번호를 입력해주세요( - 포함 )');//핸드폰 번호 입력 받기
+	let phone = prompt('핸드폰 번호를 입력해주세요( - (구분선)제외 )');//핸드폰 번호 입력 받기
 	let num = 0;
 	let t = 0;
 	for( i = 0; i<티켓리스트.length ; i++){//for 시작 
@@ -314,7 +329,7 @@ function 예매확인(  ){//예매 확인 함수 시작
 	}//if 문 끝
 	
 	let t_collect3 = document.querySelector('.t_collect3') // 안산->도착지 저장
-	let collect3 = `<div>안산</div> <div> -> </div> <div> ${티켓리스트[t].도착지} </div>`
+	let collect3 = `<h4>안산</h4> <div> → </div> <h4> ${티켓리스트[t].도착지} </h4>`
 	
 	let t_collect4 = document.querySelector('.t_collect4')//티켓 일자와 연령대 저장
 	let collect4 = `<div> 일자 <br/> ${티켓리스트[t].일자} </div> <div> 연령 <br/> ${티켓리스트[t].연령} </div>` 
@@ -331,7 +346,7 @@ function 예매확인(  ){//예매 확인 함수 시작
 	let ticketNumber4 = parseInt(Math.random()*99999+1000)//승차권 번호 생성 //1000단위부터 10000단위까지 무작위 생성
 	
 	let t_collect7 = document.querySelector('.t_collect7')
-	let collect7 = `<div> 승차권 번호 </div> 
+	let collect7 = `<h3> 승차권 번호 </h3> 
 					<div> ${ticketNumber1}-${ticketNumber2}-${ticketNumber3}-${ticketNumber4} </div>`//승차권 번호 저장
 	
 	t_collect3.innerHTML = collect3// 안산->도착지 출력
@@ -370,7 +385,7 @@ function 수정() {
 	let 좌석 = 티켓리스트[t].좌석;
 	
 	let t_collect3 = document.querySelector('.t_collect3')
-	let collect3 = `<div>안산</div> <div> -> </div> <div> ${티켓리스트[t].도착지} </div>`
+	let collect3 = `<h4>안산</h4> <div> → </div> <h4> ${티켓리스트[t].도착지} </h4>`
 	
 	let t_collect4 = document.querySelector('.t_collect4')
 	let collect4 = `<div> 일자 <br/> <input class="일자In" type="text" value="${티켓리스트[t].일자}"/> </div> <div> 연령 <br/> ${티켓리스트[t].연령} </div>` 
@@ -407,7 +422,7 @@ function 수정완료(t) {
 	alert('변경 완료되었습니다.')
 	
 	let t_collect3 = document.querySelector('.t_collect3') // 안산->도착지 저장
-	let collect3 = `<div>안산</div> <div> -> </div> <div> ${티켓리스트[t].도착지} </div>`	
+	let collect3 = `<div>안산</div> <div> → </div> <div> ${티켓리스트[t].도착지} </div>`	
 	
 	let t_collect4 = document.querySelector('.t_collect4')//티켓 일자와 연령대 저장
 	let collect4 = `<div> 일자 <br/> ${티켓리스트[t].일자} </div> <div> 연령 <br/> ${티켓리스트[t].연령} </div>` 
@@ -424,7 +439,7 @@ function 수정완료(t) {
 	let ticketNumber4 = parseInt(Math.random()*99999+1000)//승차권 번호 생성 //1000단위부터 10000단위까지 무작위 생성
 	
 	let t_collect7 = document.querySelector('.t_collect7')
-	let collect7 = `<div> 승차권 번호 </div> 
+	let collect7 = `<h3> 승차권 번호 </h3> 
 					<div> ${ticketNumber1}-${ticketNumber2}-${ticketNumber3}-${ticketNumber4} </div>`//승차권 번호 저장
 	
 	t_collect3.innerHTML = collect3// 안산->도착지 출력
@@ -446,7 +461,7 @@ function 수정완료(t) {
 function 환불(){//환불 함수 시작
 	
 	
-	let phone = prompt("핸드폰 번호를 입력해주세요( - 포함 )") //입력받은 핸드폰 번호 값 저장
+	let phone = prompt("핸드폰 번호를 입력해주세요( - (구분선)제외 )") //입력받은 핸드폰 번호 값 저장
 	
 	let num = 0;
 	
@@ -459,7 +474,7 @@ function 환불(){//환불 함수 시작
 		return;
 	}
 	//취소된 승차권 화면 표시는 ( -- )
-	document.querySelector('.t_collect3').innerHTML = `<div> -- </div> <div> -> </div> <div> -- </div>`
+	document.querySelector('.t_collect3').innerHTML = `<div> -- </div> <div> → </div> <div> -- </div>`
 	document.querySelector('.t_collect4').innerHTML = `<div> 일자 <br/> -- </div> <div> 연령 <br/> -- </div>`
 	document.querySelector('.t_collect5').innerHTML = `<div> 좌석 <br/> -- </div> <div> 타는곳 <br/> -- </div>`
 	document.querySelector('.t_collect6').innerHTML = `<div> 호차번호 <br/> -- </div> <div> -- </div>`

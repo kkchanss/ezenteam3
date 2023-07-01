@@ -109,10 +109,14 @@ li{list-style-type: none;}
 
 
 /* 옵션 구역 */
+.t_booking, .t_confirm_home{
+	position:relative;
+}
+
 .t_booking1 h4{
 	padding-right: 20px;
 }
-.t_booking1{
+.t_booking1, .t_collect3{
 	padding: 20px 10px;
 	display: flex;
 	height: 60px;
@@ -146,7 +150,6 @@ li{list-style-type: none;}
 }
 
 
-
 /* 좌석 */
 .seat button{
 	border-bottom-right-radius: 200px;
@@ -164,7 +167,26 @@ li{list-style-type: none;}
 	margin-left: 50px;
 }
 
+/* 선택된 예매정보 상세 미리보기 */
+.confirm{
+	background-color: #eeeeee;
+	position: absolute;
+	height: 90px; width: 600px;
+	top: 560px;
+}
 
+.confirm h3, t_collect7 h3{
+	margin-left: 20px;
+    font-size: 15px;
+    padding-top: 5px;
+    color: grey;
+}
+
+.confirm_info{
+	display: flex;
+	margin-top: 19px;
+	font-weight: bold;
+}
 
 
 /* 모든 버튼들(좌석, 예매, 변경, 반환) */
@@ -181,6 +203,31 @@ li{list-style-type: none;}
 .seat_btn:hover, .booking_btn:hover, .modify_btn:hover, .delete_btn:hover{
 	color: black;
 }
+
+
+
+/* 승차권 확인 페이지 */
+
+.t_collect4, .t_collect5, .t_collect6{
+	display: flex;
+	height: 100px;
+	align-items: center;
+	font-family: "HANAMDAUM";
+	border-bottom: dashed 1px #C0C0C0;
+}
+
+.t_collect7{
+	margin-left: 20px;
+    font-size: 15px;
+    padding-top: 5px;
+    color: grey;
+}
+
+.t_collect7 div{
+	margin-top: 19px;
+	font-weight: bold;
+}
+
 
 
 
