@@ -525,7 +525,7 @@ function 환불(){//환불 함수 시작
 	티켓리스트.splice( i , 1);
 	//취소된 승차권 화면 표시는 ( -- )
 	document.querySelector('.t_collect3').innerHTML = `<div> -- </div> <div> → </div> <div> -- </div>`
-	document.querySelector('.t_collect4').innerHTML = `<div> 일자 <br/> -- </div> <div> 연령 <br/> -- </div>`
+	document.querySelector('.t_collect4').innerHTML = `<div> 일자 <br/> -- </div> <div> 연령 / 금액  <br/> -- </div>`
 	document.querySelector('.t_collect5').innerHTML = `<div> 좌석 <br/> -- </div> <div> 타는곳 <br/> -- </div>`
 	document.querySelector('.t_collect6').innerHTML = `<div> 호차번호 <br/> -- </div> <div> -- </div>`
 	document.querySelector('.t_collect7').innerHTML = `<div> 승차권 번호 </div> <div> -- </div> `
