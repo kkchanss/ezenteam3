@@ -378,7 +378,7 @@ function 수정() {
 	}
 		
 	for( i = 0; i<티켓리스트.length ; i++){//for 시작
-		if(티켓리스트[i].phone == phone) t = i;
+		if(티켓리스트[i].휴대폰번호 == phone) t = i;
 	}//for 끝
 		
 	let 일자 = 티켓리스트[t].일자;
@@ -412,7 +412,27 @@ function 수정완료(t) {
 	
 	let 일자In = document.querySelector('.일자In').value;
 	let 좌석In = document.querySelector('.좌석In').value;
-	for( i = 0; i<티켓리스트.length ; i++){//for 시작
+	
+	if(좌석In == '') {
+		alert('좌석을 선택해주시길 바랍니다')
+		return;
+	}
+	
+	if(parseInt(좌석In)<1||parseInt(좌석In)>28) {
+		alert('알맞은 좌석을 선택해주시길 바랍니다.')
+		return;
+	}
+	
+	for(let i = 0; i < 티켓리스트.length; i++) {
+		if(parseInt(좌석In)==티켓리스트[i].좌석) {
+			if(티켓리스트[t].좌석 != parseInt(좌석In)) {
+				alert('이미 예매되어 있는 좌석입니다. 다른 좌석을 선택해주시길 바랍니다.')
+				return;
+			}
+		}
+	}
+	
+	for(let i = 0; i<티켓리스트.length ; i++){//for 시작
 		if(티켓리스트[i].phone == 폰넘버) t = i;
 	}//for 끝
 	
