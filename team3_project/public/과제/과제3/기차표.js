@@ -491,6 +491,11 @@ function 환불(){//환불 함수 시작
 	let con_firm = document.querySelector('.confirm')
 	con_firm.innerHTML = ``
 	상세()
+	
+	
+	
+
+	
 }//환불 끝
 	
 
