@@ -473,6 +473,10 @@ function 환불(){//환불 함수 시작
 		alert('휴대폰 번호가 일치하지 않습니다.')//번호가 같지 않다면 알림
 		return;
 	}
+	for(i = 0 ; i < 티켓리스트.length ; i++ ){
+		if(티켓리스트[i].휴대폰번호 == phone ) {break;}
+	}
+	티켓리스트.splice( i , 1);
 	//취소된 승차권 화면 표시는 ( -- )
 	document.querySelector('.t_collect3').innerHTML = `<div> -- </div> <div> → </div> <div> -- </div>`
 	document.querySelector('.t_collect4').innerHTML = `<div> 일자 <br/> -- </div> <div> 연령 <br/> -- </div>`
@@ -480,7 +484,13 @@ function 환불(){//환불 함수 시작
 	document.querySelector('.t_collect6').innerHTML = `<div> 호차번호 <br/> -- </div> <div> -- </div>`
 	document.querySelector('.t_collect7').innerHTML = `<div> 승차권 번호 </div> <div> -- </div> `
 	alert('승차권이 취소되었습니다.')
-
+	
+	let s_eat = document.querySelector('.seat')
+	s_eat.innerHTML = `` 
+	
+	let con_firm = document.querySelector('.confirm')
+	con_firm.innerHTML = ``
+	상세()
 }//환불 끝
 	
 
