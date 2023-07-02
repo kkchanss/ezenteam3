@@ -425,8 +425,10 @@ function 수정완료(t) {
 	
 	for(let i = 0; i < 티켓리스트.length; i++) {
 		if(parseInt(좌석In)==티켓리스트[i].좌석) {
-			alert('이미 예매되어 있는 좌석입니다. 다른 좌석을 선택해주시길 바랍니다.')
-			return;
+			if(티켓리스트[t].좌석 != parseInt(좌석In)) {
+				alert('이미 예매되어 있는 좌석입니다. 다른 좌석을 선택해주시길 바랍니다.')
+				return;
+			}
 		}
 	}
 	
