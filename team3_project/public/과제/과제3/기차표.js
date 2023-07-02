@@ -328,11 +328,37 @@ function 예매확인(  ){//예매 확인 함수 시작
 		return;
 	}//if 문 끝
 	
+	let daejeon = 15000 ;
+	let daegu = 25000 ;
+	let busan = 35000 ; 
+	let bill = ``;
+	
+	if( 티켓리스트[i].도착지 == '대전' && 티켓리스트[i].연령 == '성인' ){
+		bill+= daejeon
+	}
+	else if( 티켓리스트[i].도착지 == '대전' && 티켓리스트[i].연령 == '청소년' ) 
+	{ bill += daejeon*0.8 }
+	else if( 티켓리스트[i].도착지 == '대전' && 티켓리스트[i].연령 == '어린이' ) 
+	{ bill += daejeon*0.5 }
+	else if( 티켓리스트[i].도착지 == '대구' && 티켓리스트[i].연령 == '성인' ) 
+	{ bill += daegu }
+	else if( 티켓리스트[i].도착지 == '대구' && 티켓리스트[i].연령 == '청소년' ) 
+	{ bill += daegu*0.8 }
+	else if( 티켓리스트[i].도착지 == '대구' && 티켓리스트[i].연령 == '어린이' ) 
+	{ bill += daegu*0.5 }
+	else if( 티켓리스트[i].도착지 == '부산' && 티켓리스트[i].연령 == '성인' ) 
+	{ bill += busan }
+	else if( 티켓리스트[i].도착지 == '부산' && 티켓리스트[i].연령 == '청소년' ) 
+	{ bill += busan*0.8 }
+	else if( 티켓리스트[i].도착지 == '부산' && 티켓리스트[i].연령 == '어린이' ) 
+	{ bill += busan*0.5 }
+	
+	
 	let t_collect3 = document.querySelector('.t_collect3') // 안산->도착지 저장
 	let collect3 = `<h4>안산</h4> <div> → </div> <h4> ${티켓리스트[t].도착지} </h4>`
 	
 	let t_collect4 = document.querySelector('.t_collect4')//티켓 일자와 연령대 저장
-	let collect4 = `<div> <h4> 일자 </h4> <div> ${티켓리스트[t].일자} </div> </div> <div> <h4> 연령 </h4> <div> ${티켓리스트[t].연령} </div> </div>` 
+	let collect4 = `<div> <h4> 일자 </h4> <div> ${티켓리스트[t].일자} </div> </div> <div> <h4> 연령 / 금액 </h4> <div> ${티켓리스트[t].연령} / ${parseInt(bill).toLocaleString()} 원 </div> </div>` 
 	
 	let t_collect5 = document.querySelector('.t_collect5')//좌석 번호와 탑승구 저장
 	let collect5 = `<div> <h4> 좌석 </h4> <div> ${티켓리스트[t].좌석} </div> </div>  <div> <h4>  타는곳 </h4> <div> 탑승구05 </div> </div> ` 
