@@ -215,7 +215,7 @@ function 예매(){	console.log('예매함수 실행')
 	
 	for(let i = 0; i < 티켓리스트.length; i++) {
 		if(phone_input == 티켓리스트[i].휴대폰번호) {
-			alert('이미 예매한 자리가 있는 번호입니다.');
+			alert('이미 예매한 티켓이 있는 번호입니다.');
 			return;
 		}
 	}
