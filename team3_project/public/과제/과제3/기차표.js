@@ -212,14 +212,14 @@ function 예매(){	console.log('예매함수 실행')
 	if(phone_input == "" || destination1 == "" || destination2 == "" || date == "" || time == "") {
 		alert('모든 정보를 입력해주시길 바랍니다.');
 		return;
-	}
+	}	// 공란인지 확인
 	
 	for(let i = 0; i < 티켓리스트.length; i++) {
 		if(phone_input == 티켓리스트[i].휴대폰번호) {
 			alert('이미 예매한 자리가 있는 번호입니다.');
 			return;
 		}
-	}
+	}	//선택한 좌석이 예매가 되었는지 확인
 	if(좌석번호 == 0 ) { 
 		let duplicate = 0;
 		while(true) {
@@ -234,8 +234,8 @@ function 예매(){	console.log('예매함수 실행')
 			duplicate = 0;
 		}
 		
-	}
-	//2. 객체 만들기
+	}	//좌석을 선택하지 않았다면, 랜덤으로 좌성 지정하기
+	//2. 객체 만들기 ( 티켓이라는 변수에 휴대폰번호, 연령, 도착지, 일자, 좌석번호 객체 만들기)
 	let 티켓 = { 휴대폰번호 : phone_input, 연령 : destination2 , 도착지 : destination1 , 
 			일자 : date+'/'+time , 좌석 : 좌석번호  }
 			
@@ -265,14 +265,14 @@ function 상세() { console.log('상세함수 실행')
 		if(티켓리스트[i].휴대폰번호 == phone_input ){
 			break;
 		}
-	}
+	}// 입력한 휴대폰번호와 저장된 휴대폰번호를 대조
 	
 	// 1. 어디에 출력할건지?? 선택승차권에
 	let confirm = document.querySelector('.confirm'); console.log(confirm);
 	
 	
 	
-	//2.객체 만든걸 출력한다(도착역, 일자, 인원)
+	
 	
 	// 가격 계산표 
 /*
@@ -287,7 +287,7 @@ function 상세() { console.log('상세함수 실행')
 		안산 -> 부산 : 35000		
 	
 */
- 
+ 	//가격 확인하기 (if,else if문 사용)
 	let 금액 = '';
 	
 	if(티켓리스트[i].연령 == "성인" && 티켓리스트[i].도착지 == "대전"){ 금액 = 15000 }
@@ -305,7 +305,7 @@ function 상세() { console.log('상세함수 실행')
 	
 
 	
-	
+	//2.객체 만든걸 출력한다(도착역, 일자, 인원, 연령, 가격)
 	let confirmTicket = ` 
 		<h3>선택 승차권 확인</h3>
 		<div class="confirm_info"> <div>안산 -> ${티켓리스트[i].도착지} </div>	<div> ${티켓리스트[i].일자} </div>	<div> ${티켓리스트[i].연령} 1명 </div> <div> ${금액.toLocaleString()} 원 </div> </div> 
