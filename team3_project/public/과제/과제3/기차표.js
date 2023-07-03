@@ -6,6 +6,7 @@ let 좌석번호 = 0;
 let 폰넘버 ="";
 // 현재 객체의 index
 let t = 0;
+let 금액 = 0;
 
 
 // 가격 계산표 
@@ -186,10 +187,14 @@ function 좌석선택(seatNum) {
 			return;
 		}
 	}
-	
+
 	좌석번호 = seatNum;
 	
 	좌석();
+
+
+
+	document.querySelector(`.seat${seatNum}`).style=`color: #282828; background-color: #A9A8AA;`;
 	
 }
 
@@ -249,6 +254,9 @@ function 예매(){	console.log('예매함수 실행')
 	좌석번호 = 0;
 	좌석()
 	상세()
+	
+	document.querySelector('.phone_input').value = '';
+	
 }
 
 
@@ -262,6 +270,7 @@ function 예매(){	console.log('예매함수 실행')
 function 상세() { console.log('상세함수 실행')
 	
 	let phone_input = document.querySelector('.phone_input').value;
+	let i;
 	
 	for(i=0; i<티켓리스트.length ; i++){
 		
@@ -375,7 +384,6 @@ function 예매확인(  ){//예매 확인 함수 시작
 	else if( 티켓리스트[i].도착지 == '부산' && 티켓리스트[i].연령 == '어린이' ) 
 	{ bill += busan*0.5 }
 	
-	
 	let t_collect3 = document.querySelector('.t_collect3') // 안산->도착지 저장
 	let collect3 = `<h4>안산</h4> <div> → </div> <h4> ${티켓리스트[t].도착지} </h4>`
 	
@@ -402,6 +410,8 @@ function 예매확인(  ){//예매 확인 함수 시작
 	t_collect5.innerHTML = collect5//좌석 번호와 탑승구 출력
 	t_collect6.innerHTML = collect6 // 호차 번호와 큐알코드 출력
 	t_collect7.innerHTML = collect7//승차권 번호 출력
+	
+	금액 = bill;
 }// 예매확인 함수 끝  
 	
 	
@@ -435,7 +445,7 @@ function 수정() {
 	let collect3 = `<h4>안산</h4> <div> → </div> <h4> ${티켓리스트[t].도착지} </h4>`
 	
 	let t_collect4 = document.querySelector('.t_collect4')
-	let collect4 = `<h4> 일자 </h4> <div> <input class="일자In" type="text" value="${티켓리스트[t].일자}"/> </div> <h4> 연령 </h4> <div> ${티켓리스트[t].연령} </div>` 
+	let collect4 = `<h4> 일자 </h4> <div> <input class="일자In" type="text" value="${티켓리스트[t].일자}"/> </div> <h4> 연령/금액 </h4> <div> ${티켓리스트[t].연령}/${금액} </div>` 
 	
 	let t_collect5 = document.querySelector('.t_collect5')
 	let collect5 = `<h4> 좌석 </h4> <div> <input class="좌석In" type="text" value="${티켓리스트[t].좌석}"/> </div> <h4> 타는곳 </h4> <div> 탑승구05 </div>` 
@@ -492,7 +502,7 @@ function 수정완료(t) {
 	let collect3 = `<h4>안산</h4> <div> → </div> <h4> ${티켓리스트[t].도착지} </h4>`	
 	
 	let t_collect4 = document.querySelector('.t_collect4')//티켓 일자와 연령대 저장
-	let collect4 = `<div class="t_collect4_1"> <h4> 일자 </h4> <br/> <div> ${티켓리스트[t].일자} </div> </div> <div class="t_collect4_2"> <h4> 연령/금액 </h4>  <br/> ${티켓리스트[t].연령} </div>` 
+	let collect4 = `<div class="t_collect4_1"> <h4> 일자 </h4> <br/> <div> ${티켓리스트[t].일자} </div> </div> <div class="t_collect4_2"> <h4> 연령/금액 </h4>  <br/> ${티켓리스트[t].연령}/${금액} </div>` 
 	
 	let t_collect5 = document.querySelector('.t_collect5')//좌석 번호와 탑승구 저장
 	let collect5 = `<div class="t_collect5_1"> <h4> 좌석 </h4> <br/> <div> ${티켓리스트[t].좌석} </div> </div> <div class="t_collect5_2"> <h4> 타는곳 </h4>  <br/> 탑승구05 </div>` 
@@ -508,13 +518,18 @@ function 수정완료(t) {
 	let t_collect7 = document.querySelector('.t_collect7')
 	let collect7 = `<h3> 승차권 번호 </h3> 
 					<div> ${ticketNumber1}-${ticketNumber2}-${ticketNumber3}-${ticketNumber4} </div>`//승차권 번호 저장
+	let t_modify_space = document.querySelector('.modify_space');
+	let modify_space = `<button class="modify_btn" onclick="수정()" >여행 변경</button>
+					<button class="delete_btn" onclick="환불()" >반환</button>`;
 	
 	t_collect3.innerHTML = collect3// 안산->도착지 출력
 	t_collect4.innerHTML = collect4//티켓 일자와 연령대 출력
 	t_collect5.innerHTML = collect5//좌석 번호와 탑승구 출력
 	t_collect6.innerHTML = collect6 // 호차 번호와 큐알코드 출력
 	t_collect7.innerHTML = collect7//승차권 번호 출력
+	t_modify_space.innerHTML = modify_space;
 	
+	console.log(t_modify_space.innerHTML);
 	좌석()
 }
 
@@ -545,11 +560,11 @@ function 환불(){//환불 함수 시작
 	}
 	티켓리스트.splice( i , 1);
 	//취소된 승차권 화면 표시는 ( -- )
-	document.querySelector('.t_collect3').innerHTML = `<div> -- </div> <div> → </div> <div> -- </div>`
-	document.querySelector('.t_collect4').innerHTML = `<div> 일자 <br/> -- </div> <div> 연령 / 금액  <br/> -- </div>`
-	document.querySelector('.t_collect5').innerHTML = `<div> 좌석 <br/> -- </div> <div> 타는곳 <br/> -- </div>`
-	document.querySelector('.t_collect6').innerHTML = `<div> 호차번호 <br/> -- </div> <div> -- </div>`
-	document.querySelector('.t_collect7').innerHTML = `<div> 승차권 번호 </div> <div> -- </div> `
+	document.querySelector('.t_collect3').innerHTML = `<h4> -- </h4> <h4> → </h4> <h4> -- </h4>`
+	document.querySelector('.t_collect4').innerHTML = `<div class="t_collect4_1"> <h4> 일자 </h4> <br/> <div> -- </div> </div> <div class="t_collect4_2"><h4> 연령 / 금액  </h4><br/><div> -- </div></div>`
+	document.querySelector('.t_collect5').innerHTML = `<div class="t_collect5_1"> <h4> 좌석 </h4> <br/><div> -- </div></div> <div class="t_collect5_2"> <h4>타는곳 </h4><br/><div> -- </div></div>`
+	document.querySelector('.t_collect6').innerHTML = `<div class="t_collect6_1"> <h4> 호차번호 </h4> <br/>  <div> --  </div> </div> <div> -- </div>`
+	document.querySelector('.t_collect7').innerHTML = `<h3> 승차권 번호 </h3> <div> -- </div> `
 	alert('승차권이 취소되었습니다.')
 	
 	let s_eat = document.querySelector('.seat')
@@ -557,11 +572,10 @@ function 환불(){//환불 함수 시작
 	
 	let con_firm = document.querySelector('.confirm')
 	con_firm.innerHTML = ``
-	상세()
-	
-	
-	
 
+
+	편도();
+	
 	
 }//환불 끝
 	
