@@ -286,10 +286,30 @@ function 상세() { console.log('상세함수 실행')
 		안산 -> 부산 : 35000		
 	
 */
-	// let price = 
+
+	//let price = 
+	
+	let 금액 = '';
+	
+	if(티켓리스트[i].연령 == "성인" && 티켓리스트[i].도착지 == "대전"){ 금액 = 15000 }
+	else if(티켓리스트[i].연령 == "성인" && 티켓리스트[i].도착지 == "대구"){ 금액 = 25000 }
+	else if(티켓리스트[i].연령 == "성인" && 티켓리스트[i].도착지 == "부산"){ 금액 = 35000 } 
+	
+	else if(티켓리스트[i].연령 == "청소년" && 티켓리스트[i].도착지 == "대전"){ 금액 = 15000*0.8 } 
+	else if(티켓리스트[i].연령 == "청소년" && 티켓리스트[i].도착지 == "대구"){ 금액 = 25000*0.8 }
+	else if(티켓리스트[i].연령 == "청소년" && 티켓리스트[i].도착지 == "부산"){ 금액 = 35000*0.8 } 
+	
+	
+	else if(티켓리스트[i].연령 == "어린이" && 티켓리스트[i].도착지 == "대전"){ 금액 = 15000*0.5 } 
+	else if(티켓리스트[i].연령 == "어린이" && 티켓리스트[i].도착지 == "대구"){ 금액 = 25000*0.5 }
+	else if(티켓리스트[i].연령 == "어린이" && 티켓리스트[i].도착지 == "부산"){ 금액 = 35000*0.5 } 
+	
+
+	
+	
 	let confirmTicket = ` 
 		<h3>선택 승차권 확인</h3>
-		<div class="confirm_info"> <div>안산 -> ${티켓리스트[i].도착지} </div>	<div> ${티켓리스트[i].일자} </div>	<div> ${티켓리스트[i].연령} 1명 </div> </div> 
+		<div class="confirm_info"> <div>안산 -> ${티켓리스트[i].도착지} </div>	<div> ${티켓리스트[i].일자} </div>	<div> ${티켓리스트[i].연령} 1명 </div> <div> ${금액.toLocaleString()} 원 </div> </div> 
 						` 
 	
 	
@@ -298,14 +318,14 @@ function 상세() { console.log('상세함수 실행')
 	
 	
 	
+
+
+
+
+
+
+
 }
-
-
-
-
-
-
-
 
 
 // 예매확인 -- 박민재
@@ -328,17 +348,43 @@ function 예매확인(  ){//예매 확인 함수 시작
 		return;
 	}//if 문 끝
 	
+	let daejeon = 15000 ;
+	let daegu = 25000 ;
+	let busan = 35000 ; 
+	let bill = ``;
+	
+	if( 티켓리스트[i].도착지 == '대전' && 티켓리스트[i].연령 == '성인' ){
+		bill+= daejeon
+	}
+	else if( 티켓리스트[i].도착지 == '대전' && 티켓리스트[i].연령 == '청소년' ) 
+	{ bill += daejeon*0.8 }
+	else if( 티켓리스트[i].도착지 == '대전' && 티켓리스트[i].연령 == '어린이' ) 
+	{ bill += daejeon*0.5 }
+	else if( 티켓리스트[i].도착지 == '대구' && 티켓리스트[i].연령 == '성인' ) 
+	{ bill += daegu }
+	else if( 티켓리스트[i].도착지 == '대구' && 티켓리스트[i].연령 == '청소년' ) 
+	{ bill += daegu*0.8 }
+	else if( 티켓리스트[i].도착지 == '대구' && 티켓리스트[i].연령 == '어린이' ) 
+	{ bill += daegu*0.5 }
+	else if( 티켓리스트[i].도착지 == '부산' && 티켓리스트[i].연령 == '성인' ) 
+	{ bill += busan }
+	else if( 티켓리스트[i].도착지 == '부산' && 티켓리스트[i].연령 == '청소년' ) 
+	{ bill += busan*0.8 }
+	else if( 티켓리스트[i].도착지 == '부산' && 티켓리스트[i].연령 == '어린이' ) 
+	{ bill += busan*0.5 }
+	
+	
 	let t_collect3 = document.querySelector('.t_collect3') // 안산->도착지 저장
 	let collect3 = `<h4>안산</h4> <div> → </div> <h4> ${티켓리스트[t].도착지} </h4>`
 	
 	let t_collect4 = document.querySelector('.t_collect4')//티켓 일자와 연령대 저장
-	let collect4 = `<div> <h4> 일자 </h4> <div> ${티켓리스트[t].일자} </div> </div> <div> <h4> 연령 </h4> <div> ${티켓리스트[t].연령} </div> </div>` 
+	let collect4 = `<div> <h4> 일자 </h4> <div> ${티켓리스트[t].일자} </div> </div> <div> <h4> 연령 / 금액 </h4> <div> ${티켓리스트[t].연령} / ${parseInt(bill).toLocaleString()} 원 </div> </div>` 
 	
 	let t_collect5 = document.querySelector('.t_collect5')//좌석 번호와 탑승구 저장
-	let collect5 = `<div> <h4> 좌석 </h4> <div> ${티켓리스트[t].좌석} </div> </div>  <div> <h4>  타는곳 </h4> <div> 탑승구05 </div> </div> ` 
+	let collect5 = `<div class="t_collect5_1"> <h4> 좌석 </h4> <div> ${티켓리스트[t].좌석} </div> </div>  <div class="t_collect5_2"> <h4>  타는곳 </h4> <div> 탑승구05 </div> </div> ` 
 	
 	let t_collect6 = document.querySelector('.t_collect6') // 호차 번호와 큐알코드 저장 //큐알코드 텍스트는 임시입니다!
-	let collect6 = `<div> <h4> 호차번호 </h4> <div> 5호차 </div> </div> <div>큐알코드</div>`
+	let collect6 = `<div class="t_collect6_1"> <h4> 호차번호 </h4> <div> 5호차 </div> </div> <div class="t_collect6_2"><img src= "큐알코드.jpg"/></div>`
 	
 	let ticketNumber1 = parseInt(Math.random()*99999+1000)
 	let ticketNumber2 = parseInt(Math.random()*99999+1000)
@@ -394,7 +440,7 @@ function 수정() {
 	let collect5 = `<h4> 좌석 </h4> <div> <input class="좌석In" type="text" value="${티켓리스트[t].좌석}"/> </div> <h4> 타는곳 </h4> <div> 탑승구05 </div>` 
 	
 	let t_collect6 = document.querySelector('.t_collect6')
-	let collect6 = `<h4> 호차번호 </h4> <div> 5호차 </div> <div>큐알코드</div>`
+	let collect6 = `<h4> 호차번호 </h4> <div> 5호차 </div> <div><img src= "큐알코드.jpg"/></div>`
 	
 	let t_modify_space = document.querySelector('.modify_space');
 	let modify_space = `<button class="modify_btn" onclick="수정완료(t)" >변경 완료</button>
@@ -442,16 +488,16 @@ function 수정완료(t) {
 	alert('변경 완료되었습니다.')
 	
 	let t_collect3 = document.querySelector('.t_collect3') // 안산->도착지 저장
-	let collect3 = `<div>안산</div> <div> → </div> <div> ${티켓리스트[t].도착지} </div>`	
+	let collect3 = `<h4>안산</h4> <div> → </div> <h4> ${티켓리스트[t].도착지} </h4>`	
 	
 	let t_collect4 = document.querySelector('.t_collect4')//티켓 일자와 연령대 저장
-	let collect4 = `<div> 일자 <br/> ${티켓리스트[t].일자} </div> <div> 연령 <br/> ${티켓리스트[t].연령} </div>` 
+	let collect4 = `<div> <h4> 일자 </h4> <br/> <div> ${티켓리스트[t].일자} </div> </div> <div> <h4> 연령 </h4>  <br/> ${티켓리스트[t].연령} </div>` 
 	
 	let t_collect5 = document.querySelector('.t_collect5')//좌석 번호와 탑승구 저장
-	let collect5 = `<div> 좌석 <br/> ${티켓리스트[t].좌석} </div> <div> 타는곳 <br/> 탑승구05 </div>` 
+	let collect5 = `<div class="t_collect5_1"> <h4> 좌석 </h4> <br/> <div> ${티켓리스트[t].좌석} </div> </div> <div class="t_collect5_2"> <h4> 타는곳 </h4>  <br/> 탑승구05 </div>` 
 	
 	let t_collect6 = document.querySelector('.t_collect6') // 호차 번호와 큐알코드 저장 //큐알코드 텍스트는 임시입니다!
-	let collect6 = `<div> 호차번호 <br/> 5호차 </div> <div>큐알코드</div>`
+	let collect6 = `<div class="t_collect6_1" > <h4> 호차번호 </h4> <br/> <div> 5호차 </div> </div> <div class="t_collect6_2"> <img src= "큐알코드.jpg"/> </div>`
 	
 	let ticketNumber1 = parseInt(Math.random()*99999+1000)
 	let ticketNumber2 = parseInt(Math.random()*99999+1000)
@@ -499,7 +545,7 @@ function 환불(){//환불 함수 시작
 	티켓리스트.splice( i , 1);
 	//취소된 승차권 화면 표시는 ( -- )
 	document.querySelector('.t_collect3').innerHTML = `<div> -- </div> <div> → </div> <div> -- </div>`
-	document.querySelector('.t_collect4').innerHTML = `<div> 일자 <br/> -- </div> <div> 연령 <br/> -- </div>`
+	document.querySelector('.t_collect4').innerHTML = `<div> 일자 <br/> -- </div> <div> 연령 / 금액  <br/> -- </div>`
 	document.querySelector('.t_collect5').innerHTML = `<div> 좌석 <br/> -- </div> <div> 타는곳 <br/> -- </div>`
 	document.querySelector('.t_collect6').innerHTML = `<div> 호차번호 <br/> -- </div> <div> -- </div>`
 	document.querySelector('.t_collect7').innerHTML = `<div> 승차권 번호 </div> <div> -- </div> `
