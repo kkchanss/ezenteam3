@@ -4,7 +4,10 @@ let 티켓리스트 = [ ];
 let 도착지 = [ ];
 let 좌석번호 = 0;
 let 폰넘버 ="";
+// 현재 객체의 index
 let t = 0;
+
+
 // 가격 계산표 
 /*
 	연령 
@@ -151,19 +154,21 @@ function 왕복(){
 
 function 좌석(){
 	
+	// 좌석div 가져오기
 	let seat = document.querySelector('.seat');
 	let lists = "";
 	
-	
+	// 좌석 출력
 	for(let i = 1; i<=28; i++) {
 		lists+=`<button class="seat${i}" onclick="좌석선택(${i})">${i}</button>`;
+		// 7번째자리마다 줄바꿈
 		if(i % 7 == 0) lists+="<br/>";
 		if(i % 14 == 0) lists+="<br/>";
 	}
 	
 	seat.innerHTML = lists;
 	
-	
+	// 이미 선택되어 있는 좌석은 검게 표시
 	for(let i = 0; i < 티켓리스트.length; i++) {
 		let seats = 티켓리스트[i].좌석; 
 		document.querySelector(`.seat${seats}`).style=`color: #282828; background-color: #282828;`;
@@ -171,11 +176,9 @@ function 좌석(){
 }
 
 // 좌석선택 -- 김찬희
-
-// 좌석선택 -- 김찬희
-
 function 좌석선택(seatNum) {
 	
+	// 이미 있는 좌석이라면 선택x
 	for(let i = 0; i < 티켓리스트.length; i++) {
 		let seats = 티켓리스트[i].좌석; 
 		if(seatNum == seats) {
@@ -415,7 +418,6 @@ function 정기권(){//정기권 클릭하면 알림만 띄움
 
 
 // 수정 -- 김찬희
-
 function 수정() {
 	let phone = prompt('휴대번호를 입력해주세요.');
 	if( 폰넘버 != phone ){//if 시작
