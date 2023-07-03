@@ -208,6 +208,7 @@ function 예매(){	console.log('예매함수 실행')
 	let date = document.querySelector('.date').value; console.log( date );
 	let time = document.querySelector('.time').value; console.log( time );
 	
+	//유효성 검사
 	if(phone_input == "" || destination1 == "" || destination2 == "" || date == "" || time == "") {
 		alert('모든 정보를 입력해주시길 바랍니다.');
 		return;
@@ -286,9 +287,7 @@ function 상세() { console.log('상세함수 실행')
 		안산 -> 부산 : 35000		
 	
 */
-
-	//let price = 
-	
+ 
 	let 금액 = '';
 	
 	if(티켓리스트[i].연령 == "성인" && 티켓리스트[i].도착지 == "대전"){ 금액 = 15000 }
