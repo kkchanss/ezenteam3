@@ -235,12 +235,12 @@ li{list-style-type: none;}
 }
 
 /* 승차권 확인 페이지 아래 세부내용 위치 맞추기 */
-.t_collect4_1{padding-left: 72px}
-.t_collect4_2{padding-left: 110px;}
-.t_collect5_1{padding-left: 27px}
+.t_collect4_1{padding-left: 50px}
+.t_collect4_2{padding-left: 90px;}
+.t_collect5_1{padding-left: 17px}
 .t_collect5_2{padding-left: 145px;}
 .t_collect6 img{width: 70px;}
-.t_collect6_1{padding-left: 32px;}
+.t_collect6_1{padding-left: 24px;}
 .t_collect6_2{padding-left: 120px;}
 
 .t_collect7{
