@@ -1,1 +1,69 @@
 @charset "UTF-8";
+*{margin: 0px; padding: 0px;}
+
+#adminwrap{
+	width: 1200px;
+	margin: 0 auto;}
+
+#adminHeader{
+	width:1200px;
+	display: flex;
+	justify-content: space-between;
+	
+}
+.orderToplist{
+	width: 300px;
+	height: 80px;
+	font-size: 40px;
+	display:flex;
+	justify-content:center;
+	align-items: center;
+	color: white;
+	background-color: #008939;
+	
+}
+
+.orderDetail{
+	width: 900px;
+	height: 80px;
+	font-size: 40px;
+	display:flex;
+	justify-content:center;
+	align-items: center;
+	border: 1px solid #eeeeee;
+	position: relative;
+}
+
+.orderDetail button{
+	width: 150px;
+	height: 50px;
+	font-size: 30px;
+	border-style: none;
+	background-color: #E95B1D ;
+	position: absolute;
+	top: 0px; right: 0px;
+}
+
+#adminBottom{
+	display: flex;
+	justify-content: space-between;
+}
+
+.obList{
+	width: 300px;
+	height: 420px;
+	font-size: 30px;
+	
+	flex-direction: column;
+	justify-content:center;
+	border:1px solid #008939;
+}
+
+.orderBottom{
+	width: 300px;
+	height: 80px;
+	border-bottom: 1px solid #008939;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
