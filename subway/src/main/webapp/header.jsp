@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<h3>헤더 페이지 입니다</h3>
 </body>
 </html>
