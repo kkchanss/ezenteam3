@@ -10,14 +10,46 @@ li{
 a{
 	color:black; text-decoration: none;
 }
+#header{
+	width:1200px;
+}
 
 .headerTop{
-	width:1200px;
+	margin-top: 20px;
+	position: relative;
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 }
 
 .header_logo{
-	text-align: right;
+	position:absolute;
+	left: 450px;
+}
+
+.header_right{
+	position: absolute;
+	left : 1000px;
+	font-size: 12px;
+}
+
+.header_right .point{
+	font-size: 30px;
+	color:#eeeeee;
+	position: relative;
+	top: 5px;
+}
+
+.header_right .global_icon{
+	position: relative;
+	top: 12px;
+}
+
+.headerBottom{
+	margin-top: 100px;
 	
+}
+.headerBottom li {
+	float: left;
+	display: flex;
+	justify-content: space-around;
 }
