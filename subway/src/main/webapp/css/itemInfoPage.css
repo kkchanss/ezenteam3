@@ -1,1 +1,37 @@
 @charset "UTF-8";
+
+/* 키오스크 전체구역 */
+.kwrap{
+	font-family : 'KBO-Dia-Gothic_bold';
+	width: 1200px; height: 1000px;	/*구역 가로,높이 사이즈 */
+	border: 1px solid red;		/*구역 확인용 */
+	margin: 50px auto;					/*구역 가로가운데 정렬*/
+}
+
+/* 카테고리 */
+.category{
+	display: flex;	/*하위요소들의 가로배치*/
+	justify-content: space-around;	/*가로배치방법*/
+}
+
+.categorymenu{
+	width : 1200px; height: 100px;
+	background-color: #008939 ;	/*배경색*/
+	display: flex;	/*하위요소들의 가로배치*/
+	justify-content: space-around;	/*가로배치방법*/ height: 100px;
+	background-color: #008939 ;	/*배경색*/
+	text-align: center;
+	text-
+	
+}
+
+/* 선택/클릭 안된 카테고리 */
+.categorymenu li{color: #ffffff;}
+
+/* 선택/클릭 된 카테고리 */
+.categoryselect{
+	color: #E95B1D  !important;	/*위에서 이미 color 속성 사용했으므로 중복 !!*/
+	/* 1. id 별도로 해서 속성적용 2. style속성 3. !important */
+	/*border-bottom: 3px solid red;*/
+	padding-bottom: 3px;
+}

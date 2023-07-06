@@ -8,11 +8,11 @@
 	<link href="/subway/css/itemInfoPage.css" rel="stylesheet">
 </head>
 <body>
-	<div><!-- 제품 정보 페이지 시작 -->
+	<div class="wrap"><!-- 제품 정보 페이지 시작 -->
 		<div><!-- 카테고리 시작 -->
-			<div><!-- 상단카테고리 시작 -->
-				<ul><!-- 상단카테고리 시작 -->
-					<li> 샌드위치 </li>
+			<div class="category"><!-- 상단카테고리 시작 -->
+				<ul class="categorymenu"><!-- 상단카테고리 시작 -->
+					<li class="categoryselect"> 샌드위치 </li>
 					<li> 랩 </li>
 					<li> 샐러드 </li>
 				</ul><!-- 상단카테고리 끝 -->
@@ -38,11 +38,7 @@
 		
 		
 		</div><!-- 제품구역 end -->
-		
-		<div><!-- 버튼구역 시작 -->
-			<button>취소하기</button>
-			<button>주문하기</button>
-		</div><!-- 제품구역 end -->
+
 	</div><!-- 제품 정보 페이지 end -->
 	<script src="/subway/js/itemInfoPage.js" type="text/javascript"></script>
 </body>
