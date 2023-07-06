@@ -27,7 +27,7 @@ body{ background-color: #F2F2F2; }
 /* ----------------------- 커스텀 항목 구역 ----------------------- */
 .customlist{ 
 	background-color: white; 
-	width: 1100px; height: 200px;
+	width: 1150px; height: 200px;
 	margin: 0 auto;
 	margin-top: 20px;
 	display: flex;
@@ -41,6 +41,7 @@ body{ background-color: #F2F2F2; }
 .customlist img{
 	width: 200px;
 	padding: 5px 10px;
+	margin-left: 10px;
 }
 
 .customlist h3{

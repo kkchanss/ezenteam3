@@ -9,6 +9,8 @@
 </head>
 <body style="background-color: #F2F2F2;">
 
+	<%@ include file="/header.jsp" %>
+
 	<div class="wrap"> <!---------------- 커스텀오더 페이지 전체 ---------------->
 
 		<div> <!---------------- 제품이미지 ---------------->
@@ -54,11 +56,11 @@
 				<div> <img src="../img/야채.PNG"/> </div>
 				<div><h3> 야채제외 </h3></div>
 				<div> <!-- 야채제외 옵션 --> 
-					<input type ="radio" name="vegetableOption"> 피망
-					<input type ="radio" name="vegetableOption"> 할라피뇨
-					<input type ="radio" name="vegetableOption"> 올리브
-					<input type ="radio" name="vegetableOption"> 피클
-					<input type ="radio" name="vegetableOption"> 양파
+					<input type ="checkbox" name="vegetableOption"> 피망
+					<input type ="checkbox" name="vegetableOption"> 할라피뇨
+					<input type ="checkbox" name="vegetableOption"> 올리브
+					<input type ="checkbox" name="vegetableOption"> 피클
+					<input type ="checkbox" name="vegetableOption"> 양파
 					<input type ="radio" name="vegetableOption"> 제외 안 함
 				</div>
 			</div> <!-- 커스텀 : 야채제외 end -->
@@ -82,6 +84,8 @@
 		</div> <!---------------- 주문하기 버튼 end ---------------->
 
 	</div> <!---------------- 커스텀오더 페이지 전체 end ---------------->
+	
+	<%@ include file="/footer.jsp" %>
 
 </body>
 </html>
