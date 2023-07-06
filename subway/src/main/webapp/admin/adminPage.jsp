@@ -74,7 +74,7 @@
 		
 		</div><!-- 주문내역 페이지 하단공간 끝 -->
 	</div><!-- 주문내역 확인 페이지 전체 공간 끝 -->
-
+ 
 <%@ include file="../footer.jsp" %>
 <script src="../js/adminPage.js" type="text/javascript"></script>
 </body>
