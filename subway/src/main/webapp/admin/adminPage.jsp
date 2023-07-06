@@ -67,7 +67,7 @@
 						<td>연락처</td><td>:</td><td>01012341234 </td>
 					</tr>
 				</table>
-				<div class="finishBtn">
+				<div class="finishBtn">  
 					<button class="refundBtn">환불</button><button class="realFn">완료</button>
 				</div>				
 			</div><!-- 주문 상세 확인 오른쪽 공간 끝 -->
