@@ -10,17 +10,20 @@
 <body>
 	<div id = "header">
 		<div class="headerTop">
-			<div class="header_logo">
-			<a href="/subway/mainPage.jsp"><img  src="img/header_logo.PNG"></a>
-			</div>
-			<div>
-				<a href="#">로그인</a> <span> · </span> <a href="#">회원가입</a>
-				<a href="#"><img src="img/header_global_icon.PNG"></a>
+			<a href="/subway/mainPage.jsp"><img class="header_logo"  src="img/header_logo.PNG"></a>
+			<div class="header_right">
+				<a href="#">로그인</a> <span class="point"> · </span> <a href="#">회원가입</a>
+				<a href="#"><img class="global_icon" src="img/header_global_icon.PNG"></a>
 			</div>
 		</div>
 		
-		<div>
-		
+		<div class="headerBottom">
+			<ul>
+				<li>메뉴소개</li>
+				<li>이용방법</li>
+				<li>새소식</li>
+				<li>관리자</li>
+			</ul>
 		</div>
 	</div>
 	
