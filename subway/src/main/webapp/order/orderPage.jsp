@@ -13,9 +13,8 @@
 
 	<div class="wrap"> <!---------------- 커스텀오더 페이지 전체 ---------------->
 
-		<div> <!---------------- 제품이미지 ---------------->
-			<div class="productImgBox"><img class="productImg" src="../img/eggmayo.png"/></div>
-			<div class="productNameBox"><h3 class="productName"> 에그마요 </h3></div>
+		<div class="productinfo"> <!---------------- 제품이미지 ---------------->
+
 		</div> <!---------------- 제품이미지 end ---------------->
 		
 		<div class="customBox"> <!---------------- 커스텀 항목 ---------------->
@@ -80,12 +79,12 @@
 		</div> <!---------------- 커스텀 항목 end ---------------->
 		
 		<div class="orderBtnBox"> <!---------------- 주문하기 버튼 ---------------->
-			<button class="orderBtn"> 주문하기 </button>
+			<button onclick="order()" class="orderBtn"> 주문하기 </button>
 		</div> <!---------------- 주문하기 버튼 end ---------------->
 
 	</div> <!---------------- 커스텀오더 페이지 전체 end ---------------->
 	
 	<%@ include file="/footer.jsp" %>
-
+	<script src="../js/orderPage.js"></script>
 </body>
 </html>
