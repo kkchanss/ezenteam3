@@ -17,14 +17,12 @@
 			</div>
 		</div>
 		
-		<div class="headerBottom">
-			<ul>
-				<li>메뉴소개</li>
-				<li>이용방법</li>
-				<li>새소식</li>
-				<li>관리자</li>
-			</ul>
-		</div>
+		<ul class="headerBottom">
+			<li>메뉴소개</li>
+			<li>이용방법</li>
+			<li>새소식</li>
+			<li>관리자</li>
+		</ul>
 	</div>
 	
 	

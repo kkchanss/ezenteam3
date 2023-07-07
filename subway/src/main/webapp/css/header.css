@@ -46,10 +46,8 @@ a{
 
 .headerBottom{
 	margin-top: 100px;
-	
+		display: flex;
+	justify-content: space-around;
 }
 .headerBottom li {
-	float: left;
-	display: flex;
-	justify-content: space-around;
 }
