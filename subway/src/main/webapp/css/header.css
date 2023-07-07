@@ -1,6 +1,6 @@
 @charset "UTF-8";
 *{
-	padding:0px; margin: 0 auto;
+	padding:0px; margin: 0px;
 }
 
 li{
@@ -16,14 +16,17 @@ a:hover{ /* 선택자 : hover{} 해당 요소에 마우스를 올렸을때 */
 	color:green;
 	border-bottom: 1px solid green;
 }
+#headerAll{
+	padding-top: 50px;
+	background-color: window;
+}
 
 #header{
 	width:1200px;
-
+	margin: 0 auto;
 }
 
 .headerTop{
-	margin-top: 20px;
 	position: relative;
 	display: flex;
 	justify-content: flex-end;
@@ -56,6 +59,7 @@ a:hover{ /* 선택자 : hover{} 해당 요소에 마우스를 올렸을때 */
 	margin-top: 100px;
 		display: flex;
 	justify-content: space-around;
+	padding-bottom: 30px;
 }
 
 .drop_menu{

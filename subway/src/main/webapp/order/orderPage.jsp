@@ -6,10 +6,12 @@
 	<meta charset="UTF-8">
 	<title>orderPage</title>
 	<link href="../css/orderPage.css" rel="stylesheet">
+	<link href="../css/header.css" rel="stylesheet">
+	<link href="../css/footer.css" rel="stylesheet">
 </head>
 <body style="background-color: #F2F2F2;">
 
-	<%@ include file="/header.jsp" %>
+	<%@ include file="../header.jsp" %>
 
 	<div class="wrap"> <!---------------- 커스텀오더 페이지 전체 ---------------->
 
