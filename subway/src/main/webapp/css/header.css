@@ -19,6 +19,7 @@ a:hover{ /* 선택자 : hover{} 해당 요소에 마우스를 올렸을때 */
 #headerAll{
 	padding-top: 50px;
 	background-color: window;
+	height:150px;
 }
 
 #header{
@@ -57,7 +58,7 @@ a:hover{ /* 선택자 : hover{} 해당 요소에 마우스를 올렸을때 */
 
 .headerBottom{
 	margin-top: 100px;
-		display: flex;
+	display: flex;
 	justify-content: space-around;
 	padding-bottom: 30px;
 }
@@ -69,15 +70,19 @@ a:hover{ /* 선택자 : hover{} 해당 요소에 마우스를 올렸을때 */
 }
 
 .sub_menu{
-	display: none;
+	overflow: hidden;
+	opacity: 0;
+	/* display: none; */
+	margin-top: 20px;
+	line-height: 180%;
+	background-color: white;
 }
 
 .headerBottom:hover .sub_menu{
-	display: block;
+	/* display: block; */
+	opacity: 1;
 }
 
-
-
-.drop_menu:hover .li{
-	color:green;
+.title{
+	font-weight: bold;
 }

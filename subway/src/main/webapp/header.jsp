@@ -21,7 +21,7 @@
 			
 			<ul class="headerBottom">
 				<li class="drop_menu">
-					<a href="#">메뉴소개</a>
+					<a class="title" href="\subway\itemInfo\itemInfoPage.jsp">메뉴소개</a>
 						<ul class="sub_menu">
 							<li><a href="#">샌드위치</a></li>
 							<li><a href="#">랩</a></li>
@@ -29,20 +29,14 @@
 						</ul>
 				</li>
 				<li class="drop_menu">
-					<a href="#">이용방법</a>
-						<ul class="sub_menu">
-							<li><a href="#">써브웨이 이용방법</a></li>
-							<li><a href="#">단체메뉴 이용방법</a></li>
-							<li><a href="#">신선한 재료 소개</a></li>
-						</ul>
+					<a class="title" href="\subway\review\reviewPage.jsp">리뷰 작성</a>
 				</li>
 				<li class="drop_menu">
-					<a href="#">관리자</a>
+					<a class="title" href="\subway\admin\adminPage.jsp">관리자</a>
 						<ul class="sub_menu">
 							<li><a href="#">주문확인</a></li>
 							<li><a href="#">리뷰관리</a></li>
 						</ul>
-				
 				</li>
 			</ul>
 		</div>
