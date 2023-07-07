@@ -3,7 +3,6 @@
 
 /* 키오스크 전체구역 */
 .kwrap{
-	font-family : 'KBO-Dia-Gothic_bold';
 	width: 1200px; height: 1000px;	/*구역 가로,높이 사이즈 */
 	margin: 50px auto;					/*구역 가로가운데 정렬*/
 }
@@ -41,10 +40,11 @@
 	
 }
 
+
+
 .productbox{
-	height: 500px;			/* height 생략시 기본값 auto : 내용물 크기만 자동으로 늘어남*/
+	width :1200px; height: 500px;			/* height 생략시 기본값 auto : 내용물 크기만 자동으로 늘어남*/
 	border: 1px solid red;
-	display: flex; flex-wrap: wrap;
 	overflow-y: scroll;		/*만약에 자식요소들이 현재 구역보다 사이즈가 더 커지면 스크롤생성*/
 }
 

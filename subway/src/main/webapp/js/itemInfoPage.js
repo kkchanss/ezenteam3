@@ -25,7 +25,5 @@ let MenuList = [
 
 let cartList = [ ]
 
-categoryPrint(0);
-function categoryPrint( selectNo ){
-	
-}
+
+let selectIime = JSON.parse(localStorage.setItem('selectIime', selectIime));

@@ -8,6 +8,9 @@
 	<link href="/subway/css/itemInfoPage.css" rel="stylesheet">
 </head>
 <body>
+
+
+	
 	<div class="wrap"><!-- 제품 정보 페이지 시작 -->
 		<div><!-- 카테고리 시작 -->
 			<div class="category_top"><!-- 상단카테고리 시작 -->
@@ -32,14 +35,17 @@
 					<li> 프리미엄 </li>
 				</ul>-->
 			</div><!-- 하단카테고리 end -->
-		</div class="productbox"><!-- 카테고리 end -->
+		</div><!-- 카테고리 end -->
 		
-		<div><!-- 제품구역 시작 -->
+		<div class="productbox"><!-- 제품구역 시작 -->
 		
 		
 		</div><!-- 제품구역 end -->
 
 	</div><!-- 제품 정보 페이지 end -->
 	<script src="/subway/js/itemInfoPage.js" type="text/javascript"></script>
+	
+	
+	
 </body>
 </html>
