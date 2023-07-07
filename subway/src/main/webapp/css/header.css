@@ -19,11 +19,12 @@ a:hover{ /* 선택자 : hover{} 해당 요소에 마우스를 올렸을때 */
 #headerAll{
 	padding-top: 50px;
 	background-color: window;
-	height:150px;
+	height:250px;
 }
 
 #header{
 	width:1200px;
+	
 	margin: 0 auto;
 }
 
