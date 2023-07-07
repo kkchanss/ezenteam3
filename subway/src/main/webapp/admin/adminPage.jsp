@@ -20,16 +20,8 @@
 		
 		<div id="adminBottom"><!--주문내역페이지 하단 공간 -->
 			<div class="obList"><!-- 주문 간략 확인 사이드바 -->
-				<div class="orderBottom">
-					<ul class="orNumber"> 주문번호 : 1</ul>
-					<ul>에그마요</ul>
-					<button class="orFinish">완료</button>
-				</div>
-				<div class="orderBottom">
-					<ul class="orNumber"> 주문번호 : 1</ul>
-					<ul>에그마요</ul>
-					<button class="orFinish">완료</button>
-				</div>
+				
+				
 			</div><!-- 주문 간략 확인 사이드바   -->
 			<div class="odSpace"><!-- 주문 상세 학인 오른쪽 공간 -->
 				<table class="odDlist">
