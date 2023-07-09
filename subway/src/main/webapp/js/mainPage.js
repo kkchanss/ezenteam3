@@ -1,11 +1,10 @@
 // 광고 이미지 배열
 let simgList = ['main_h_img01.jpg', 'main_h_img02.jpg', 'main_h_img03.jpg']; 
 
-// 메인메뉴 리스트
-
+// 카테고리 리스트
 let categoryList = [ '클래식', '프레쉬&라이트', '랩', '샐러드'];
 
-
+// 메인메뉴 리스트
 let mainMenuList = [
 	 				{ name : '에그마요', content: "부드러운 달걀과 고소한 마요네즈의 조합", img : 'eggmayo.png', category : 0}, 
 	 				{ name : 'BBQ', content: "써브웨이의 코리안 스타일 샌드위치!", img : 'BBQ.png', category : 0}, 
@@ -19,8 +18,18 @@ let mainMenuList = [
 	 				{ name : 'BLT', content: "오리지널 아메리칸 스타일 베이컨의 풍미와 바삭함 그대로~", img : 'S_BLT.png', category : 3}, 
 	 				{ name : '이탈리안BMT', content: "페퍼로니, 살라미 그리고 햄이 만들어내는 최상의 조화!", img : 'S_pulled_pork_BBQ.png', category : 3},
 	 				{ name : '스파이시 이탈리안', content: "살라미, 페퍼로니가 입안 한가득! 진짜 이탈리아의 맛 가득한 샐러드", img : 'S_spicy_italian.png', category : 3}
- 					]
+ 					];
+ 
+// 리뷰 리스트 가져오기
+let reviewList = [
+	{ no : 1, name : '찬희', content : '사장님이 친절해요', star : 3, time : '2023-07-09'},
+	{ no : 2, name : '희찬', content : '에그마요 짱', star : 5, time : '2023-07-10'},
+	{ no : 3, name : '예지', content : '피망 맛 없어요', star : 1, time : '2023-07-10'}
+];
+/*let review = { no : 1, name : '찬희', content : '사장님이 친절해요', star : 1, time : '2023-07-09'};*/
 
+
+// 광고 이미지 바꿔주기
 let viewhimg = 0; 
  setInterval(()=> {
 	 
@@ -37,7 +46,7 @@ let viewhimg = 0;
  
  categoryPrint(0); // 최초 1번 실행 [ 가장 앞에 있는 카테고리 선택 가정]
  productPrint(0);
- 
+ reviewPrint();
  function categoryPrint(selectNo) {
 	 console.log('categoryPrint')
 	 // 1. 어디에
@@ -105,4 +114,26 @@ let viewhimg = 0;
 		}
 	 // 3. 출력[대입]
  	 products.innerHTML = html;
+ }
+ 
+ // 리뷰 리스트 출력
+ function reviewPrint() {
+	 let review_list = document.querySelector('.review_list');
+	 let html = `<tr> 
+                  <th class="no"> 번호 </th>
+                  <th class="name"> 작성자 </th>
+                  <th class="content"> 내용 </th>
+                  <th class="star"> 별점 </th>
+                  <th class="time"> 날짜 </th>
+               </tr>`;
+     for(let i = 0; i < reviewList.length; i++) {
+		 html+=`<tr>
+                  <td class="no"> ${reviewList[i].no} </td>
+                  <td class="name"> ${reviewList[i].name} </td>
+                  <td class="content"> ${reviewList[i].content} </td>
+                  <td class="star">${reviewList[i].star} </td> 
+                  <td class="time">${reviewList[i].time} </td>                
+               </tr>`;
+	 }
+	 review_list.innerHTML = html;
  }
