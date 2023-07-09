@@ -1,37 +1,50 @@
 @charset "UTF-8";
+*{margin: 0px; padding: 0px;}
 
 /* 키오스크 전체구역 */
 .kwrap{
-	font-family : 'KBO-Dia-Gothic_bold';
 	width: 1200px; height: 1000px;	/*구역 가로,높이 사이즈 */
-	border: 1px solid red;		/*구역 확인용 */
 	margin: 50px auto;					/*구역 가로가운데 정렬*/
 }
 
 /* 카테고리 */
-.category{
+.category_top{
 	display: flex;	/*하위요소들의 가로배치*/
 	justify-content: space-around;	/*가로배치방법*/
 }
 
-.categorymenu{
+.categorymenu_top{
 	width : 1200px; height: 100px;
 	background-color: #008939 ;	/*배경색*/
 	display: flex;	/*하위요소들의 가로배치*/
-	justify-content: space-around;	/*가로배치방법*/ height: 100px;
-	background-color: #008939 ;	/*배경색*/
+	justify-content: space-around;	/*가로배치방법*/
 	text-align: center;
-	text-
+	font-size: 50px;
+	list-style-type: none;
+}
+
+
+.category_Sub{
+	display: flex;	/*하위요소들의 가로배치*/
+	justify-content: space-around;	/*가로배치방법*/
+}
+
+.categorymenu_Sub{
+	width : 1200px; height: 100px;
+	background-color: #E95B1D ;	/*배경색*/
+	display: flex;	/*하위요소들의 가로배치*/
+	justify-content: space-around;	/*가로배치방법*/
+	text-align: center;
+	font-size: 50px;
+	list-style-type: none;
 	
 }
 
-/* 선택/클릭 안된 카테고리 */
-.categorymenu li{color: #ffffff;}
 
-/* 선택/클릭 된 카테고리 */
-.categoryselect{
-	color: #E95B1D  !important;	/*위에서 이미 color 속성 사용했으므로 중복 !!*/
-	/* 1. id 별도로 해서 속성적용 2. style속성 3. !important */
-	/*border-bottom: 3px solid red;*/
-	padding-bottom: 3px;
+
+.productbox{
+	width :1200px; height: 500px;			/* height 생략시 기본값 auto : 내용물 크기만 자동으로 늘어남*/
+	border: 1px solid red;
+	overflow-y: scroll;		/*만약에 자식요소들이 현재 구역보다 사이즈가 더 커지면 스크롤생성*/
 }
+

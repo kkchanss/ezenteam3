@@ -86,10 +86,10 @@
             { 상위 : 샐러드 , 하위 : [클래식, 프리미엄] }, ]
 	- 주문상태 = [ 0, 1, 2] 0:주문완료 1:주문취소 2:픽업완료
 	- (샘플)주문 = [ { ono : 1, name : '김찬희', phone : 01012341234, date : 2023-07-05 13:30, status : 2 , category : 0 , product : '에그마요',         		bread : '화이트',  cheese : '슈레드',   toasting : 'true',    vegetable : [ 피망, 할라피뇨],  sauce : '랜치',  	pay : '5500' }
-				{ ono : 2, name : '신예지', phone : 01011111234, date : 2023-07-05 15:30, status : 2 , category : 2 , product : '치킨 베이컨 미니 랩 ', 	bread : '',      cheese : '',       toasting : 'false',   vegetable : [ ],      	  sauce : '',    	pay : '3500' }
-				{ ono : 3, name : '박민재', phone : 01022221234, date : 2023-07-06 11:30, status : 0 , category : 2 , product : '이탈리안 비엔티 샐러드',   	bread : '',      cheese : '슈레드',   toasting : 'false',   vegetable : [ 할라피뇨 ],	  sauce : '핫칠리',	pay : '8500' }
-	   	  	 	{ ono : 3, name : '이성호', phone : 01033331234, date : 2023-07-06 17:30, status : 1 , category : 2 , product : '이탈리안 비엔티 샐러드',	bread : '',      cheese : '슈레드',   toasting : 'false',   vegetable : [ 할라피뇨 ],   	  sauce : '핫칠리',	pay : '8500' }
-	  		  ]
+					{ ono : 2, name : '신예지', phone : 01011111234, date : 2023-07-05 15:30, status : 2 , category : 2 , product : '치킨 베이컨 미니 랩 ', 	bread : '',      cheese : '',       toasting : 'false',   vegetable : [ ],      	  sauce : '',    	pay : '3500' }
+					{ ono : 3, name : '박민재', phone : 01022221234, date : 2023-07-06 11:30, status : 0 , category : 2 , product : '이탈리안 비엔티 샐러드', bread : '',      cheese : '슈레드',   toasting : 'false',   vegetable : [ 할라피뇨 ],	  sauce : '핫칠리',	pay : '8500' }
+	   	  	 		{ ono : 3, name : '이성호', phone : 01033331234, date : 2023-07-06 17:30, status : 1 , category : 2 , product : '이탈리안 비엔티 샐러드',	bread : '',      cheese : '슈레드',   toasting : 'false',   vegetable : [ 할라피뇨 ],   	  sauce : '핫칠리',	pay : '8500' }
+	  			  ]
 	     └>  속성명 종류 ( ono, name, phone, date, status, category, product, bread, cheese, toasting, vegetable, sauce, pay )
 			제품마다 다른 속성명의 다른 형태의 객체로 사용하는게 아니라 하나의 형태의 객체로 만들어서 하나의 주문리스트 배열에 다 넣기	
 	- 주문리스트 = [ ]

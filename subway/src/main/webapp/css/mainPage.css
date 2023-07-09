@@ -1,1 +1,53 @@
 @charset "UTF-8";
+
+.mainMid{
+	margin-top: 100px;
+	display: flex;
+	justify-content: space-around;
+}
+
+.midUl{
+	display: flex;
+	font-weight: bold;
+}
+
+.midUl li{
+	padding-left: 20px;
+}
+
+.line{
+	padding-left: 3px;
+	color:black;
+	font-weight: normal;
+}
+
+.products{
+	width:1200px;
+	margin: 0 auto;
+	display: flex;
+}
+
+.product{
+	padding-left: 20px;
+}
+
+.pinfo{
+	text-align: center;
+}
+
+.product img{
+	width:100%;
+}
+
+.pname{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.pcontent{
+	font-size: 13px;
+}
+
+.categoryselect{
+	color: green;
+}
