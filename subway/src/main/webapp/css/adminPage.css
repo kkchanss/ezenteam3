@@ -39,7 +39,18 @@
 	border-top-right-radius: 15px;
 }
 
-.orderDetail button{
+.billBtn{
+	width: 150px;
+	height: 50px;
+	font-size: 25px;
+	border:1px solid #008939;
+	background-color: #008939 ;
+	color: white;
+	position: absolute;
+	top: -1px; right: 149px;
+}
+
+.review{
 	width: 150px;
 	height: 50px;
 	font-size: 25px;
@@ -66,7 +77,9 @@
 	justify-content:center;
 	border:1px solid #008939;
 	border-bottom-left-radius: 15px;
+	position: relative;
 }
+
 
 .orderBottom{
 	width: 300px;
@@ -117,6 +130,66 @@
 	position: relative;
 }
 
+.finSpace{
+	width:310px;
+	height:174px;
+	border: 1px solid black;
+	display:flex;
+	flex-direction:column;
+	font-size: 20px;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+}
+
+.finHaed{
+	width:310px;
+	height: 30px;
+	position: absolute;
+	bottom: 144px;
+	background-color: white;
+	
+}
+
+.finHaed tr{
+	display: flex;
+	justify-content: space-between;
+}
+
+..finHaed th{padding-right: 5px;}
+
+.biilSpace{
+	width: 310px;
+	margin-top: 30px;
+	overflow: scroll;
+	
+}
+
+
+
+.finContspa tr{
+	width: 310px;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid black;
+	
+}
+
+.finContspa td{padding-right: 5px;}
+
+.totalMoney{
+	position: absolute;
+	bottom:0px;
+	width: 310px;
+	height: 30px;
+	background-color: white;
+}
+
+.totalMoney tr{
+	display: flex;
+	justify-content: space-around;
+}
+
 .odDlist td{
 	padding-bottom: 10px;
 	padding-right: 20px;
@@ -153,7 +226,12 @@
 	background-color: #E95B1D;
 }
 
-
+.odadminBtn{
+	position: absolute;
+	bottom: 0px; right: 240px;
+	color: white ;
+	background-color: #008939;
+}
 
 
 

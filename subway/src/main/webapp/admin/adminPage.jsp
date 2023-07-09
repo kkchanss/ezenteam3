@@ -17,21 +17,27 @@
 		
 		<div id="adminHeader"><!-- 페이지 상단 -->
 			<div class="orderToplist"><h3>주문목록</h3></div>
-			<div class="orderDetail"><h3>주문상세</h3> <button>리뷰관리</button></div>
+			<div class="orderDetail"><h3>주문상세</h3> 			
+				<button onclick="finishView()" class="billBtn" >주문관리</button>
+				<button class="review">리뷰관리</button>
+			</div>
 		</div><!-- 페이지 상단 끝 -->
 		
 		<div id="adminBottom"><!--주문내역페이지 하단 공간 -->
 			
 			<div class="obList"><!-- 주문 간략 확인 사이드바 -->
 				<!-- 주문 들어오면 간략정보 출력되는 공간임 -->
+				
 			</div><!-- 주문 간략 확인 사이드바 끝 -->
 			
 			<div class="odSpace"><!-- 주문 상세 확인 오른쪽 공간 -->
 				<!-- 사이드바에서 메뉴 누르면 
 					해당 주문 상세정보 확인 출력과
 					환불, 완료 버튼 출력 됨 -->
+				<div class="finSpace">
+					
+				</div>
 			</div><!-- 주문 상세 확인 오른쪽 공간 끝 -->
-		
 		</div><!-- 주문내역 페이지 하단공간 끝 -->
 	</div><!-- 주문내역 확인 페이지 전체 공간 끝 -->
  
