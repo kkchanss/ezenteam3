@@ -6,39 +6,43 @@ let categoryList = [ '샌드위치' , '랩', '샐러드'
 ];
 
 let MenuList = [
-	{name : '에그마요', price : 5500, img : 'eggmayo.png', category :0 },
-	{name : '참치', price : 5800, img : 'tuna.png', category :0 },
-	{name : '햄', price : 5800, img : 'ham.png', category : 0},
-	{name : '쉬림프', price : 7600, img : 'shrimp.png', category : 0},
-	{name : '바비큐', price : 7300, img : 'BBQ.png', category : 0},
-	{name : '치킨데리야끼', price : 7000, img : 'chicken_teriyaki.png', category : 0},
-	{name : '스테이크&치즈아보카도랩', price : 5000, img : 'steak_n_cheese_avocado_wrap.jpg', category :1 },
-	{name : '쉬림프 에그마요 랩', price : 4600, img : 'shrimp_egg_mayo_wrap.jpg', category : 1},
-	{name : '치킨 베이컨 미니 랩', price : 3500, img : 'chicken_bacon_mini_wrap.jpg', category : 1},
-	{name : '이탈리안 비엠티', price : 8500, img : 'S_italian_BMT.png', category :2 },
-	{name : '비엘티', price : 8000, img : 'S_BLT.png', category :2 },
-	{name : '햄', price : 7600, img : 'S_ham.png', category :2 },
-	{name : '풀드포크바비큐', price : 9000, img : 'S_pulled_pork_BBQ.png', category : 2},
-	{name : '스파이시 이탈리안', price : 8700, img : 'S_spicy_italian.png', category : 2},
-	{name : '쉬림프', price : 9400, img : 'S_shrimp.png', category :2 },
+	{product : '에그마요', pay : 5500, img : 'eggmayo.png', category :0 },
+	{product : '참치', pay : 5800, img : 'tuna.png', category :0 },
+	{product : '햄', pay : 5800, img : 'ham.png', category : 0},
+	{product : '쉬림프', pay : 7600, img : 'shrimp.png', category : 0},
+	{product : '바비큐', pay : 7300, img : 'BBQ.png', category : 0},
+	{product : '치킨데리야끼', pay : 7000, img : 'chicken_teriyaki.png', category : 0},
+	{product : '스테이크&치즈아보카도랩', pay : 5000, img : 'steak_n_cheese_avocado_wrap.jpg', category :1 },
+	{product : '쉬림프 에그마요 랩', pay : 4600, img : 'shrimp_egg_mayo_wrap.jpg', category : 1},
+	{product : '치킨 베이컨 미니 랩', pay : 3500, img : 'chicken_bacon_mini_wrap.jpg', category : 1},
+	{product : '이탈리안 비엠티', pay : 8500, img : 'S_italian_BMT.png', category :2 },
+	{product : '비엘티', pay : 8000, img : 'S_BLT.png', category :2 },
+	{product : '햄', pay : 7600, img : 'S_ham.png', category :2 },
+	{product : '풀드포크바비큐', pay : 9000, img : 'S_pulled_pork_BBQ.png', category : 2},
+	{product : '스파이시 이탈리안', pay : 8700, img : 'S_spicy_italian.png', category : 2},
 ]
 
 let cartList = [ ]
 
 categoryPrint(0);
 function categoryPrint(selectNo){
-	let categorymenu_top = document.querySelector('.categorymenu_top'); console.log('categorymenu_top')
+	// 함수의 목적 : 카테고리 클릭 함수
+	// 함수의 사용조건 : 사용자가 카테고리를 클릭 했을때
+	// 함수의 하는 순서도 1단계~10단계 : 
+	//1. 카테고리 함수 정의
+	//2. 
+	
+	let categorymenu_top = document.querySelector('.categorymenu_top'); console.log(categorymenu_top)
+	
 	let html = ``;
-	for(let i = 0; i<categoryList.length; i++){
-		// 선택된카테고리(selectNo) 와 i 와 같으면 i번재 인덱스 선택된 카테고리
-		if( i == selectNo){html +=`<li onclick="categoryselect(${i})" class="categoryselect"> ${categoryList[i]} </li>`}
-		else{html +=`<li onclick="categorySelect( ${ i } )" >${ categoryList[i] }</li>`}
-		
+	
+	for(let i=0; i<categoryList.length; i++){
+		html += `<li onclick="categoryPrint( ${i} )"> ${ categoryList[i] } </li>`
 	}
+	
 	categorymenu_top.innerHTML = html;
 	
 }
-
 function categorySelect(selectNo){
 	console.log(selectNo);
 	let category_topli = document.querySelectorAll('.category_topli');
