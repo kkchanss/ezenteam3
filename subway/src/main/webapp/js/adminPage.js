@@ -20,6 +20,13 @@ let orderList = [ { ono : 1,
 				, { ono : 2, name : '신예지', phone : '01011111234', date : '2023-07-05 15:30' , status : 2 , category : 2 , product : '치킨 베이컨 미니 랩 ', 	bread : '',      cheese : '',       toasting : 'false',   vegetable : [ ],      	  sauce : '',    	pay : '3500' }
 				, { ono : 3, name : '박민재', phone : '01022221234', date : '2023-07-06 11:30', status : 0 , category : 2 , product : '이탈리안 비엔티 샐러드',   	bread : '',      cheese : '슈레드',   toasting : 'false',   vegetable : [ '할라피뇨' ],	  sauce : '핫칠리',	pay : '8500' }
 	   	  	 	, { ono : 4, name : '이성호', phone : '01033331234', date : '2023-07-06 17:30' , status : 1 , category : 2 , product : '이탈리안 비엔티 샐러드',	bread : '',      cheese : '슈레드',   toasting : 'false',   vegetable : [ '할라피뇨' ],   	  sauce : '핫칠리',	pay : '8500' }
+	   	  	 	, { ono : 2, name : '신예지', phone : '01011111234', date : '2023-07-05 15:30' , status : 2 , category : 2 , product : '치킨 베이컨 미니 랩 ', 	bread : '',      cheese : '',       toasting : 'false',   vegetable : [ ],      	  sauce : '',    	pay : '3500' }
+				, { ono : 3, name : '박민재', phone : '01022221234', date : '2023-07-06 11:30', status : 0 , category : 2 , product : '이탈리안 비엔티 샐러드',   	bread : '',      cheese : '슈레드',   toasting : 'false',   vegetable : [ '할라피뇨' ],	  sauce : '핫칠리',	pay : '8500' }
+	   	  	 	, { ono : 4, name : '이성호', phone : '01033331234', date : '2023-07-06 17:30' , status : 1 , category : 2 , product : '이탈리안 비엔티 샐러드',	bread : '',      cheese : '슈레드',   toasting : 'false',   vegetable : [ '할라피뇨' ],   	  sauce : '핫칠리',	pay : '8500' }
+	   	  	 	, { ono : 2, name : '신예지', phone : '01011111234', date : '2023-07-05 15:30' , status : 2 , category : 2 , product : '치킨 베이컨 미니 랩 ', 	bread : '',      cheese : '',       toasting : 'false',   vegetable : [ ],      	  sauce : '',    	pay : '3500' }
+				, { ono : 3, name : '박민재', phone : '01022221234', date : '2023-07-06 11:30', status : 0 , category : 2 , product : '이탈리안 비엔티 샐러드',   	bread : '',      cheese : '슈레드',   toasting : 'false',   vegetable : [ '할라피뇨' ],	  sauce : '핫칠리',	pay : '8500' }
+	   	  	 	, { ono : 4, name : '이성호', phone : '01033331234', date : '2023-07-06 17:30' , status : 1 , category : 2 , product : '이탈리안 비엔티 샐러드',	bread : '',      cheese : '슈레드',   toasting : 'false',   vegetable : [ '할라피뇨' ],   	  sauce : '핫칠리',	pay : '8500' }
+	   	  	 	
 	  		  ];
 let 주문상태 = [ 0 , 1 , 2 ] // 0 = 주문완료 1 = 주문취소 2 = 픽업완료
 console.log('admin js 열림 ')
@@ -211,4 +218,8 @@ function finishView(){ console.log('함수함수함수')
 		finContspa.innerHTML += html
 		
 	}	
+	
+	let biilSpace = document.querySelector('.biilSpace')
+	
+	biilSpace.scrollTop = biilSpace.scrollHeight ;
 }
