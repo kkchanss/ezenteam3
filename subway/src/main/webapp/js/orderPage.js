@@ -9,7 +9,7 @@
  
  // ★☆★☆★☆★☆  제품 페이지에서 선택된 아이템 임시 설정. 추후에 수정해야함 ★☆★☆★☆★☆ 
  /*let selectIime = JSON.parse(localStorage.getItem('selectIime', selectIime));*/
- let selectItem = {category: 2, img: 'S_shrimp.png', product: '쉬림프', pay: 9400}
+ let selectItem = {category: 0, img: 'eggmayo.png', product: '에그마요', pay: 5500}
  
 
  // -------------------------출력--------------------------------------------------
