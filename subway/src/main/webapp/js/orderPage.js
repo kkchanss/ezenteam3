@@ -9,7 +9,7 @@
  
  // ★☆★☆★☆★☆  제품 페이지에서 선택된 아이템 임시 설정. 추후에 수정해야함 ★☆★☆★☆★☆ 
  /*let selectIime = JSON.parse(localStorage.getItem('selectIime', selectIime));*/
- let selectItem = {category: 0, img: 'eggmayo.png', product: '에그마요', pay: 5500}
+ let selectItem = {category: 2, img: 'S_shrimp.png', product: '쉬림프', pay: 9400}
  
 
  // -------------------------출력--------------------------------------------------
@@ -147,33 +147,41 @@
  }//f e
  
  
- // -------------------------주문하기 버튼--------------------------------------------------
- // -------------------------주문하기 버튼--------------------------------------------------
+ // -------------------------주문하기--------------------------------------------------
+ // -------------------------주문하기--------------------------------------------------
  // orderList = 주문내역 객체가 들어가는 주문리스트 배열명
  // 속성명 종류 ( ono, name, phone, date, status, category, product, bread, cheese, toasting, vegetable, sauce, pay )
  orderList = []
  function order(){ // f s
-	 //저장할 주문 정보들 선언하기
-	 let ono = 1;
+
+	 //저장할 주문 정보들 선언하기, 만약에 넣을 값이 없다면 공백으로 저장하기
+	 let ono = orderList.length == 0 ? 1 :  orderList[orderList.length-1].ono +1
 	 let name = prompt('주문자명을 입력해 주세요. : ');
 	 let phone = prompt('휴대폰번호를 입력해 주세요. ("-" 제외) : ');
 	 let date = `${new Date().getFullYear()}-${new Date().getMonth()+1 }-${new Date().getDate() }`;
 	 let status = 0;
 	 let category = selectItem.category;
 	 let product = selectItem.product;
-	 let bread = document.querySelector('.breadOption').value;
-	 let cheese = document.querySelector('.cheeseOption').value;
-	 let toasting = document.querySelector('.toastingOption').value;
-	 let vegetable = document.querySelector('.vegetableOption').value;
-	 let sauce = document.querySelector('.sauceOption').value;
+	 let bread = '';
+	 if(category == 0) 					{bread = document.querySelector('.breadOption').value;}
+	 let cheese = '';
+	 if(category == 0 || category == 2) {cheese = document.querySelector('.cheeseOption').value;}
+	 let toasting = ''
+	 if(category == 0) 					{toasting = document.querySelector('.toastingOption').value;}
+	 let vegetable = ''
+	 if(category == 0 || category == 2) {vegetable = document.querySelector('.vegetableOption').value;}
+	 let sauce = ''
+	 if(category == 0 || category == 2) {sauce = document.querySelector('.sauceOption').value;}
 	 let pay = selectItem.pay
 	 
+
 	 // 주문 객체 만들기
 	 let order = { ono: ono, name: name, phone: phone, date: date, status: status, category: category, 
 	 				product: product, bread: bread, cheese: cheese, toasting: toasting, 
 	 				vegetable: vegetable, sauce: sauce, pay: pay  }
-	 // 주문을 주문리스트배열에 푸쉬
+	 // 주문을 주문리스트배열에 푸쉬 및 세션에 올리기
 	 orderList.push(order); console.log (order);
+	 sessionStorage.setItem('orderList', JSON.stringify(orderList));
 	 
 	 // 버튼 삭제하기
 	 let orderBtnBox = document.querySelector('.orderBtnBox')

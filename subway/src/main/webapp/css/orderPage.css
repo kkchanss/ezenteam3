@@ -24,6 +24,10 @@ body{ background-color: #F2F2F2; }
 	padding: 0px 10px 20px 10px;
 }
 
+.productImg{
+	width: 550px;
+}
+
 /* ----------------------- 커스텀 항목 구역 ----------------------- */
 .customlist{ 
 	background-color: white; 
