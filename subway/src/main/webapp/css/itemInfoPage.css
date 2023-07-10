@@ -46,5 +46,6 @@
 	width :1200px; height: 500px;			/* height 생략시 기본값 auto : 내용물 크기만 자동으로 늘어남*/
 	border: 1px solid red;
 	overflow-y: scroll;		/*만약에 자식요소들이 현재 구역보다 사이즈가 더 커지면 스크롤생성*/
+	margin: 0 auto;
 }
 

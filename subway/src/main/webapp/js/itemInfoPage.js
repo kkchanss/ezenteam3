@@ -25,5 +25,33 @@ let MenuList = [
 
 let cartList = [ ]
 
+categoryPrint(0);
+function categoryPrint(selectNo){
+	let categorymenu_top = document.querySelector('.categorymenu_top'); console.log('categorymenu_top')
+	let html = ``;
+	for(let i = 0; i<categoryList.length; i++){
+		// 선택된카테고리(selectNo) 와 i 와 같으면 i번재 인덱스 선택된 카테고리
+		if( i == selectNo){html +=`<li onclick="categoryselect(${i})" class="categoryselect"> ${categoryList[i]} </li>`}
+		else{html +=`<li onclick="categorySelect( ${ i } )" >${ categoryList[i] }</li>`}
+		
+	}
+	categorymenu_top.innerHTML = html;
+	
+}
 
-let selectIime = JSON.parse(localStorage.setItem('selectIime', selectIime));
+function categorySelect(selectNo){
+	console.log(selectNo);
+	let category_topli = document.querySelectorAll('.category_topli');
+	console.log(category_topli)
+	
+	for(let i = 0; i<categoryList.length; i++){
+		if (selectNo==i){
+			category_topli[i].classList.add('categoryselect');
+		}else{
+			category_topli[i].classList.remove('')
+		}
+	}
+	productPrint(selectNo);
+}
+
+//let selectIime = JSON.parse(localStorage.setItem('selectIime', selectIime));
