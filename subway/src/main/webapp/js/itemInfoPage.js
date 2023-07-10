@@ -26,33 +26,34 @@ let cartList = [ ]
 
 categoryPrint(0);
 function categoryPrint(selectNo){
-	// 함수의 목적 : 카테고리 클릭 함수
-	// 함수의 사용조건 : 사용자가 카테고리를 클릭 했을때
+	// 함수의 목적 : 카테고리 출력 함수
+	// 함수의 사용조건 : 사용자가 웹 실행 했을 때
 	// 함수의 하는 순서도 1단계~10단계 : 
-	//1. 카테고리 함수 정의
-	//2. 
-	
+	//1. 카테고리 함수 정의한다
+	//2. 어떤 데이터를 어느곳에 어떻게 출력 
+	// categoryList 배열안에 있는 데이터를 categorymenu_top에 리스트아이템으로 전부다 출력
+		// 1. 나는 카테고리배열을 출력하고 한다.
+		// 2. categorymenu_top 이라는 ul 태그 안에 하고 싶다.
+		// 3. 카테고리배열에 있는 모두 하나씩 li 태그 구성해서 출력한다.
+		
 	let categorymenu_top = document.querySelector('.categorymenu_top'); console.log(categorymenu_top)
-	
 	let html = ``;
-	
 	for(let i=0; i<categoryList.length; i++){
-		html += `<li onclick="categoryPrint( ${i} )"> ${ categoryList[i] } </li>`
+		html += `<li onclick="categorySelect( ${i} )"> ${ categoryList[i] } </li>`
 	}
-	
 	categorymenu_top.innerHTML = html;
-	
 }
+
 function categorySelect(selectNo){
 	console.log(selectNo);
-	let category_topli = document.querySelectorAll('.category_topli');
+	let category_topli = document.querySelectorAll('.categorymenu_top li');
 	console.log(category_topli)
 	
 	for(let i = 0; i<categoryList.length; i++){
 		if (selectNo==i){
 			category_topli[i].classList.add('categoryselect');
 		}else{
-			category_topli[i].classList.remove('')
+			category_topli[i].classList.remove('categoryselect')
 		}
 	}
 	productPrint(selectNo);
