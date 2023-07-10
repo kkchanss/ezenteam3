@@ -78,11 +78,13 @@
 	border:1px solid #008939;
 	border-bottom-left-radius: 15px;
 	position: relative;
+	overflow: scroll;  	
 }
-
+.obList::-webkit-scrollbar {
+	display:none;}
 
 .orderBottom{
-	width: 300px;
+	width: 299px;
 	height: 90px;
 	border-bottom: 1px solid #008939;
 	display: flex;
@@ -131,7 +133,7 @@
 }
 
 .finSpace{
-	width:310px;
+	width:320px;
 	height:174px;
 	border: 1px solid black;
 	display:flex;
@@ -143,7 +145,7 @@
 }
 
 .finHaed{
-	width:310px;
+	width:320px;
 	height: 30px;
 	position: absolute;
 	bottom: 144px;
@@ -156,31 +158,35 @@
 	justify-content: space-between;
 }
 
-..finHaed th{padding-right: 5px;}
+.finHaed th{padding-right: 5px;}
 
 .biilSpace{
-	width: 310px;
+	width: 320px;
+	height: 120px;
 	margin-top: 30px;
 	overflow: scroll;
 	
 }
 
+.biilSpace::-webkit-scrollbar {display:none;}
 
+.finContspa{overflow: scroll;}
 
 .finContspa tr{
-	width: 310px;
+	width: 320px;
 	display: flex;
+	white-space: nowrap;
 	justify-content: space-between;
 	border-bottom: 1px solid black;
 	
 }
 
 .finContspa td{padding-right: 5px;}
-
+ 
 .totalMoney{
 	position: absolute;
 	bottom:0px;
-	width: 310px;
+	width: 320px;
 	height: 30px;
 	background-color: white;
 }
