@@ -29,6 +29,30 @@
 						</ul>
 				</li>
 				<li class="drop_menu">
+					<a class="title" href="\subway\itemInfo\itemInfoPage.jsp">이용방법</a>
+						<ul class="sub_menu">
+							<li><a href="#">써브웨이 이용방법</a></li>
+							<li><a href="#">단체메뉴 이용방법</a></li>
+							<li><a href="#">신선한 재료 소개</a></li>
+						</ul>
+				</li>
+				<li class="drop_menu">
+					<a class="title" href="\subway\itemInfo\itemInfoPage.jsp">새소식</a>
+						<ul class="sub_menu">
+							<li><a href="#">이벤트 / 프로모션</a></li>
+							<li><a href="#">뉴스 / 공지사항</a></li>
+							<li><a href="#">광고 영상</a></li>
+						</ul>
+				</li>
+				<li class="drop_menu">
+					<a class="title" href="\subway\itemInfo\itemInfoPage.jsp">써브웨이</a>
+						<ul class="sub_menu">
+							<li><a href="#">써브웨이 역사</a></li>
+							<li><a href="#">써브웨이 약속</a></li>
+							<li><a href="#">매장 찾기</a></li>
+						</ul>
+				</li>
+				<li class="drop_menu">
 					<a class="title" href="\subway\review\reviewPage.jsp">리뷰 작성</a>
 				</li>
 				<li class="drop_menu">

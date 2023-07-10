@@ -21,11 +21,13 @@ let mainMenuList = [
  					];
  
 // 리뷰 리스트 가져오기
-let reviewList = [
+let reviewList = JSON.parse(sessionStorage.getItem('reviewList'));
+console.log("reviewList : " + reviewList);
+/*let reviewList = [
 	{ no : 1, name : '찬희', content : '사장님이 친절해요', star : 3, time : '2023-07-09'},
 	{ no : 2, name : '희찬', content : '에그마요 짱', star : 5, time : '2023-07-10'},
 	{ no : 3, name : '예지', content : '피망 맛 없어요', star : 1, time : '2023-07-10'}
-];
+];*/
 /*let review = { no : 1, name : '찬희', content : '사장님이 친절해요', star : 1, time : '2023-07-09'};*/
 
 
@@ -122,6 +124,7 @@ let viewhimg = 0;
 	 let html = `<tr> 
                   <th class="no"> 번호 </th>
                   <th class="name"> 작성자 </th>
+                  <th class="menu"> 상품명 </th>
                   <th class="content"> 내용 </th>
                   <th class="star"> 별점 </th>
                   <th class="time"> 날짜 </th>
@@ -130,6 +133,7 @@ let viewhimg = 0;
 		 html+=`<tr>
                   <td class="no"> ${reviewList[i].no} </td>
                   <td class="name"> ${reviewList[i].name} </td>
+                  <td class="menu"> ${reviewList[i].menu} </td>
                   <td class="content"> ${reviewList[i].content} </td>
                   <td class="star">${reviewList[i].star} </td> 
                   <td class="time">${reviewList[i].time} </td>                

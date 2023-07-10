@@ -36,16 +36,17 @@
 			<h1>한줄 리뷰</h1>
 			
 			<div class="review_list_box">
-            <table class="review_list"> <!-- qna 리스트 -->
+            <table class="review_list"> <!-- review 리스트 -->
                <tr> 
                   <th class="no"> 번호 </th>
                   <th class="name"> 작성자 </th>
+                  <th class="menu"> 상품명 </th>
                   <th class="content"> 내용 </th>
                   <th class="star"> 별점 </th>
                   <th class="time"> 날짜 </th>
                </tr>
                
-               <tr>
+     <!--           <tr>
                   <td class="no"> 1 </td>
                   <td class="name"> 찬희 </td>
                   <td class="content"><a href="#"> 사장님이 친절해요 </a> </td>
@@ -59,7 +60,7 @@
                   <td class="content"><a href="#"> 에그마요 추천합니다 </a> </td>
                   <td class="star"> 2 </td>   
                   <td class="time"> 2023-07-09 </td>              
-               </tr>
+               </tr> -->
                
             </table> <!-- qna 리스트 end -->
          </div>
