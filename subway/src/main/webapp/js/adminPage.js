@@ -1,33 +1,16 @@
 // 관리자 계정
 let admin = { id : 'admin', pw : 1234};
 
-let finishOrder = []
+let finishOrder = JSON.parse(sessionStorage.getItem('finishOrder '))
+
+if(finishOrder ==null)
+finishOrder = []
 
 //사전 주문 데이터
-let orderList = [ { ono : 1, 
-				  name : '김찬희',
-				  phone : '01012341234', 
-				  date : '2023-07-05 13:30', 
-				  status : 2 , 
-				  category : 0 , 
-				  product : '에그마요',         	
-				  bread : '화이트',  
-				  cheese : '슈레드',   
-				  toasting : 'true',    
-				  vegetable : [ '피망', '할라피뇨'],  
-				  sauce : '랜치',  	
-				  pay : '5500' }
-				, { ono : 2, name : '신예지', phone : '01011111234', date : '2023-07-05 15:30' , status : 2 , category : 2 , product : '치킨 베이컨 미니 랩 ', 	bread : '',      cheese : '',       toasting : 'false',   vegetable : [ ],      	  sauce : '',    	pay : '3500' }
-				, { ono : 3, name : '박민재', phone : '01022221234', date : '2023-07-06 11:30', status : 0 , category : 2 , product : '이탈리안 비엔티 샐러드',   	bread : '',      cheese : '슈레드',   toasting : 'false',   vegetable : [ '할라피뇨' ],	  sauce : '핫칠리',	pay : '8500' }
-	   	  	 	, { ono : 4, name : '이성호', phone : '01033331234', date : '2023-07-06 17:30' , status : 1 , category : 2 , product : '이탈리안 비엔티 샐러드',	bread : '',      cheese : '슈레드',   toasting : 'false',   vegetable : [ '할라피뇨' ],   	  sauce : '핫칠리',	pay : '8500' }
-	   	  	 	, { ono : 2, name : '신예지', phone : '01011111234', date : '2023-07-05 15:30' , status : 2 , category : 2 , product : '치킨 베이컨 미니 랩 ', 	bread : '',      cheese : '',       toasting : 'false',   vegetable : [ ],      	  sauce : '',    	pay : '3500' }
-				, { ono : 3, name : '박민재', phone : '01022221234', date : '2023-07-06 11:30', status : 0 , category : 2 , product : '이탈리안 비엔티 샐러드',   	bread : '',      cheese : '슈레드',   toasting : 'false',   vegetable : [ '할라피뇨' ],	  sauce : '핫칠리',	pay : '8500' }
-	   	  	 	, { ono : 4, name : '이성호', phone : '01033331234', date : '2023-07-06 17:30' , status : 1 , category : 2 , product : '이탈리안 비엔티 샐러드',	bread : '',      cheese : '슈레드',   toasting : 'false',   vegetable : [ '할라피뇨' ],   	  sauce : '핫칠리',	pay : '8500' }
-	   	  	 	, { ono : 2, name : '신예지', phone : '01011111234', date : '2023-07-05 15:30' , status : 2 , category : 2 , product : '치킨 베이컨 미니 랩 ', 	bread : '',      cheese : '',       toasting : 'false',   vegetable : [ ],      	  sauce : '',    	pay : '3500' }
-				, { ono : 3, name : '박민재', phone : '01022221234', date : '2023-07-06 11:30', status : 0 , category : 2 , product : '이탈리안 비엔티 샐러드',   	bread : '',      cheese : '슈레드',   toasting : 'false',   vegetable : [ '할라피뇨' ],	  sauce : '핫칠리',	pay : '8500' }
-	   	  	 	, { ono : 4, name : '이성호', phone : '01033331234', date : '2023-07-06 17:30' , status : 1 , category : 2 , product : '이탈리안 비엔티 샐러드',	bread : '',      cheese : '슈레드',   toasting : 'false',   vegetable : [ '할라피뇨' ],   	  sauce : '핫칠리',	pay : '8500' }
-	   	  	 	
-	  		  ];
+
+let orderList = JSON.parse(sessionStorage.getItem('orderList'))
+if(orderList==null)
+orderList = [  ];
 let 주문상태 = [ 0 , 1 , 2 ] // 0 = 주문완료 1 = 주문취소 2 = 픽업완료
 console.log('admin js 열림 ')
 
@@ -73,6 +56,9 @@ function detailOd( detali ){//detailOd() 시작
 					</tr>
 					<tr>
 						<td>주문번호 </td><td>:</td><td> ${orderList[detali].ono} 번 </td>
+					</tr>
+					<tr>
+						<td>주문자</td><td>:</td><td>${orderList[detali].name} </td>
 					</tr>
 					<tr>
 						<td>메뉴</td><td>:</td><td>${orderList[detali].product} </td>
@@ -133,8 +119,10 @@ function finishOd( finishN ){//함수 시작
 				  pay : fO.pay }
 				
 			finishOrder.push( fnOder )
+			sessionStorage.setItem('finishOrder',JSON.stringify(finishOrder))
 			
 			orderList.splice( finishN , 1 )
+			sessionStorage.setItem('orderList' ,JSON.stringify(orderList) )
 
 			console.log(finishOrder)
 			odSpace.innerHTML = ``
@@ -154,6 +142,7 @@ function dodDelete( refundN ){// 함수시작
 	for( let i = 0 ; i<orderList.length ; i++){//for st
 		if( i == refundN  ){//if st
 			orderList.splice( refundN , 1 )
+			sessionStorage.setItem('orderList' ,JSON.stringify(orderList) )
 			odSpace.innerHTML = ``
 			alert('환불 되었습니다.')
 			break;
@@ -165,8 +154,10 @@ function dodDelete( refundN ){// 함수시작
 
 finishView()
 
-function finishView(){ console.log('함수함수함수')
+function finishView(){ 
 	
+	finishOrder = JSON.parse(sessionStorage.getItem('finishOrder'))
+	console.log(finishOrder)
 	let totalPrice = 0;
 	
 	 for( let i = 0 ;i<finishOrder.length; i++ ){
