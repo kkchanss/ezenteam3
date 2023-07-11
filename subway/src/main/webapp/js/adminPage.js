@@ -104,6 +104,8 @@ function detailOd( detali ){//detailOd() 시작
 //주문 완료처리되는 함수(주문 완료 배열로 푸쉬)
 function finishOd( finishN ){//함수 시작
 	
+	
+	
 	let odSpace = document.querySelector('.odSpace')
 	
 	for( let i = 0 ; i<orderList.length ; i++){//for st
