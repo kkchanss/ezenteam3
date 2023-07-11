@@ -1,16 +1,16 @@
 // 관리자 계정
 let admin = { id : 'admin', pw : 1234};
 
-let finishOrder = JSON.parse(sessionStorage.getItem('finishOrder '))
-
+let finishOrder = JSON.parse(sessionStorage.getItem('finishOrder'))
 if(finishOrder ==null)
-finishOrder = []
+finishOrder = [ ];
 
 //사전 주문 데이터
 
 let orderList = JSON.parse(sessionStorage.getItem('orderList'))
 if(orderList==null)
 orderList = [  ];
+
 let 주문상태 = [ 0 , 1 , 2 ] // 0 = 주문완료 1 = 주문취소 2 = 픽업완료
 console.log('admin js 열림 ')
 
@@ -119,7 +119,7 @@ function finishOd( finishN ){//함수 시작
 				  pay : fO.pay }
 				
 			finishOrder.push( fnOder )
-			sessionStorage.setItem('finishOrder',JSON.stringify(finishOrder))
+			sessionStorage.setItem('finishOrder' , JSON.stringify(finishOrder))
 			
 			orderList.splice( finishN , 1 )
 			sessionStorage.setItem('orderList' ,JSON.stringify(orderList) )
@@ -156,7 +156,6 @@ finishView()
 
 function finishView(){ 
 	
-	finishOrder = JSON.parse(sessionStorage.getItem('finishOrder'))
 	console.log(finishOrder)
 	let totalPrice = 0;
 	
@@ -214,3 +213,5 @@ function finishView(){
 	
 	biilSpace.scrollTop = biilSpace.scrollHeight ;
 }
+
+function reviewAdmin(){ location.href = 'adminReview.jsp' }

@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+.reviewList h1{
+	text-align: center;
+	margin:15px 0px;
+}
+
+/* 게시물 */
+.review_list_box{
+   display: flex;
+   justify-content: space-around;
+   margin-bottom: 20px;
+}
+
+.review_list{
+   border-collapse: collapse; 
+   color: black;
+   
+}
+
+.review_list td, .review_list th{
+   border-bottom: 1px solid #dadada;
+   border-top: 1px solid #dadada;
+   padding: 10px;
+}
+
+.review_list .content{
+   width:700px;
+   text-align: center;
+}
+
+.review_list .name{
+	width:100px;
+	text-align: center;
+}
+
+.review_list .star{
+	text-align: center;
+}
+
+.noa{position: relative;}
+
+.siren{
+	width: 20px;
+	position:absolute;
+	bottom: 13px; right: -20px;
+}

@@ -19,7 +19,7 @@
 			<div class="orderToplist"><h3>주문목록</h3></div>
 			<div class="orderDetail"><h3>주문상세</h3> 			
 				<button onclick="finishView()" class="billBtn" >주문관리</button>
-				<button class="review">리뷰관리</button>
+				<button onclick="reviewAdmin()" class="review">리뷰관리</button>
 			</div>
 		</div><!-- 페이지 상단 끝 -->
 		
