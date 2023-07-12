@@ -88,5 +88,9 @@ a:hover{ /* 선택자 : hover{} 해당 요소에 마우스를 올렸을때 */
 }
 
 .title{
+<<<<<<< HEAD
 	font-weight: bold;
 }
+=======
+	font-weight: bold;}
+>>>>>>> branch '박민재' of https://github.com/kkchanss/ezenteam3.git
