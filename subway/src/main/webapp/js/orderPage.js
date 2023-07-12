@@ -8,7 +8,7 @@
  console.log ('orderPage JS 실행')
  
  // ★☆★☆★☆★☆  제품 페이지에서 선택된 아이템 임시 설정. 추후에 수정해야함 ★☆★☆★☆★☆ 
- let selectIime = JSON.parse(localStorage.getItem('selectIime', selectIime));
+ let selectItem = JSON.parse(localStorage.getItem('selectItem'));
  
  
 

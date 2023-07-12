@@ -8,6 +8,10 @@ body{ background-color: #F2F2F2; }
 .wrap{ width: 1200px; margin: 0 auto;}
 
 /* ----------------------- 제품 이미지 구역 ----------------------- */
+#wrapimg{
+	text-align: center;
+	margin: 0 auto;
+}
 
 .productImgBox{
 	width: 550px;

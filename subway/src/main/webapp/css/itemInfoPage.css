@@ -14,35 +14,64 @@
 }
 
 .categorymenu_top{
-	width : 1200px; height: 100px;
-	background-color: #008939 ;	/*배경색*/
+	width : 1200px; height: 50px;
+	background-color: white ;	/*배경색*/
 	display: flex;	/*하위요소들의 가로배치*/
 	justify-content: space-around;	/*가로배치방법*/
 	text-align: center;
-	font-size: 50px;
+	border-radius: 50px;
+	font-size: 35px;
+	font-weight: bold; 
 	list-style-type: none;
+	padding-top: 50px;
+	padding-bottom: 55px;
+	margin-bottom: 10px;
+	color: #2D2D2D;
 }
 
 
 
 .categoryselect{
-	color:red !important;
+	background-color: #FFBD11;
+	border-radius: 15px;
+	padding: 5px 5px;
+	color: white;
+	width: 180px; height: 45px;
 }
 
 .kioskcontent{
 	width : 1200px; 
-	 margin: 0 auto;
-	 display: flex;
+	margin: 0 auto;
+	display: flex;
     flex-wrap: wrap;
-    
-   
 }
 
 .product img{width: 100%;}
 
 .productbox{
-	max-width :400px; height: 300px;			/* height 생략시 기본값 auto : 내용물 크기만 자동으로 늘어남*/
-	 margin-bottom: 50px;
+	max-width :400px; 
+	height: 300px;			/* height 생략시 기본값 auto : 내용물 크기만 자동으로 늘어남*/
+	margin-bottom: 50px;
 		
 }
 
+.product{
+	text-align: center;
+}
+
+.Product_Name{
+	font-size: 21px;
+	color: #2D2D2D;
+	font-weight: bold;
+}
+
+.Product_Name_English{
+	font-size: 16px;
+	color: #616161;
+}
+
+.calory{
+	font-size: 18px;
+	color: #F3D605;
+	font-weight: bold;
+}
