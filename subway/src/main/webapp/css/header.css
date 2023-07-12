@@ -19,7 +19,7 @@ a:hover{ /* 선택자 : hover{} 해당 요소에 마우스를 올렸을때 */
 #headerAll{
 	padding-top: 50px;
 	background-color: window;
-	height:250px;
+	height:400px;
 }
 
 #header{
@@ -72,12 +72,14 @@ a:hover{ /* 선택자 : hover{} 해당 요소에 마우스를 올렸을때 */
 }
 
 .sub_menu{
+	border-top : 1px  solid #eeeeee;
 	overflow: hidden;
 	opacity: 0;
 	/* display: none; */
 	margin-top: 20px;
 	line-height: 180%;
 	background-color: white;
+	font-size: 17px;
 }
 
 .headerBottom:hover .sub_menu{
@@ -87,3 +89,4 @@ a:hover{ /* 선택자 : hover{} 해당 요소에 마우스를 올렸을때 */
 
 .title{
 	font-weight: bold;
+}
