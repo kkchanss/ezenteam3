@@ -31,11 +31,12 @@ a{
 .headerTop{
    display: flex;
    justify-content: flex-end;
+   margin-bottom: 50px;
 }
 
 .header_logo{
    position: absolute;
-   right: 750px;
+   right: 850px;
    top:21px;
 }
 
@@ -80,7 +81,8 @@ a{
    position: absolute;
    top: 30px;
    width: 100vw; /* 전체 사이즈 100% */
-   padding-top: 50px;
+   padding-top: 30px;
+   padding-bottom: 50px;
 }
 
 .headerBottom:hover .sub_menuBox{

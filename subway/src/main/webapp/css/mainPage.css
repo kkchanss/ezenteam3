@@ -11,6 +11,10 @@
 	margin: 0 auto;
 }
 
+.subwaymenuImg{
+	width:350px;
+}
+
 .midUl{
 	display: flex;
 	font-weight: bold;
@@ -57,13 +61,18 @@
 	color: green;
 }
 
-/* .reviewList{
-	
-} */
+.reviewList{
+	width:1300px;
+	margin:0 auto;
+	position: relative;
+} 
 
-.reviewList h1{
-	text-align: center;
-	margin:15px 0px;
+.reviewList .subwayreviewImg{
+	position: absolute;
+	width:350px;
+	text-align: left;
+	top: 20px;
+	left:10px;
 }
 
 /* 게시물 */
@@ -71,6 +80,7 @@
    display: flex;
    justify-content: space-around;
    margin-bottom: 20px;
+   padding-top: 150px;
 }
 
 .review_list{

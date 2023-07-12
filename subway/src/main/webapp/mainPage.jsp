@@ -15,7 +15,7 @@
 		<img class="mainImg" src="img/main_h_img01.jpg"> <!-- 메인 광고 -->
 		 
 		<div class="mainMid"> <!--  메인 중간 부분 -->
-			<img src="img/main_subwayMenu.PNG">
+			<img class="subwaymenuImg" src="img/subways_menu.png">
 			<ul class="midUl">
 				<!-- <li>클래식 <sapn class="line">|</sapn></li><li>클래식 <sapn class="line">|</sapn></li>
 				<li>클래식 <sapn class="line">|</sapn></li>  <li>클래식</li> -->
@@ -33,7 +33,7 @@
 		</div> <!-- 제품들 end  -->
 		
 		<div class="reviewList"> <!-- 리뷰 페이지 / 번호 작성자 내용 별점 날짜 -->
-			<h1>한줄 리뷰</h1>
+			<img class="subwayreviewImg" src="img/subways_review.png">
 			
 			<div class="review_list_box">
             <table class="review_list"> <!-- review 리스트 -->
