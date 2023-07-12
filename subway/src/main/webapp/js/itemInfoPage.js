@@ -25,6 +25,7 @@ let MenuList = [
 let cartList = [ ]
 
 categoryPrint(0);
+categorySelect(0);
 function categoryPrint(selectNo){
 	// 함수의 목적 : 카테고리 출력 함수
 	// 함수의 사용조건 : 사용자가 웹 실행 했을 때

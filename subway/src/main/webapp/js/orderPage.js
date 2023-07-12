@@ -8,13 +8,9 @@
  console.log ('orderPage JS 실행')
  
  // ★☆★☆★☆★☆  제품 페이지에서 선택된 아이템 임시 설정. 추후에 수정해야함 ★☆★☆★☆★☆ 
-<<<<<<< HEAD
  let selectItem = JSON.parse(localStorage.getItem('selectItem'));
-=======
- let selectItem = JSON.parse(localStorage.getItem('selectItem')) ;
  
  
->>>>>>> branch '이성호' of https://github.com/kkchanss/ezenteam3.git
  
  
 
@@ -48,10 +44,10 @@
 				<div> <img src="../img/빵.PNG"/> </div>
 				<div><h3> 빵 </h3></div>
 				<div> <!-- 빵 옵션 -->
-					<input type ="radio" class="breadOption" name="bread" value="화이트"> 화이트
-					<input type ="radio" class="breadOption" name="bread" value="위트"> 위트
-					<input type ="radio" class="breadOption" name="bread" value="허니오트"> 허니오트
-					<input type ="radio" class="breadOption" name="bread" value="플랫브레드"> 플랫브레드
+					<input style='zoom:1.7;' type ="radio" class="breadOption" name="bread" value="화이트"> 화이트
+					<input style='zoom:1.7;' type ="radio" class="breadOption" name="bread" value="위트"> 위트
+					<input style='zoom:1.7;' type ="radio" class="breadOption" name="bread" value="허니오트"> 허니오트
+					<input style='zoom:1.7;' type ="radio" class="breadOption" name="bread" value="플랫브레드"> 플랫브레드
 				</div>
 			</div> <!-- 커스텀 : 빵 end -->
 			
@@ -59,10 +55,10 @@
 				<div> <img src="../img/치즈.PNG"/> </div>
 				<div><h3> 치즈 </h3></div>
 				<div> <!-- 치즈 옵션 --> 
-					<input type ="radio" class="cheeseOption" name="cheese" value="아메리칸"> 아메리칸
-					<input type ="radio" class="cheeseOption" name="cheese" value="슈레드"> 슈레드
-					<input type ="radio" class="cheeseOption" name="cheese" value="모차렐라"> 모차렐라
-					<input type ="radio" class="cheeseOption" name="cheese" value="선택 안 함"> 선택 안 함
+					<input style='zoom:1.7;' type ="radio" class="cheeseOption" name="cheese" value="아메리칸"> 아메리칸
+					<input style='zoom:1.7;' type ="radio" class="cheeseOption" name="cheese" value="슈레드"> 슈레드
+					<input style='zoom:1.7;' type ="radio" class="cheeseOption" name="cheese" value="모차렐라"> 모차렐라
+					<input style='zoom:1.7;' type ="radio" class="cheeseOption" name="cheese" value="선택 안 함"> 선택 안 함
 				</div>
 			</div> <!-- 커스텀 : 치즈 end -->
 			
@@ -70,8 +66,8 @@
 				<div> <img src="../img/토스팅.PNG"/> </div>
 				<div><h3> 토스팅 </h3></div>
 				<div> <!-- 토스팅 옵션 true, false --> 
-					<input type ="radio" class="toastingOption" name="toasting" value="토스팅"> 토스팅
-					<input type ="radio" class="toastingOption" name="toasting" value="토스팅 안 함"> 토스팅 안 함
+					<input style='zoom:1.7;' type ="radio" class="toastingOption" name="toasting" value="토스팅"> 토스팅
+					<input style='zoom:1.7;' type ="radio" class="toastingOption" name="toasting" value="토스팅 안 함"> 토스팅 안 함
 				</div>
 			</div> <!-- 커스텀 : 토스팅 end -->
 			
@@ -80,12 +76,12 @@
 				<div> <img src="../img/야채.PNG"/> </div>
 				<div><h3> 야채제외 </h3></div>
 				<div> <!-- 야채제외 옵션 --> 
-					<input type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="피망"> 피망
-					<input type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="할라피뇨"> 할라피뇨
-					<input type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="올리브"> 올리브
-					<input type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="피클"> 피클
-					<input type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="양파"> 양파
-					<input type ="checkbox" class="vegetableOption" onchange="제외이벤트()" name="vegetable" value="제외 안 함"> 제외 안 함
+					<input style='zoom:1.7;' type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="피망"> 피망
+					<input style='zoom:1.7;' type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="할라피뇨"> 할라피뇨
+					<input style='zoom:1.7;' type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="올리브"> 올리브
+					<input style='zoom:1.7;' type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="피클"> 피클
+					<input style='zoom:1.7;' type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="양파"> 양파
+					<input style='zoom:1.7;' type ="checkbox" class="vegetableOption" onchange="제외이벤트()" name="vegetable" value="제외 안 함"> 제외 안 함
 				</div>
 			</div> <!-- 커스텀 : 야채제외 end -->
 			
@@ -93,11 +89,11 @@
 				<div> <img src="../img/소스.PNG"/> </div>
 				<div><h3> 소스 </h3></div>
 				<div> <!-- 소스 옵션 --> 
-					<input type ="radio" class="sauceOption" name="sauce" value="핫칠리"> 핫칠리
-					<input type ="radio" class="sauceOption" name="sauce" value="랜치"> 랜치
-					<input type ="radio" class="sauceOption" name="sauce" value="바베큐"> 바베큐
-					<input type ="radio" class="sauceOption" name="sauce" value="스위트어니언"> 스위트어니언
-					<input type ="radio" class="sauceOption" name="sauce" value="선택 안 함"> 선택 안 함
+					<input style='zoom:1.7;' type ="radio" class="sauceOption" name="sauce" value="핫칠리"> 핫칠리
+					<input style='zoom:1.7;' type ="radio" class="sauceOption" name="sauce" value="랜치"> 랜치
+					<input style='zoom:1.7;' type ="radio" class="sauceOption" name="sauce" value="바베큐"> 바베큐
+					<input style='zoom:1.7;' type ="radio" class="sauceOption" name="sauce" value="스위트어니언"> 스위트어니언
+					<input style='zoom:1.7;' type ="radio" class="sauceOption" name="sauce" value="선택 안 함"> 선택 안 함
 				</div>
 			</div> <!-- 커스텀 : 소스 end -->`;
 		//대입	
@@ -114,10 +110,10 @@
 				<div> <img src="../img/치즈.PNG"/> </div>
 				<div><h3> 치즈 </h3></div>
 				<div> <!-- 치즈 옵션 --> 
-					<input type ="radio" class="cheeseOption" name="cheese" value="아메리칸"> 아메리칸
-					<input type ="radio" class="cheeseOption" name="cheese" value="슈레드"> 슈레드
-					<input type ="radio" class="cheeseOption" name="cheese" value="모차렐라"> 모차렐라
-					<input type ="radio" class="cheeseOption" name="cheese" value="선택 안 함"> 선택 안 함
+					<input style='zoom:1.7;' type ="radio" class="cheeseOption" name="cheese" value="아메리칸"> 아메리칸
+					<input style='zoom:1.7;' type ="radio" class="cheeseOption" name="cheese" value="슈레드"> 슈레드
+					<input style='zoom:1.7;' type ="radio" class="cheeseOption" name="cheese" value="모차렐라"> 모차렐라
+					<input style='zoom:1.7;' type ="radio" class="cheeseOption" name="cheese" value="선택 안 함"> 선택 안 함
 				</div>
 			</div> <!-- 커스텀 : 치즈 end -->	
 			
@@ -125,12 +121,12 @@
 				<div> <img src="../img/야채.PNG"/> </div>
 				<div><h3> 야채제외 </h3></div>
 				<div> <!-- 야채제외 옵션 --> 
-					<input type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="피망"> 피망
-					<input type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="할라피뇨"> 할라피뇨
-					<input type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="올리브"> 올리브
-					<input type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="피클"> 피클
-					<input type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="양파"> 양파
-					<input type ="checkbox" class="vegetableOption" onchange="제외이벤트()" name="vegetable" value="제외 안 함"> 제외 안 함
+					<input style='zoom:1.7;' type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="피망"> 피망
+					<input style='zoom:1.7;' type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="할라피뇨"> 할라피뇨
+					<input style='zoom:1.7;' type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="올리브"> 올리브
+					<input style='zoom:1.7;' type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="피클"> 피클
+					<input style='zoom:1.7;' type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="양파"> 양파
+					<input style='zoom:1.7;' type ="checkbox" class="vegetableOption" onchange="제외이벤트()" name="vegetable" value="제외 안 함"> 제외 안 함
 				</div>
 			</div> <!-- 커스텀 : 야채제외 end -->
 			
@@ -138,11 +134,11 @@
 				<div> <img src="../img/소스.PNG"/> </div>
 				<div><h3> 소스 </h3></div>
 				<div> <!-- 소스 옵션 --> 
-					<input type ="radio" class="sauceOption" name="sauce" value="핫칠리"> 핫칠리
-					<input type ="radio" class="sauceOption" name="sauce" value="랜치"> 랜치
-					<input type ="radio" class="sauceOption" name="sauce" value="바베큐"> 바베큐
-					<input type ="radio" class="sauceOption" name="sauce" value="스위트어니언"> 스위트어니언
-					<input type ="radio" class="sauceOption" name="sauce" value="선택 안 함"> 선택 안 함
+					<input style='zoom:1.7;' type ="radio" class="sauceOption" name="sauce" value="핫칠리"> 핫칠리
+					<input style='zoom:1.7;' type ="radio" class="sauceOption" name="sauce" value="랜치"> 랜치
+					<input style='zoom:1.7;' type ="radio" class="sauceOption" name="sauce" value="바베큐"> 바베큐
+					<input style='zoom:1.7;' type ="radio" class="sauceOption" name="sauce" value="스위트어니언"> 스위트어니언
+					<input style='zoom:1.7;'type ="radio" class="sauceOption" name="sauce" value="선택 안 함"> 선택 안 함
 				</div>
 			</div> <!-- 커스텀 : 소스 end -->`;
 		//대입	

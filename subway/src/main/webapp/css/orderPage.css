@@ -77,9 +77,14 @@ body{ background-color: #F2F2F2; }
 	margin-right: 10px;
 }
 .customlist input{
-	margin: 0px 10px 0px 10px;
+	margin: 0px 1px 0px 4px;
 	width: 20px;
 }
+.input[type="checkbox"]{
+	width: 10px; height: 10px;
+}
+
+
 /* ----------------------- 주문하기 버튼 ----------------------- */
 .orderBtn{
 	width: 1200px; height: 100px;
