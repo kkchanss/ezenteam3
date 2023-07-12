@@ -9,7 +9,7 @@
  
  // ★☆★☆★☆★☆  제품 페이지에서 선택된 아이템 임시 설정. 추후에 수정해야함 ★☆★☆★☆★☆ 
  /*let selectIime = JSON.parse(localStorage.getItem('selectIime', selectIime));*/
- let selectItem = {category: 0, img: 'eggmayo.png', product: '에그마요', product_English: 'eggmayo', calory: '416kcal', pay: 5500}
+ let selectItem = {category: 0, img: 'steak_n_cheese_avocado_wrap.jpg', product: '스테이크&치즈아보카도랩', product_English: '스테이크&치즈아보카도랩', calory: '416kcal', pay: 5500}
  
 
  // -------------------------출력--------------------------------------------------
@@ -22,7 +22,10 @@
 	 let productinfo = document.querySelector('.productinfo')
 	 //무엇
 	 let html = `<div class="productImgBox"><img class="productImg" src="../img/${selectItem.img}"/></div>
-			<div class="productNameBox"><h3 class="productName"> ${selectItem.product} </h3></div>`
+				 <div class="productNameBox"><h3 class="productName"> ${selectItem.product} </h3></div>
+				 <div class="productNameEnglishBox"><p class="productEnglish"> ${selectItem.product_English} </p></div>
+				 <div class="productCaloryBox"><h3 class="productCalory"> ${selectItem.calory} </h3></div>
+				 `
 	 //대입
 	 productinfo.innerHTML = html 
 	 
@@ -71,12 +74,12 @@
 				<div> <img src="../img/야채.PNG"/> </div>
 				<div><h3> 야채제외 </h3></div>
 				<div> <!-- 야채제외 옵션 --> 
-					<input type ="checkbox" class="vegetableOption" name="vegetable" value="피망"> 피망
-					<input type ="checkbox" class="vegetableOption" name="vegetable" value="할라피뇨"> 할라피뇨
-					<input type ="checkbox" class="vegetableOption" name="vegetable" value="올리브"> 올리브
-					<input type ="checkbox" class="vegetableOption" name="vegetable" value="피클"> 피클
-					<input type ="checkbox" class="vegetableOption" name="vegetable" value="양파"> 양파
-					<input type ="radio" class="vegetableOption" name="vegetable" value="제외 안 함"> 제외 안 함
+					<input type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="피망"> 피망
+					<input type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="할라피뇨"> 할라피뇨
+					<input type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="올리브"> 올리브
+					<input type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="피클"> 피클
+					<input type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="양파"> 양파
+					<input type ="checkbox" class="vegetableOption" onchange="제외이벤트()" name="vegetable" value="제외 안 함"> 제외 안 함
 				</div>
 			</div> <!-- 커스텀 : 야채제외 end -->
 			
@@ -116,12 +119,12 @@
 				<div> <img src="../img/야채.PNG"/> </div>
 				<div><h3> 야채제외 </h3></div>
 				<div> <!-- 야채제외 옵션 --> 
-					<input type ="checkbox" class="vegetableOption" name="vegetable" value="피망"> 피망
-					<input type ="checkbox" class="vegetableOption" name="vegetable" value="할라피뇨"> 할라피뇨
-					<input type ="checkbox" class="vegetableOption" name="vegetable" value="올리브"> 올리브
-					<input type ="checkbox" class="vegetableOption" name="vegetable" value="피클"> 피클
-					<input type ="checkbox" class="vegetableOption" name="vegetable" value="양파"> 양파
-					<input type ="radio" name="vegetable" class="vegetableOption"> 제외 안 함
+					<input type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="피망"> 피망
+					<input type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="할라피뇨"> 할라피뇨
+					<input type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="올리브"> 올리브
+					<input type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="피클"> 피클
+					<input type ="checkbox" class="vegetableOption" onchange="선택이벤트()" name="vegetable" value="양파"> 양파
+					<input type ="checkbox" class="vegetableOption" onchange="제외이벤트()" name="vegetable" value="제외 안 함"> 제외 안 함
 				</div>
 			</div> <!-- 커스텀 : 야채제외 end -->
 			
@@ -145,6 +148,47 @@
 	 orderBtnBox.innerHTML = `<button onclick="order()" class="orderBtn"> 주문하기 </button>`;
 	 
  }//f e
+ 
+ 
+ 
+ function 제외이벤트(){
+    
+    let vegetableInputs = [];
+    vegetableInputs = document.querySelectorAll('input[name="vegetable"]:checked');
+    // 제외 안함이 체크 되면 다른 체크박스 체크 지우기
+    for( let i = 0 ; i<vegetableInputs.length; i++ ){
+        if( vegetableInputs[i].value == '제외 안 함' ){
+           for( let j = 0 ; j<vegetableInputs.length; j++ ){ 
+              vegetableInputs[j].checked = false;
+           }
+           console.log( vegetableInputs )
+           vegetableInputs[i].checked = true;
+           break;
+        }
+    }
+ }
+ function 선택이벤트(){
+	let vegetableInputs = [];
+    vegetableInputs = document.querySelectorAll('input[name="vegetable"]:checked');
+	// 제외 안함이 체크되어 있는데 다른 항목에 체크되면 제외 안함 체크 풀기
+    for( let i = 0 ; i<vegetableInputs.length; i++ ){
+        if( vegetableInputs[i].value == '피망' || 
+        	vegetableInputs[i].value == '할라피뇨' || 
+        	vegetableInputs[i].value == '올리브' || 
+        	vegetableInputs[i].value == '피클' || 
+        	vegetableInputs[i].value == '양파' ){
+           for( let j = 0 ; j<vegetableInputs.length; j++ ){ 
+			   if(vegetableInputs[j].value == '제외 안 함')
+              vegetableInputs[j].checked = false;
+           }
+           console.log( vegetableInputs )
+           vegetableInputs[i].checked = true;
+           break;
+        }
+    }
+ }
+ 
+ 
  
  
  // -------------------------주문하기--------------------------------------------------
@@ -174,9 +218,21 @@
 	 let toasting = '';
 	 if(category == 0) 					{toasting = document.querySelector('input[name="toasting"]:checked').value;}
 	 console.log (toasting)
+	 
 	 let vegetable = [];
-	 if(category == 0 || category == 2) {vegetable = document.querySelectorAll('input[name="vegetable"]:checked').value;}
-	 console.log (vegetable)
+     let vegetableInputs = [];
+     if(category == 0 || category == 2) {vegetableInputs = document.querySelectorAll('input[name="vegetable"]:checked')}
+     console.log (vegetableInputs)
+    
+     for( let i = 0 ; i<vegetableInputs.length; i++ ){
+        if( vegetableInputs[i].value == '제외 안 함' ){
+           vegetable.splice( 0 ); // 배열 초기화
+           break;
+        }
+        vegetable.push ( vegetableInputs[i].value )
+     }
+     console.log (vegetable)
+	
 	 let sauce = '';
 	 if(category == 0 || category == 2) {sauce = document.querySelector('input[name="sauce"]:checked').value;}
 	 console.log (sauce)
