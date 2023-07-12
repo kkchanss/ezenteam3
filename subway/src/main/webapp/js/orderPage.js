@@ -8,14 +8,9 @@
  console.log ('orderPage JS 실행')
  
  // ★☆★☆★☆★☆  제품 페이지에서 선택된 아이템 임시 설정. 추후에 수정해야함 ★☆★☆★☆★☆ 
-<<<<<<< HEAD
+
  let selectItem = JSON.parse(localStorage.getItem('selectItem'));
-=======
- let selectItem = JSON.parse(localStorage.getItem('selectItem')) ;
- 
- 
->>>>>>> branch '이성호' of https://github.com/kkchanss/ezenteam3.git
- 
+
  
 
  // -------------------------출력--------------------------------------------------
