@@ -82,7 +82,7 @@ function productPrint(categoryNo){	// 제품 출력 함수
 
 function productSelect( productNo ){ 
    console.log(MenuList[productNo].product);
-   localStorage.setItem('selectIime' , JSON.stringify(
+   localStorage.setItem('selectItem' , JSON.stringify(
       
       {category: MenuList[productNo].category, 
       img: MenuList[productNo].img,
