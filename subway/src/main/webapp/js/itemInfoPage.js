@@ -67,7 +67,7 @@ function productPrint(categoryNo){	// 제품 출력 함수
 				
 				
 				html+=
-					`<div onclick="" class="productbox">
+					`<div onclick="productSelect(${i})" class="productbox">
 							<div  class="product">
 								<img src="../img/${MenuList[i].img}">
 								<div class="Product_Name">${MenuList[i].product}</div>
