@@ -22,21 +22,6 @@
 					<li onclick="categoryPrint(2)"> 샐러드 </li>
 				</ul><!-- 상단카테고리 끝 -->
 			</div><!-- 상단카테고리 end -->
-			
-			<!--<div class="category_Sub">
-				<ul class="categorymenu_Sub">
-					<li> 클래식 </li>
-					<li> 프리미엄 </li>
-				</ul>--><!-- 하단카테고리 샌드위치 end -->
-				<!--<ul>
-					<li> 시그니처랩 </li>
-					<li> 미니랩 </li>
-				</ul>
-				<ul>
-					<li> 클래식 </li>
-					<li> 프리미엄 </li>
-				</ul>
-			</div>--><!-- 하단카테고리 end -->
 		</div><!-- 카테고리 end -->
 		
 		<div class="kioskcontent"><!-- 제품구역 시작 -->

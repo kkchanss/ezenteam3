@@ -44,7 +44,7 @@ function categoryPrint(selectNo){
 	categorymenu_top.innerHTML = html;
 }
 
-function categorySelect(selectNo){
+function categorySelect(selectNo){	// 카테고리 클릭 함수
 	console.log(selectNo);
 	let category_topli = document.querySelectorAll('.categorymenu_top li');
 	console.log(category_topli)
@@ -59,7 +59,7 @@ function categorySelect(selectNo){
 	productPrint(selectNo);
 }
 
-function productPrint(categoryNo){
+function productPrint(categoryNo){	// 제품 출력 함수
 	let kioskcontent = document.querySelector('.kioskcontent');	console.log(kioskcontent)
 	let html = '';	console.log(html)
 		for(let i= 0; i<MenuList.length; i++){
@@ -67,7 +67,7 @@ function productPrint(categoryNo){
 				
 				
 				html+=
-					`<div class="productbox">
+					`<div onclick="" class="productbox">
 							<div  class="product">
 								<img src="../img/${MenuList[i].img}">
 								<div class="Product_Name">${MenuList[i].product}</div>
@@ -79,6 +79,11 @@ function productPrint(categoryNo){
 	kioskcontent.innerHTML = html;	console.log(productbox)
 }
 
+function productSelect( productNo ){ 
+	console.log(MenuList[productNo].product);
+	cartList.push(productNo); console.log(cartList);
+	
+}
 
 
 
