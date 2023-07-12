@@ -9,7 +9,7 @@
  
  // ★☆★☆★☆★☆  제품 페이지에서 선택된 아이템 임시 설정. 추후에 수정해야함 ★☆★☆★☆★☆ 
  /*let selectIime = JSON.parse(localStorage.getItem('selectIime', selectIime));*/
- let selectItem = {category: 2, img: 'S_spicy_italian.png', product: '스파이시이탈리안', product_English: 'S_spicy_italian', calory: '416kcal', pay: 8700}
+ let selectItem = {category: 0, img: 'steak_n_cheese_avocado_wrap.jpg', product: '스테이크&치즈아보카도랩', product_English: '스테이크&치즈아보카도랩', calory: '416kcal', pay: 5500}
  
 
  // -------------------------출력--------------------------------------------------
@@ -225,7 +225,7 @@
      console.log (vegetableInputs)
     
      for( let i = 0 ; i<vegetableInputs.length; i++ ){
-        if( vegetableInputs[i].value = '제외 안 함' ){
+        if( vegetableInputs[i].value == '제외 안 함' ){
            vegetable.splice( 0 ); // 배열 초기화
            break;
         }
