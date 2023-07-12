@@ -6,6 +6,11 @@
 	justify-content: space-around;
 }
 
+.mainImg{
+	width:100%;
+	margin: 0 auto;
+}
+
 .midUl{
 	display: flex;
 	font-weight: bold;
