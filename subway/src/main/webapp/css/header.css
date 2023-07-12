@@ -1,107 +1,104 @@
 @charset "UTF-8";
 *{
-	padding:0px; margin: 0px;
+   padding:0px; margin: 0px;
 }
 
 li{
-	list-style-type: none;
+   list-style-type: none;
 }
 
 a{
-	color:black; text-decoration: none;
+   color:black; text-decoration: none;
 }
 
 /* 액션 속성 */
-a:hover{ /* 선택자 : hover{} 해당 요소에 마우스를 올렸을때 */
-	color:green;
-	border-bottom: 1px solid green;
+.headerBottom a:hover{ /* 선택자 : hover{} 해당 요소에 마우스를 올렸을때 */
+   color:green;
+   border-bottom: 1px solid green;
 }
 #headerAll{
-	padding-top: 50px;
-	background-color: window;
-	height:150px;
+   padding-top: 50px;
+   background-color: window;
+   height:150px;
 }
 
 #header{
-	width:1200px;
-	margin: 0 auto;
-	margin-bottom: 200px;
+   width:1200px;
+   margin: 0 auto;
+   margin-bottom: 200px;
 }
 
 .headerTop{
-	position: relative;
-	display: flex;
-	justify-content: flex-end;
+   display: flex;
+   justify-content: flex-end;
 }
 
 .header_logo{
-	position:absolute;
-	left: 450px;
+   position: absolute;
+   right: 850px;
+   top:21px;
 }
 
 .header_right{
-	position: absolute;
-	left : 1000px;
-	font-size: 12px;
+   font-size: 12px;
 }
 
 .header_right .point{
-	font-size: 30px;
-	color:#eeeeee;
-	position: relative;
-	top: 5px;
+   font-size: 30px;
+   color:#eeeeee;
+   position: relative;
+   top: 5px;
 }
 
 .header_right .global_icon{
-	position: relative;
-	top: 12px;
+   position: relative;
+   top: 12px;
 }
 
-#nav{
-	position: absolute;
-	width:100%;
-	text-align:center;
-	font-size: 25px;
-	top:140px;
-	height:50px;
-	right:20px;
+ .headerBottom{
+   font-size: 25px;
+   display: flex;
+   justify-content: space-around;
+   position: relative;
 }
-
-#nav li{
-		vertical-align: top;
-}
-/* .headerBottom{
-	font-size: 25px;
-	margin-top: 100px;
-	display: flex;
-	justify-content: space-around;
-} */
 
 .drop_menu{
-	width:200px;
-	height:150px;
-	display: inline-block;
-	margin-left: 10px;
-	position: relative; /* 부모요소에 상대배치 */
+   width:200px;
+   display: inline-block;
+   margin-left: 10px;
+   position: relative; /* 부모요소에 상대배치 */
 }
 
-.sub_menu{
-	border-top : 1px  solid #eeeeee;
-	overflow: hidden;
-	opacity: 0;
-	/* display: none; */
-	margin-top: 20px;
-	line-height: 180%;
-	background-color: white;
-	font-size: 17px;
+.sub_menuBox{
+	z-index: 50;
+   margin-left: 20px;
+   display: none;
+   line-height: 180%;
+   background-color: white;
+   font-size: 17px;
+   
+   position: absolute;
+   top: 30px;
+   width: 100vw; /* 전체 사이즈 100% */
+   padding-top: 50px;
 }
 
-#nav:hover .sub_menu{
-	/* display: block; */
-	overflow: visible;
-	opacity: 1;
+.headerBottom:hover .sub_menuBox{
+   display: flex;
+   justify-content: center;
 }
 
 .title{
-	font-weight: bold;
+   font-weight: bold;
+}
+
+.sub_menuDiv{
+	width:1200px;
+	display: flex;
+	justify-content: space-around;
+}
+
+.sub_menu{
+	
+	width:200px;
 }
