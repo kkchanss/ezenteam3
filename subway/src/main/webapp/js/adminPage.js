@@ -7,13 +7,13 @@ finishOrder = [
 { ono : 1, name : '김찬희', phone : '01012341234', date : '2023-07-05 13:30', product : '에그마요', pay : '5500' }
 ,{ ono : 2, name : '신예지', phone : '01011111234', date : '2023-07-05 15:30', product : '치킨 베이컨 미니 랩 ', pay : '3500' }
 ,{ ono : 3, name : '박민재', phone : '01022221234', date : '2023-07-06 11:30', product : '이탈리안 비엔티 샐러드', pay : '8500' }
-,{ ono : 3, name : '이성호', phone : '01033331234', date : '2023-07-06 17:30', product : '이탈리안 비엔티 샐러드', pay : '8500' }
-,{ ono : 2, name : '신예지', phone : '01011111234', date : '2023-07-05 15:30', product : '치킨 베이컨 미니 랩 ', pay : '3500' }
-,{ ono : 3, name : '박민재', phone : '01022221234', date : '2023-07-06 11:30', product : '이탈리안 비엔티 샐러드', pay : '8500' }
-,{ ono : 3, name : '이성호', phone : '01033331234', date : '2023-07-06 17:30', product : '이탈리안 비엔티 샐러드', pay : '8500' }
-,{ ono : 2, name : '신예지', phone : '01011111234', date : '2023-07-05 15:30', product : '치킨 베이컨 미니 랩 ', pay : '3500' }
-,{ ono : 3, name : '박민재', phone : '01022221234', date : '2023-07-06 11:30', product : '이탈리안 비엔티 샐러드', pay : '8500' }
-,{ ono : 3, name : '이성호', phone : '01033331234', date : '2023-07-06 17:30', product : '이탈리안 비엔티 샐러드', pay : '8500' }
+,{ ono : 4, name : '이성호', phone : '01033331234', date : '2023-07-06 17:30', product : '이탈리안 비엔티 샐러드', pay : '8500' }
+,{ ono : 5, name : '신예지', phone : '01011111234', date : '2023-07-05 15:30', product : '치킨 베이컨 미니 랩 ', pay : '3500' }
+,{ ono : 6, name : '박민재', phone : '01022221234', date : '2023-07-06 11:30', product : '이탈리안 비엔티 샐러드', pay : '8500' }
+,{ ono : 7, name : '이성호', phone : '01033331234', date : '2023-07-06 17:30', product : '이탈리안 비엔티 샐러드', pay : '8500' }
+,{ ono : 8, name : '신예지', phone : '01011111234', date : '2023-07-05 15:30', product : '치킨 베이컨 미니 랩 ', pay : '3500' }
+,{ ono : 9, name : '박민재', phone : '01022221234', date : '2023-07-06 11:30', product : '이탈리안 비엔티 샐러드', pay : '8500' }
+,{ ono : 10, name : '이성호', phone : '01033331234', date : '2023-07-06 17:30', product : '이탈리안 비엔티 샐러드', pay : '8500' }
 	
 	
 ];
@@ -45,7 +45,7 @@ function order() {//order() 함수 시작
 					<ul>${orderList[i].product}</ul>
 					<button onclick="finishOd( ${i} )" class="orFinish">완료</button>
 				</div>	
-				`
+				`//하위 함수들이 인수를 받아 각각의 기능 구현 
 	}//for 끝
 		obList.innerHTML = html	
 }//order() 함수 끝
