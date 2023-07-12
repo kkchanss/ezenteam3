@@ -68,16 +68,18 @@ function productPrint(categoryNo){
 				
 				html+=
 					`<div class="productbox">
-							<div>
+							<div  class="product">
 								<img src="../img/${MenuList[i].img}">
+								<div class="Product_Name">${MenuList[i].product}</div>
+								<div class="Product_Name_English">${MenuList[i].product_English}</div>
+								<div class="calory">${MenuList[i].calory}</div>
 							</div>
-							<div class="Product_Name">${MenuList[i].product}</div>
-							<div class="Product_Name_English">${MenuList[i].product_English}</div>
-							<div class="calory">${MenuList[i].calory}</div>
 						</div>`}
 		}	
 	kioskcontent.innerHTML = html;	console.log(productbox)
 }
+
+
 
 
 

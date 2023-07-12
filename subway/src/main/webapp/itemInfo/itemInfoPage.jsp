@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Subway Product Information</title>
+	<link href="../css/header.css" rel="stylesheet">
+	<link href="../css/footer.css" rel="stylesheet">
 	<link href="/subway/css/itemInfoPage.css" rel="stylesheet">
 </head>
 <body>
