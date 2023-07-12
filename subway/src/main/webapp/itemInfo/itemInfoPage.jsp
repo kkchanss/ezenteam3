@@ -9,12 +9,13 @@
 	<link href="../css/footer.css" rel="stylesheet">
 	<link href="/subway/css/itemInfoPage.css" rel="stylesheet">
 </head>
-<body>
+<body style="background-color: #F2F2F2;">
 
 	<%@ include file="../header.jsp" %>
 	
 	<div class="wrap"><!-- 제품 정보 페이지 시작 -->
 		<div><!-- 카테고리 시작 -->
+			<img id="wrapimg" src="\subway\img\main_h_img02.jpg" style="width: 100%;"/> 
 			<div class="category_top"><!-- 상단카테고리 시작 -->
 				<ul class="categorymenu_top"><!-- 상단카테고리 시작 -->
 					<li onclick="categoryPrint(0)" class="categoryselect"> 샌드위치 </li>
