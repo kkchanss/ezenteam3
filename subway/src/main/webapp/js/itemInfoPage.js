@@ -6,20 +6,20 @@ let categoryList = [ '샌드위치' , '랩', '샐러드'
 ];
 
 let MenuList = [
-	{product : '에그마요', pay : 5500, img : 'eggmayo.png', category :0 },
-	{product : '참치', pay : 5800, img : 'tuna.png', category :0 },
-	{product : '햄', pay : 5800, img : 'ham.png', category : 0},
-	{product : '쉬림프', pay : 7600, img : 'shrimp.png', category : 0},
-	{product : '바비큐', pay : 7300, img : 'BBQ.png', category : 0},
-	{product : '치킨데리야끼', pay : 7000, img : 'chicken_teriyaki.png', category : 0},
-	{product : '스테이크&치즈아보카도랩', pay : 5000, img : 'steak_n_cheese_avocado_wrap.jpg', category :1 },
-	{product : '쉬림프 에그마요 랩', pay : 4600, img : 'shrimp_egg_mayo_wrap.jpg', category : 1},
-	{product : '치킨 베이컨 미니 랩', pay : 3500, img : 'chicken_bacon_mini_wrap.jpg', category : 1},
-	{product : '이탈리안 비엠티', pay : 8500, img : 'S_italian_BMT.png', category :2 },
-	{product : '비엘티', pay : 8000, img : 'S_BLT.png', category :2 },
-	{product : '햄', pay : 7600, img : 'S_ham.png', category :2 },
-	{product : '풀드포크바비큐', pay : 9000, img : 'S_pulled_pork_BBQ.png', category : 2},
-	{product : '스파이시 이탈리안', pay : 8700, img : 'S_spicy_italian.png', category : 2},
+	{product : '에그마요',				product_English : 'eggmayo' ,					calory : '416kcal', pay : 5500, img : 'eggmayo.png', category :0 },
+	{product : '참치',				product_English : 'tuna',						calory : '316kcal', pay : 5800, img : 'tuna.png', category :0 },
+	{product : '햄',					product_English : 'ham',						calory : '262kcal', pay : 5800, img : 'ham.png', category : 0},
+	{product : '쉬림프',				product_English : 'shrimp',						calory : '241kcal', pay : 7600, img : 'shrimp.png', category : 0},
+	{product : '바비큐',				product_English : 'BBQ',						calory : '372kcal', pay : 7300, img : 'BBQ.png', category : 0},
+	{product : '치킨데리야끼', 			product_English : 'chicken_teriyaki',			calory : '314kcal', pay : 7000, img : 'chicken_teriyaki.png', category : 0},
+	{product : '스테이크&치즈아보카도랩',	product_English :'steak_n_cheese_avocado_wrap',	calory : '478kcal', pay : 5000, img : 'steak_n_cheese_avocado_wrap.jpg', category :1 },
+	{product : '쉬림프 에그마요 랩', 		product_English: 'shrimp_egg_mayo_wrap',		calory : '516kcal', pay : 4600, img : 'shrimp_egg_mayo_wrap.jpg', category : 1},
+	{product : '치킨 베이컨 미니 랩',	 	product_English : 'chicken_bacon_mini_wrap' ,	calory : '391kcal', pay : 3500, img : 'chicken_bacon_mini_wrap.jpg', category : 1},
+	{product : '이탈리안 비엠티', 		product_English: 'S_italian_BMT',				calory : '226kcal', pay : 8500, img : 'S_italian_BMT.png', category :2 },
+	{product : '비엘티',				product_English : 'S_BLT',						calory : '153kcal', pay : 8000, img : 'S_BLT.png', category :2 },
+	{product : '햄', 				product_English : 'S_ham',						calory : '99.5kcal',pay : 7600, img : 'S_ham.png', category :2 },
+	{product : '풀드포크바비큐',			product_English : 'S_pulled_pork_BBQ',			calory : '165kcal', pay : 9000, img : 'S_pulled_pork_BBQ.png', category : 2},
+	{product : '스파이시 이탈리안', 		product_English: 'S_spicy_italian',				calory : '302kcal', pay : 8700, img : 'S_spicy_italian.png', category : 2},
 ]
 
 let cartList = [ ]
@@ -57,6 +57,22 @@ function categorySelect(selectNo){
 		}
 	}
 	productPrint(selectNo);
+}
+
+function productPrint(){
+	let productbox = document.querySelector('.productbox')
+	let html = '';
+		for(let i= 0; i<MenuList.length; i++){
+			html+=`<div class="productbox">
+						<div>
+							<img src="../img/${MenuList[i].img}">
+						</div>
+						<div class="Product_Name">${MenuList[i].product}</div>
+						<div class="Product_Name_English">${MenuList[i].Product_English}</div>
+						<div class="calory">${MenuList[i].calory}</div>
+					</div>`
+		}
+	productbox.innerHTML = html
 }
 
 //let selectIime = JSON.parse(localStorage.setItem('selectIime', selectIime));
