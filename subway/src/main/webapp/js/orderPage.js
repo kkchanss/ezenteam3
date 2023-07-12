@@ -9,7 +9,7 @@
  
  // ★☆★☆★☆★☆  제품 페이지에서 선택된 아이템 임시 설정. 추후에 수정해야함 ★☆★☆★☆★☆ 
  /*let selectIime = JSON.parse(localStorage.getItem('selectIime', selectIime));*/
- let selectItem = {category: 0, img: 'eggmayo.png', product: '에그마요', pay: 5500}
+ let selectItem = {category: 0, img: 'eggmayo.png', product: '에그마요', product_English: 'eggmayo', calory: '416kcal', pay: 5500}
  
 
  // -------------------------출력--------------------------------------------------
@@ -175,7 +175,7 @@
 	 if(category == 0) 					{toasting = document.querySelector('input[name="toasting"]:checked').value;}
 	 console.log (toasting)
 	 let vegetable = [];
-	 if(category == 0 || category == 2) {vegetable = document.querySelector('input[name="vegetable"]:checked').value;}
+	 if(category == 0 || category == 2) {vegetable = document.querySelectorAll('input[name="vegetable"]:checked').value;}
 	 console.log (vegetable)
 	 let sauce = '';
 	 if(category == 0 || category == 2) {sauce = document.querySelector('input[name="sauce"]:checked').value;}
