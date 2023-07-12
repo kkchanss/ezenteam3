@@ -38,15 +38,7 @@
 		</div><!-- 카테고리 end -->
 		
 		<div class="kioskcontent"><!-- 제품구역 시작 -->
-			<div class="productbox"><!-- 제품구역 1개 -->
-				<div><!-- 제품사진 시작 -->
-					<img src="../img/eggmayo.png">
-				</div><!-- 제품사진 끝 -->
-				<div class="Product_Name">에그마요</div>
-				<div class="Product_Name_English">Egg Mayo</div>
-				<div class="calory">416 Kcal</div>
-			</div><!-- 제품구역 1개 끝 -->
-		
+			<!-- productPrint 함수에서 출력 -->
 		</div><!-- 제품구역 end -->
 
 	</div><!-- 제품 정보 페이지 end -->
