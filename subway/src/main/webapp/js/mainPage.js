@@ -19,9 +19,21 @@ let mainMenuList = [
 	 				{ name : '이탈리안BMT', content: "페퍼로니, 살라미 그리고 햄이 만들어내는 최상의 조화!", img : 'S_pulled_pork_BBQ.png', category : 3},
 	 				{ name : '스파이시 이탈리안', content: "살라미, 페퍼로니가 입안 한가득! 진짜 이탈리아의 맛 가득한 샐러드", img : 'S_spicy_italian.png', category : 3}
  					];
- 
+
 // 리뷰 리스트 가져오기
 let reviewList = JSON.parse(sessionStorage.getItem('reviewList'));
+if(reviewList == null) {
+	reviewList = [
+		{no : 1, name : '찬희', content : '에그마요 맛있네요', star: 4, 
+		time : `2023-07-10`, menu : '에그마요 샌드위치'},
+		{no : 2, name : '민재', content : '서브웨이 최고', star: 5, 
+		time : `2023-07-11`, menu : '햄 샐러드'},
+		{no : 3, name : '예지', content : '제 취향은 아니네요', star: 2, 
+		time : `2023-07-11`, menu : '참치 샌드위치'},
+		{no : 4, name : '성호', content : '야채 냠냠', star: 3, 
+		time : `2023-07-12`, menu : '비엘티 샐러드'}
+	]
+}
 console.log("reviewList : " + reviewList);
 /*let reviewList = [
 	{ no : 1, name : '찬희', content : '사장님이 친절해요', star : 3, time : '2023-07-09'},
@@ -141,3 +153,5 @@ let viewhimg = 0;
 	 }
 	 review_list.innerHTML = html;
  }
+ 
+ 
