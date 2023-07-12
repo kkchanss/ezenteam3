@@ -3,7 +3,14 @@ let admin = { id : 'admin', pw : 1234};
 
 let finishOrder = JSON.parse(sessionStorage.getItem('finishOrder'))
 if(finishOrder ==null)
-finishOrder = [ ];
+finishOrder = [ 
+{ ono : 1, name : '김찬희', phone : '01012341234', date : '2023-07-05 13:30', product : '에그마요', pay : '5500' }
+,{ ono : 2, name : '신예지', phone : '01011111234', date : '2023-07-05 15:30', product : '치킨 베이컨 미니 랩 ', pay : '3500' }
+,{ ono : 3, name : '박민재', phone : '01022221234', date : '2023-07-06 11:30', product : '이탈리안 비엔티 샐러드', pay : '8500' }
+,{ ono : 3, name : '이성호', phone : '01033331234', date : '2023-07-06 17:30', product : '이탈리안 비엔티 샐러드', pay : '8500' }
+	
+	
+];
 
 //사전 주문 데이터
 
