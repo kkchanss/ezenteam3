@@ -59,6 +59,7 @@ function categorySelect(selectNo){	// 카테고리 클릭 함수
 	productPrint(selectNo);
 }
 
+productPrint(0);
 function productPrint(categoryNo){	// 제품 출력 함수
 	let kioskcontent = document.querySelector('.kioskcontent');	console.log(kioskcontent)
 	let html = '';	console.log(html)
@@ -80,9 +81,17 @@ function productPrint(categoryNo){	// 제품 출력 함수
 }
 
 function productSelect( productNo ){ 
-	console.log(MenuList[productNo].product);
-	cartList.push(productNo); console.log(cartList);
-	
+   console.log(MenuList[productNo].product);
+   localStorage.setItem('selectIime' , JSON.stringify(
+      
+      {category: MenuList[productNo].category, 
+      img: MenuList[productNo].img,
+       product: MenuList[productNo].product, 
+       product_English: MenuList[productNo].product_English,
+        calory: MenuList[productNo].calory,
+         pay: MenuList[productNo].pay}
+      
+     ) )
 }
 
 
