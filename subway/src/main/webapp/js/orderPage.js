@@ -9,7 +9,7 @@
  
  // ★☆★☆★☆★☆  제품 페이지에서 선택된 아이템 임시 설정. 추후에 수정해야함 ★☆★☆★☆★☆ 
  /*let selectIime = JSON.parse(localStorage.getItem('selectIime', selectIime));*/
- let selectItem = {category: 0, img: 'eggmayo.png', product: '에그마요', product_English: 'eggmayo', calory: '416kcal', pay: 5500}
+ let selectItem = {category: 2, img: 'S_spicy_italian.png', product: '스파이시이탈리안', product_English: 'S_spicy_italian', calory: '416kcal', pay: 8700}
  
 
  // -------------------------출력--------------------------------------------------
@@ -22,7 +22,10 @@
 	 let productinfo = document.querySelector('.productinfo')
 	 //무엇
 	 let html = `<div class="productImgBox"><img class="productImg" src="../img/${selectItem.img}"/></div>
-			<div class="productNameBox"><h3 class="productName"> ${selectItem.product} </h3></div>`
+				 <div class="productNameBox"><h3 class="productName"> ${selectItem.product} </h3></div>
+				 <div class="productNameEnglishBox"><p class="productEnglish"> ${selectItem.product_English} </p></div>
+				 <div class="productCaloryBox"><h3 class="productCalory"> ${selectItem.calory} </h3></div>
+				 `
 	 //대입
 	 productinfo.innerHTML = html 
 	 
