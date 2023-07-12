@@ -1,8 +1,9 @@
 @charset "UTF-8";
 
 .wrap{
-	width: 1200px;
+	width: 500px;
 	margin: 0 auto;
+	margin-top: 50px;
 }
 
 .reviewTitle{
@@ -20,6 +21,11 @@
 	border-bottom: 1px solid black;
 	min-width: 10px;
 	
+}
+
+.menuSelect{
+	padding: 10px;
+	border: none;
 }
 
 .reviewContent h3{
