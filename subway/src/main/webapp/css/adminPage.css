@@ -162,11 +162,19 @@
 
 .biilSpace{
 	width: 320px;
-	height: 478px;
+	height: 239px;
 	margin-top: 30px;
 	overflow: scroll;
 	
 }
+
+.biilDetali{
+	width: 320px;
+	height: 239px;
+	overflow: scroll;
+}
+
+.biilDetali::-webkit-scrollbar {display:none;}
 
 .biilSpace::-webkit-scrollbar {display:none;}
 

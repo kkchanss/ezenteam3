@@ -8,6 +8,12 @@ finishOrder = [
 ,{ ono : 2, name : '신예지', phone : '01011111234', date : '2023-07-05 15:30', product : '치킨 베이컨 미니 랩 ', pay : '3500' }
 ,{ ono : 3, name : '박민재', phone : '01022221234', date : '2023-07-06 11:30', product : '이탈리안 비엔티 샐러드', pay : '8500' }
 ,{ ono : 3, name : '이성호', phone : '01033331234', date : '2023-07-06 17:30', product : '이탈리안 비엔티 샐러드', pay : '8500' }
+,{ ono : 2, name : '신예지', phone : '01011111234', date : '2023-07-05 15:30', product : '치킨 베이컨 미니 랩 ', pay : '3500' }
+,{ ono : 3, name : '박민재', phone : '01022221234', date : '2023-07-06 11:30', product : '이탈리안 비엔티 샐러드', pay : '8500' }
+,{ ono : 3, name : '이성호', phone : '01033331234', date : '2023-07-06 17:30', product : '이탈리안 비엔티 샐러드', pay : '8500' }
+,{ ono : 2, name : '신예지', phone : '01011111234', date : '2023-07-05 15:30', product : '치킨 베이컨 미니 랩 ', pay : '3500' }
+,{ ono : 3, name : '박민재', phone : '01022221234', date : '2023-07-06 11:30', product : '이탈리안 비엔티 샐러드', pay : '8500' }
+,{ ono : 3, name : '이성호', phone : '01033331234', date : '2023-07-06 17:30', product : '이탈리안 비엔티 샐러드', pay : '8500' }
 	
 	
 ];
@@ -191,6 +197,12 @@ function finishView(){
 							
 				</table>
 			</div>
+			<div class="biilDetali">
+				<table class="Dspace">
+							
+							
+				</table>
+			</div>
 			<div>
 				<table class="totalMoney">
 					<tr>
@@ -208,7 +220,7 @@ function finishView(){
 	for(let i = 0 ; i<finishOrder.length ; i++){
 		let html = ``
 		html = `
-				<tr>
+				<tr onclick="finDetali( ${i} )">
 					<td>${i+1}</td>
 					<td>${finishOrder[i].product}</td>
 					<td>${parseInt(finishOrder[i].pay).toLocaleString()} 원</td>
@@ -221,6 +233,42 @@ function finishView(){
 	let biilSpace = document.querySelector('.biilSpace')
 	
 	biilSpace.scrollTop = biilSpace.scrollHeight ;
+}
+
+function finDetali( fD ){
+	
+	let Dspace= document.querySelector('.Dspace')
+	
+	let html = ``;
+	
+	for(let i = 0 ; i<finishOrder.length ; i++ ){
+		if(i==fD){
+			html +=`
+					<tr>
+						<td>주문번호<td><td>:</td><td>${finishOrder[fD].ono}<td>
+					</tr>
+					<tr>
+						<td>주문자<td><td>:</td><td>${finishOrder[fD].name}<td>
+					</tr>
+					<tr>
+						<td>전화번호<td><td>:</td><td>${finishOrder[fD].phone}<td>
+					</tr>
+					<tr>
+						<td>주문시간<td><td>:</td><td>${finishOrder[fD].date}<td>
+					</tr>
+					<tr>
+						<td>주문메뉴<td><td>:</td><td>${finishOrder[fD].product}<td>
+					</tr>
+					<tr>
+						<td>결제금액<td><td>:</td><td>${finishOrder[fD].pay}<td>
+					</tr>
+					`
+			
+			break;
+		}
+			
+	}
+	Dspace.innerHTML = html;
 }
 
 function reviewAdmin(){ location.href = 'adminReview.jsp' }
