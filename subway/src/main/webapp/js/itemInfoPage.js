@@ -59,20 +59,26 @@ function categorySelect(selectNo){
 	productPrint(selectNo);
 }
 
-function productPrint(){
-	let productbox = document.querySelector('.productbox')
-	let html = '';
+function productPrint(categoryNo){
+	let kioskcontent = document.querySelector('.kioskcontent');	console.log(kioskcontent)
+	let html = '';	console.log(html)
 		for(let i= 0; i<MenuList.length; i++){
-			html+=`<div class="productbox">
-						<div>
-							<img src="../img/${MenuList[i].img}">
-						</div>
-						<div class="Product_Name">${MenuList[i].product}</div>
-						<div class="Product_Name_English">${MenuList[i].Product_English}</div>
-						<div class="calory">${MenuList[i].calory}</div>
-					</div>`
-		}
-	productbox.innerHTML = html
+			if(MenuList[i].category==categoryNo){	
+				
+				
+				html+=
+					`<div class="productbox">
+							<div>
+								<img src="../img/${MenuList[i].img}">
+							</div>
+							<div class="Product_Name">${MenuList[i].product}</div>
+							<div class="Product_Name_English">${MenuList[i].product_English}</div>
+							<div class="calory">${MenuList[i].calory}</div>
+						</div>`}
+		}	
+	kioskcontent.innerHTML = html;	console.log(productbox)
 }
+
+
 
 //let selectIime = JSON.parse(localStorage.setItem('selectIime', selectIime));

@@ -9,7 +9,7 @@
 </head>
 <body>
 
-
+	<%@ include file="../header.jsp" %>
 	
 	<div class="wrap"><!-- 제품 정보 페이지 시작 -->
 		<div><!-- 카테고리 시작 -->
@@ -44,7 +44,7 @@
 	</div><!-- 제품 정보 페이지 end -->
 	<script src="/subway/js/itemInfoPage.js" type="text/javascript"></script>
 	
-	
+	<%@ include file="/footer.jsp" %>
 	
 </body>
 </html>
