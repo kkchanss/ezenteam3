@@ -44,7 +44,7 @@ function categoryPrint(selectNo){
 	categorymenu_top.innerHTML = html;
 }
 
-function categorySelect(selectNo){
+function categorySelect(selectNo){	// 카테고리 클릭 함수
 	console.log(selectNo);
 	let category_topli = document.querySelectorAll('.categorymenu_top li');
 	console.log(category_topli)
@@ -59,20 +59,33 @@ function categorySelect(selectNo){
 	productPrint(selectNo);
 }
 
-function productPrint(){
-	let productbox = document.querySelector('.productbox')
-	let html = '';
+function productPrint(categoryNo){	// 제품 출력 함수
+	let kioskcontent = document.querySelector('.kioskcontent');	console.log(kioskcontent)
+	let html = '';	console.log(html)
 		for(let i= 0; i<MenuList.length; i++){
-			html+=`<div class="productbox">
-						<div>
-							<img src="../img/${MenuList[i].img}">
-						</div>
-						<div class="Product_Name">${MenuList[i].product}</div>
-						<div class="Product_Name_English">${MenuList[i].Product_English}</div>
-						<div class="calory">${MenuList[i].calory}</div>
-					</div>`
-		}
-	productbox.innerHTML = html
+			if(MenuList[i].category==categoryNo){	
+				
+				
+				html+=
+					`<div onclick="productSelect(${i})" class="productbox">
+							<div  class="product">
+								<img src="../img/${MenuList[i].img}">
+								<div class="Product_Name">${MenuList[i].product}</div>
+								<div class="Product_Name_English">${MenuList[i].product_English}</div>
+								<div class="calory">${MenuList[i].calory}</div>
+							</div>
+						</div>`}
+		}	
+	kioskcontent.innerHTML = html;	console.log(productbox)
 }
+
+function productSelect( productNo ){ 
+	console.log(MenuList[productNo].product);
+	cartList.push(productNo); console.log(cartList);
+	
+}
+
+
+
 
 //let selectIime = JSON.parse(localStorage.setItem('selectIime', selectIime));
