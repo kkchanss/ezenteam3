@@ -18,14 +18,7 @@
 			
 		<div class="review_list_box">
 			<table class="review_list"> <!-- review 리스트 -->
-				<tr> 
-					<th class="no"> 번호 </th>
-					<th class="name"> 작성자 </th>
-					<th class="menu"> 상품명 </th>
-					<th class="content"> 내용 </th>
-					<th class="star"> 별점 </th>
-					<th class="time"> 날짜 </th>
-				</tr>
+
 			</table> <!-- qna 리스트 end -->
 		</div>
 	</div>

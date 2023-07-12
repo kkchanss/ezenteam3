@@ -33,6 +33,8 @@ function reviewPrint() {//함수시작
 function reportRv( sirenN ){//함수 시작
 	console.log(sirenN)
 	
+	//let contentrv = document.querySelectorAll('.review_list tr')
+	
 	let pw = prompt('관리자 비밀번호를 입력하세요')
 	 if(pw == '1234'){//if sta
 		 for(let i = 0 ; i< reviewList.length ; i++){//for sta
@@ -40,15 +42,19 @@ function reportRv( sirenN ){//함수 시작
 			 if(sirenN == i){//if2 sta
 			 	reviewList[i].name = ' ? '
 			 	reviewList[i].menu = ' ??? '
-				reviewList[i].content = `신고된리뷰입니다. &#91; 열람불가 &#93; `
+				reviewList[i].content = `<span style="color:red">신고된리뷰입니다. &#91; 열람불가 &#93;</span> `
 				reviewList[i].star = ' ? '
 				sessionStorage.setItem('reviewList' , JSON.stringify(reviewList))
+			 	//contentrv[i].classList.add('reportRv');
+
 			 }//if2 end
+			 
+			 
 		 }//for end
 	 }//if end
 	 else{ alert('비밀번호가 틀렸습니다.[신고불가]')
 	 		}
-	
+	//contentrv[i].classList.remove('reportRv');
 	reviewPrint() 
 }//함수 끝
  
