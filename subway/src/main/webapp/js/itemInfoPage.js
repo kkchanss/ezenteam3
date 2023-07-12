@@ -92,6 +92,8 @@ function productSelect( productNo ){
          pay: MenuList[productNo].pay}
       
      ) )
+     
+     location.href ='../order/orderPage.jsp';
 }
 
 
